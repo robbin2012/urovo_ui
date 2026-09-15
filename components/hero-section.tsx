@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 import { ArrowRight } from "lucide-react"
 
 const stats = [
@@ -7,15 +10,56 @@ const stats = [
   { value: "400+", label: "R&D Professionals" },
 ]
 
+const slides = [
+  {
+    image: "/ybx_static/out/images/hero-warehouse.png",
+    alt: "Warehouse worker in a hi-vis vest scanning boxes with a rugged handheld device",
+  },
+  {
+    image: "/ybx_static/out/images/hero-tablet.jpg",
+    alt: "Frontline operator reviewing data on a tablet",
+  },
+  {
+    image: "/ybx_static/out/images/hero-manufacturing.jpg",
+    alt: "Precision manufacturing equipment in operation",
+  },
+]
+
 export function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0)
+  const [countdownCycle, setCountdownCycle] = useState(0)
+  const countdownRef = useRef<SVGCircleElement>(null)
+
+  useEffect(() => {
+    const circle = countdownRef.current
+    if (!circle) return
+
+    const countdown = circle.animate(
+      [{ strokeDashoffset: "100" }, { strokeDashoffset: "0" }],
+      { duration: 5500, easing: "linear", fill: "forwards" },
+    )
+
+    countdown.onfinish = () => {
+      setActiveSlide((current) => (current + 1) % slides.length)
+    }
+
+    return () => countdown.cancel()
+  }, [activeSlide, countdownCycle])
+
   return (
     <section className="relative">
       <div className="relative min-h-[720px] w-full overflow-hidden">
-        <img
-          src="/images/hero-warehouse.png"
-          alt="Warehouse worker in a hi-vis vest scanning boxes with a rugged handheld device"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        {slides.map((slide, index) => (
+          <img
+            key={slide.image}
+            src={slide.image}
+            alt={slide.alt}
+            aria-hidden={index !== activeSlide}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+              index === activeSlide ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
         <div className="relative mx-auto flex min-h-[720px] max-w-[1280px] flex-col justify-center px-6 pb-40 pt-28">
@@ -35,6 +79,40 @@ export function HeroSection() {
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
+        </div>
+
+        <div className="absolute right-6 top-1/2 z-10 flex -translate-y-1/2 flex-col items-center gap-4 sm:right-10 lg:right-16" aria-label="Banner slides">
+          {slides.map((slide, index) => (
+            <button
+              type="button"
+              key={slide.image}
+              aria-label={`Show banner ${index + 1}`}
+              aria-current={index === activeSlide}
+              onClick={() => {
+                setActiveSlide(index)
+                setCountdownCycle((current) => current + 1)
+              }}
+              className={`rounded-full transition-all ${index === activeSlide ? "h-2.5 w-2.5 bg-transparent" : "h-1.5 w-1.5 bg-white/85 hover:bg-white"}`}
+            >
+              {index === activeSlide && (
+                <svg viewBox="0 0 16 16" className="h-full w-full -rotate-90" fill="none" aria-hidden="true">
+                  <circle cx="8" cy="8" r="6.5" stroke="white" strokeOpacity="0.3" strokeWidth="1.25" />
+                  <circle
+                    ref={countdownRef}
+                    cx="8"
+                    cy="8"
+                    r="6.5"
+                    pathLength="100"
+                    stroke="white"
+                    strokeWidth="1.25"
+                    strokeLinecap="round"
+                    strokeDasharray="100"
+                    strokeDashoffset="100"
+                  />
+                </svg>
+              )}
+            </button>
+          ))}
         </div>
       </div>
 

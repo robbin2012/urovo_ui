@@ -22,6 +22,17 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Static export
+
+The project is configured with `output: 'export'`, so it can be deployed without a Node.js server.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm export
+```
+
+Upload the generated `out/` directory to any static hosting service or web server. The entry file is `out/index.html`.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Learn More

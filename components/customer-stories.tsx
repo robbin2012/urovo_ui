@@ -1,9 +1,9 @@
 import { ArrowRight } from "lucide-react"
 
 const stories = [
-  { name: "Watsons China", tag: "Retail", image: "/images/story-watsons.png" },
-  { name: "Three Southern European Banks", tag: "Manufacturing", image: "/images/story-banks.png" },
-  { name: "MINISO", tag: "Financial", image: "/images/story-miniso.png" },
+  { name: "Watsons China", tag: "Retail", image: "/ybx_static/out/images/story-watsons.png" },
+  { name: "Three Southern European Banks", tag: "Manufacturing", image: "/ybx_static/out/images/story-banks.png" },
+  { name: "MINISO", tag: "Financial", image: "/ybx_static/out/images/story-miniso.png" },
 ]
 
 export function CustomerStories() {

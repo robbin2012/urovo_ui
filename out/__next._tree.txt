@@ -1,0 +1,11 @@
+:HL["/ybx_static/out/_next/static/chunks/2sz50bz4bdqhl.css","style"]
+:HL["/ybx_static/out/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ybx_static/out/images/data-capture.png","image"]
+:HL["/ybx_static/out/images/story-watsons.png","image"]
+:HL["/ybx_static/out/images/story-banks.png","image"]
+:HL["/ybx_static/out/images/story-miniso.png","image"]
+:HL["/ybx_static/out/images/tech-cube.png","image"]
+:HL["/ybx_static/out/images/news-building.png","image"]
+:HL["/ybx_static/out/images/blog-rfid.png","image"]
+:HL["/ybx_static/out/images/blog-factory.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"xGw-AJXwfXKPb1ZhinTSf"}

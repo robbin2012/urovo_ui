@@ -43,7 +43,7 @@ export function DataActionSection() {
 
           <div className="relative overflow-hidden rounded-2xl">
             <img
-              src="/images/data-capture.png"
+              src="/ybx_static/out/images/data-capture.png"
               alt="Hands holding a parcel with a QR label and a phone showing a secured checkmark"
               className="h-full w-full object-cover"
             />
