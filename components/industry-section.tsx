@@ -16,12 +16,12 @@ const cards = [
   {
     title: "Retail Operations",
     body: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations. From inventory and fulfillment to customer service and checkout, UROVO helps teams capture accurate information, respond faster and keep work moving across stores and distribution environments.",
-    image: "/ybx_static/out/images/retail.png",
+    image: "/images/retail.png",
   },
   {
     title: "Logistics & Transportation",
     body: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery. Rugged mobile computers, barcode and RFID capture, mobile printing and device software help improve visibility, reduce manual errors and support reliable execution from receiving through final delivery.",
-    image: "/ybx_static/out/images/story-watsons.png",
+    image: "/images/story-watsons.png",
   },
 ]
 

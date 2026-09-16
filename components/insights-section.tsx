@@ -5,13 +5,13 @@ const blogs = [
     tag: "BLOG",
     title: "Bringing End-to-End Traceability to Wine: UROVO's RFID Solution in Action",
     date: "2026.08.08",
-    image: "/ybx_static/out/images/blog-rfid.png",
+    image: "/images/blog-rfid.png",
   },
   {
     tag: "BLOG",
     title: "Bringing End-to-End Traceability to Wine: UROVO's RFID Solution in Action",
     date: "2026.08.08",
-    image: "/ybx_static/out/images/blog-factory.png",
+    image: "/images/blog-factory.png",
   },
 ]
 
@@ -31,7 +31,7 @@ export function InsightsSection() {
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <div className="overflow-hidden rounded-2xl">
           <img
-            src="/ybx_static/out/images/news-building.png"
+            src="/images/news-building.png"
             alt="Modern geometric architecture building"
             className="h-full max-h-[300px] w-full object-cover"
           />

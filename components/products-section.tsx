@@ -70,7 +70,7 @@ export function ProductsSection() {
 
           <div className="flex items-center justify-center">
             <img
-              src="/ybx_static/out/images/barcode-scanner.png"
+              src="/images/barcode-scanner.png"
               alt="Rugged handheld barcode scanner"
               className="max-h-80 w-auto object-contain drop-shadow-2xl"
             />

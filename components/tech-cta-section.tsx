@@ -4,7 +4,7 @@ export function TechCtaSection() {
   return (
     <section className="relative overflow-hidden bg-[#050a1c]">
       <img
-        src="/ybx_static/out/images/tech-cube.png"
+        src="/images/tech-cube.png"
         alt=""
         aria-hidden="true"
         className="absolute right-0 top-1/2 h-[420px] w-auto -translate-y-1/2 object-contain opacity-90"
