@@ -44,7 +44,11 @@ export function DataActionSection() {
         <p data-reveal data-reveal-delay="1" className="section-description">UROVO devices, software and cloud services work together in one continuous operational loop.</p>
         <div data-reveal data-reveal-delay="2" className="data-grid">
           <div className="data-loop" aria-label="Operational loop: Capture, Connect, Process, Act">
-            <div className={`loop-ring loop-ring--step-${activeStep + 1}`}><div className="loop-center"><img src="/images/design/capture-icon.png" alt="" /></div>{loop.map((step, index) => <i key={step.label} className={activeStep === index ? "is-active" : ""} aria-hidden="true" />)}</div>
+            <div className={`loop-ring loop-ring--step-${activeStep + 1}`}>
+              <div className="loop-particles" aria-hidden="true"><span /><span /><span /><span /></div>
+              <div className="loop-center"><img src="/images/design/capture-icon.png" alt="" /></div>
+              {loop.map((step, index) => <i key={step.label} className={activeStep === index ? "is-active" : ""} aria-hidden="true" />)}
+            </div>
             {loop.map((step, index) => <button key={step.label} type="button" aria-pressed={activeStep === index} className={`loop-step step-${index + 1} ${activeStep === index ? "is-active" : ""}`} onClick={() => setActiveStep(index)}><span>0{index + 1}</span>{step.label}</button>)}
           </div>
           <div className="data-card">
