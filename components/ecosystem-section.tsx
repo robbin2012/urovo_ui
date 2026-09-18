@@ -1,25 +1,17 @@
 const partners = [
-  { name: "StayLinked", tag: "TERMINAL EMULATION" },
-  { name: "Springdel", tag: "DEVICE MANAGEMENT" },
-  { name: "ivanti", tag: "ENTERPRISE PLATFORM" },
-  { name: "android", tag: "CERTIFICATION" },
-  { name: "EMVCo", tag: "CERTIFICATION" },
-  { name: "Qualcomm", tag: "TECHNOLOGY PLATFORM" },
+  { name: "StayLinked", tag: "TERMINAL EMULATION", asset: 8 },
+  { name: "Springdel", tag: "DEVICE MANAGEMENT", asset: 7 },
+  { name: "ivanti", tag: "ENTERPRISE PLATFORM", asset: 6 },
+  { name: "android", tag: "CERTIFICATION", asset: 5 },
+  { name: "EMVCo", tag: "CERTIFICATION", asset: 4 },
+  { name: "Qualcomm", tag: "TECHNOLOGY PLATFORM", asset: 3 },
 ]
-
 export function EcosystemSection() {
-  return (
-    <section className="mx-auto max-w-[1280px] px-6 py-24">
-      <h2 className="text-2xl font-semibold text-brand-navy sm:text-3xl">UROVO Technology Ecosystem</h2>
-
-      <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
-        {partners.map((p) => (
-          <div key={p.name} className="border-l border-border pl-6 first:border-l-0 first:pl-0 lg:border-l lg:first:border-l-0 lg:first:pl-6">
-            <div className="text-xl font-bold text-brand-navy">{p.name}</div>
-            <div className="mt-2 text-[10px] font-medium tracking-wide text-muted-foreground">{p.tag}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
+  return <section id="partners" className="ecosystem-section page-container">
+    <h2 className="section-title">UROVO Technology Ecosystem</h2>
+    <div className="partner-grid">{partners.map((p) => <div key={p.name} className="partner">
+      <img src={`/ybx_static/out/images/revised_images/SVG/资源 ${p.asset}.svg`} alt={p.name} />
+      <p>{p.tag}</p>
+    </div>)}</div>
+  </section>
 }

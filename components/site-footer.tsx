@@ -54,17 +54,18 @@ const columns = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#0b0d12] text-white">
-      <div className="mx-auto max-w-[1280px] px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
+    <footer id="footer" className="site-footer text-white">
+      <div className="page-container footer-inner">
+        <div className="footer-grid">
           <div>
-            <div className="text-2xl font-bold">Urovo</div>
+            <img className="footer-logo" src="/ybx_static/out/images/revised_images/SVG/logo.svg" alt="UROVO" />
             <div className="mt-6 flex gap-3">
               {[LinkedinIcon, FacebookIcon, YoutubeIcon].map((Icon, i) => (
                 <a
                   key={i}
+                  aria-label={["LinkedIn", "Facebook", "YouTube"][i]}
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-brand hover:text-brand"
+                  className="footer-social-link flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -73,13 +74,13 @@ export function SiteFooter() {
 
             <div className="mt-10">
               <p className="text-sm font-medium">Subscribe our newsletter</p>
-              <form className="mt-4 flex max-w-sm items-center gap-2 rounded-full border border-white/20 p-1.5">
+              <form className="newsletter-form">
                 <input
-                  type="email"
+                  type="email" aria-label="Your email address" required
                   placeholder="Enter your email"
                   className="flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/40 focus:outline-none"
                 />
-                <button className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand/90">
+                <button className="cta-button inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-xs font-semibold text-white">
                   SUBMIT
                   <ArrowRight className="h-3.5 w-3.5" />
                 </button>
@@ -87,7 +88,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="footer-links grid grid-cols-2 gap-8 sm:grid-cols-4">
             {columns.map((col) => (
               <div key={col.title}>
                 <h4 className="text-sm font-semibold">{col.title}</h4>
@@ -105,7 +106,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-6">
+        <div className="footer-copyright">
           <p className="text-xs text-white/40">© 2021 UROVO PTE. LIMITED All RIGHTS RESERVED.</p>
         </div>
       </div>

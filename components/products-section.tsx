@@ -3,79 +3,63 @@
 import { useState } from "react"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 
-const tabs = [
-  "Mobile Computers",
-  "Tables",
-  "Wearables",
-  "RFID Devices",
-  "Barcode Scanners",
-  "Printers",
-  "Smart Payment Terminals",
-  "Smart Mobile Terminals",
+const tabs = ["Mobile Computers", "Tablets", "Wearables", "RFID Devices", "Barcode Scanners", "Printers", "Smart Payment Terminals", "Smart Mobile Terminals"]
+const products = [
+  { title: "Barcode Scanners", image: "资源 9.png", description: "Handheld and presentation scanners designed to capture 1D and 2D barcodes quickly and accurately in fast-paced environments." },
+  { title: "Mobile Computers", image: "资源 1.png", description: "Enterprise mobile computers that bring reliable data capture and connected workflows to your frontline teams." },
+  { title: "Tablets", image: "资源 10.png", description: "Rugged tablets that keep teams connected to the information they need in demanding working environments." },
 ]
 
 export function ProductsSection() {
-  const [active, setActive] = useState("Mobile Computers")
-
+  const [active, setActive] = useState(products[0].title)
+  const [index, setIndex] = useState(0)
+  const changeProduct = (direction: number) => {
+    const next = (index + direction + products.length) % products.length
+    setIndex(next)
+    setActive(products[next].title)
+  }
   return (
-    <section className="mx-auto max-w-[1280px] px-6 py-24">
-      <h2 className="text-2xl font-semibold text-brand-navy sm:text-3xl">UROVO Devices for Every Frontline Task</h2>
-
-      <div className="mt-8 flex flex-wrap gap-3">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActive(tab)}
-            className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
-              active === tab
-                ? "bg-brand text-white"
-                : "bg-secondary text-foreground/70 hover:bg-secondary/70"
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-[#eaf1ff] to-[#f6f9ff]">
-        <div className="grid items-center gap-8 p-8 md:grid-cols-2 md:p-12">
-          <div>
-            <h3 className="text-3xl font-bold text-brand-navy sm:text-4xl">Barcode Scanners</h3>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Handheld and presentation scanners designed to capture 1D and 2D barcodes quickly and accurately in
-              fast-paced environments.
-            </p>
-            <a href="#" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand">
-              Explore Barcode Scanners
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white">
-                <ArrowRight className="h-3.5 w-3.5" />
-              </span>
-            </a>
-
-            <div className="mt-10 flex gap-3">
-              <button
-                aria-label="Previous"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-foreground/70 transition-colors hover:text-brand"
+    <section id="products" className="products-section">
+      <div className="page-container">
+        <h2 className="section-title">UROVO Devices for Every Frontline Task</h2>
+        <div className="pill-tabs" aria-label="Product categories">
+          {tabs.map((tab) => <button key={tab} aria-pressed={active === tab} className={active === tab ? "active" : ""} onClick={() => {
+            setActive(tab)
+            const next = products.findIndex((item) => item.title === tab)
+            if (next >= 0) setIndex(next)
+          }}>{tab}</button>)}
+        </div>
+        <div className="product-feature">
+          <div className="product-copy">
+            <div className="product-details">
+              {products.map((product, productIndex) => <div
+                key={product.title}
+                className={`product-detail${index === productIndex ? " is-active" : ""}`}
+                aria-hidden={index !== productIndex || undefined}
+                inert={index !== productIndex}
               >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button
-                aria-label="Next"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-foreground/70 transition-colors hover:text-brand"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
+                <h3>{product.title}</h3>
+                <p>{product.description}</p>
+                <a href="#contact" className="product-link">Explore {product.title}<span className="arrow-badge"><ArrowRight /></span></a>
+              </div>)}
+            </div>
+            <div className="product-controls">
+              <button aria-label="Previous product" onClick={() => changeProduct(-1)}><ChevronLeft /></button>
+              <button aria-label="Next product" onClick={() => changeProduct(1)}><ChevronRight /></button>
             </div>
           </div>
-
-          <div className="flex items-center justify-center">
-            <img
-              src="/images/barcode-scanner.png"
-              alt="Rugged handheld barcode scanner"
-              className="max-h-80 w-auto object-contain drop-shadow-2xl"
-            />
+          <div className="product-art">
+            <img className="product-mark" src="/ybx_static/out/images/revised_images/SVG/logo背景.svg" alt="" />
+            {products.map((product, productIndex) => <img
+              key={product.title}
+              className={`product-image${index === productIndex ? " is-active" : ""}`}
+              src={`/ybx_static/out/images/revised_images/1x/${product.image}`}
+              alt={product.title}
+              aria-hidden={index !== productIndex || undefined}
+            />)}
           </div>
         </div>
+        <p className="sr-only" aria-live="polite" aria-atomic="true">{products[index].title}</p>
       </div>
     </section>
   )

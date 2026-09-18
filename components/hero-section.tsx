@@ -12,15 +12,15 @@ const stats = [
 
 const slides = [
   {
-    image: "/images/hero-warehouse.png",
+    image: "/ybx_static/out/images/design/hero.webp",
     alt: "Warehouse worker in a hi-vis vest scanning boxes with a rugged handheld device",
   },
   {
-    image: "/images/hero-tablet.jpg",
+    image: "/ybx_static/out/images/hero-tablet.jpg",
     alt: "Frontline operator reviewing data on a tablet",
   },
   {
-    image: "/images/hero-manufacturing.jpg",
+    image: "/ybx_static/out/images/hero-manufacturing.jpg",
     alt: "Precision manufacturing equipment in operation",
   },
 ]
@@ -28,11 +28,27 @@ const slides = [
 export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [countdownCycle, setCountdownCycle] = useState(0)
+  const [dragOffset, setDragOffset] = useState(0)
+  const [isDragging, setIsDragging] = useState(false)
   const countdownRef = useRef<SVGCircleElement>(null)
+  const bannerRef = useRef<HTMLDivElement>(null)
+  const dragStartRef = useRef(0)
+  const slideTimeoutRef = useRef<ReturnType<typeof setTimeout>>(null)
+
+  const changeSlide = (direction: number) => {
+    const bannerWidth = bannerRef.current?.offsetWidth ?? window.innerWidth
+    setIsDragging(false)
+    setDragOffset(direction > 0 ? -bannerWidth : bannerWidth)
+    slideTimeoutRef.current = setTimeout(() => {
+      setActiveSlide((current) => (current + direction + slides.length) % slides.length)
+      setDragOffset(0)
+      setCountdownCycle((current) => current + 1)
+    }, 350)
+  }
 
   useEffect(() => {
     const circle = countdownRef.current
-    if (!circle) return
+    if (!circle || isDragging || dragOffset !== 0) return
 
     const countdown = circle.animate(
       [{ strokeDashoffset: "100" }, { strokeDashoffset: "0" }],
@@ -40,29 +56,73 @@ export function HeroSection() {
     )
 
     countdown.onfinish = () => {
-      setActiveSlide((current) => (current + 1) % slides.length)
+      changeSlide(1)
     }
 
     return () => countdown.cancel()
-  }, [activeSlide, countdownCycle])
+  }, [activeSlide, countdownCycle, dragOffset, isDragging])
+
+  useEffect(() => () => {
+    if (slideTimeoutRef.current) clearTimeout(slideTimeoutRef.current)
+  }, [])
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    if ((event.target as HTMLElement).closest("a, button")) return
+    if (slideTimeoutRef.current) clearTimeout(slideTimeoutRef.current)
+    dragStartRef.current = event.clientX
+    setIsDragging(true)
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDragging) return
+    setDragOffset(event.clientX - dragStartRef.current)
+  }
+
+  const handlePointerEnd = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDragging) return
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+    const threshold = Math.min((bannerRef.current?.offsetWidth ?? 600) * 0.12, 100)
+
+    if (Math.abs(dragOffset) >= threshold) {
+      changeSlide(dragOffset < 0 ? 1 : -1)
+    } else {
+      setIsDragging(false)
+      setDragOffset(0)
+      setCountdownCycle((current) => current + 1)
+    }
+  }
 
   return (
-    <section className="relative">
-      <div className="relative min-h-[720px] w-full overflow-hidden">
-        {slides.map((slide, index) => (
+    <section id="top" className="hero-section">
+      <div
+        ref={bannerRef}
+        className={`hero-banner relative w-full touch-pan-y select-none overflow-hidden ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerEnd}
+        onPointerCancel={handlePointerEnd}
+      >
+        {[-1, 0, 1].map((position) => {
+          const index = (activeSlide + position + slides.length) % slides.length
+          const slide = slides[index]
+          return (
           <img
-            key={slide.image}
+            key={`${position}-${slide.image}`}
             src={slide.image}
             alt={slide.alt}
-            aria-hidden={index !== activeSlide}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-              index === activeSlide ? "opacity-100" : "opacity-0"
-            }`}
+            aria-hidden={position !== 0}
+            draggable={false}
+            className={`pointer-events-none absolute inset-0 h-full w-full object-cover ${isDragging ? "" : "transition-transform duration-[350ms] ease-out"}`}
+            style={{ transform: `translate3d(calc(${position * 100}% + ${dragOffset}px), 0, 0)` }}
           />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+          )
+        })}
+        <div className="hero-shade absolute inset-0" />
 
-        <div className="relative mx-auto flex min-h-[720px] max-w-[1280px] flex-col justify-center px-6 pb-40 pt-28">
+        <div className="hero-content page-container">
           <h1 className="max-w-2xl text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
             Devices and Software for Frontline Operations
           </h1>
@@ -72,8 +132,8 @@ export function HeroSection() {
           </p>
           <div className="mt-8">
             <a
-              href="#"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+              href="#industries"
+              className="cta-button group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white"
             >
               Explore Solutions
               <ArrowRight className="h-4 w-4" />
@@ -92,7 +152,7 @@ export function HeroSection() {
                 setActiveSlide(index)
                 setCountdownCycle((current) => current + 1)
               }}
-              className={`rounded-full transition-all ${index === activeSlide ? "h-2.5 w-2.5 bg-transparent" : "h-1.5 w-1.5 bg-white/85 hover:bg-white"}`}
+              className={`rounded-full transition-all duration-300 hover:scale-125 ${index === activeSlide ? "h-2.5 w-2.5 bg-transparent" : "h-1.5 w-1.5 bg-white/85 hover:bg-white"}`}
             >
               {index === activeSlide && (
                 <svg viewBox="0 0 16 16" className="h-full w-full -rotate-90" fill="none" aria-hidden="true">
@@ -116,7 +176,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto -mt-24 max-w-[1180px] px-6">
+      <div className="hero-stats page-container">
         <div className="grid grid-cols-2 gap-6 rounded-xl bg-white px-8 py-8 shadow-xl md:grid-cols-4 md:gap-4 md:px-10">
           {stats.map((s) => (
             <div key={s.value} className="border-l border-border pl-5 first:border-l-0 first:pl-0 md:border-l md:first:border-l-0">
