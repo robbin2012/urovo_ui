@@ -80,9 +80,9 @@ export function SiteFooter() {
                   placeholder="Enter your email"
                   className="flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/40 focus:outline-none"
                 />
-                <button className="cta-button inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-xs font-semibold text-white">
-                  SUBMIT
-                  <ArrowRight className="h-3.5 w-3.5" />
+                <button className="cta-button newsletter-submit inline-flex items-center rounded-full bg-brand text-xs font-semibold text-white">
+                  <span>SUBMIT</span>
+                  <ArrowRight aria-hidden="true" />
                 </button>
               </form>
             </div>

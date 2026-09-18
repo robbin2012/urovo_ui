@@ -8,6 +8,12 @@ const navTargets: Record<string, string> = { Products: "#products", Software: "#
 const industryItems = ["Retail", "Logistics & Transportation", "Manufacturing", "Hospitality", "Utilities", "Healthcare", "Financial Technology"]
 const productCategories = ["Mobile Computers", "Wearables", "Tablets", "RFID Devices", "Barcode Scanners", "Printers", "Smart Payment Terminals", "Smart Mobile Terminals"]
 const productModels = ["DT610", "DT610", "DT510", "DT66", "SR5600", "DT610", "DT610", "DT510", "DT66", "SR5600", "DT610", "DT610", "DT510", "DT66", "SR5600"]
+const productImages = ["资源 1.png", "资源 2.png", "资源 10.png"]
+const productDescriptions = [
+  "Mobile computing for receiving, put-away, replenishment, and inventory tasks.",
+  "Reliable handheld performance for connected frontline workflows and everyday data capture.",
+  "A rugged large-screen device for mobile operations, inspections, and field collaboration.",
+]
 const featureMenus: Record<string, { title?: string; description?: string; links: string[]; image: string; imageAlt: string; cta?: string }> = {
   Software: {
     title: "UROVO Enterprise Enabler (UEE)",
@@ -48,10 +54,10 @@ function IndustriesDropdown({ sticky, linkClass }: { sticky: boolean; linkClass:
             <ul>
               {industryItems.map((industry, index) => (
                 <li key={industry}>
-                  <a href="#industries" className={index === 0 ? "is-active" : ""}>
+                  <button type="button" className={index === 0 ? "is-active" : ""}>
                     {industry}
                     {index === 0 && <ChevronRight aria-hidden="true" />}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -73,6 +79,8 @@ function IndustriesDropdown({ sticky, linkClass }: { sticky: boolean; linkClass:
 }
 
 function ProductsDropdown({ sticky, linkClass }: { sticky: boolean; linkClass: string }) {
+  const [previewIndex, setPreviewIndex] = useState<number | null>(null)
+
   return (
     <div className="mega-nav group relative">
       <a href="#products" aria-haspopup="true" className={linkClass}>Products</a>
@@ -80,25 +88,30 @@ function ProductsDropdown({ sticky, linkClass }: { sticky: boolean; linkClass: s
         <div className="products-menu">
           <nav className="products-menu__categories" aria-label="Product categories">
             {productCategories.map((category, index) => (
-              <a key={category} href="#products" className={index === 0 ? "is-active" : ""}>
+              <button key={category} type="button" className={index === 0 ? "is-active" : ""}>
                 {category}
                 {index === 0 && <ChevronRight aria-hidden="true" />}
-              </a>
+              </button>
             ))}
           </nav>
-          <div className="products-menu__catalog">
+          <div className="products-menu__catalog" onMouseLeave={() => setPreviewIndex(null)}>
             <div className="products-menu__heading">
               <strong>All</strong>
               <a href="#products">View all products <ArrowRight aria-hidden="true" /></a>
             </div>
             <div className="products-menu__grid">
               {productModels.map((model, index) => (
-                <a href="#products" className="products-menu__card" key={`${model}-${index}`}>
-                  <span aria-hidden="true">U</span>
+                <a href="#products" className="products-menu__card" key={`${model}-${index}`} onMouseEnter={() => setPreviewIndex(index)} onFocus={() => setPreviewIndex(index)} onBlur={() => setPreviewIndex(null)}>
+                  <img src={`/images/revised_images/1x/${productImages[index % productImages.length]}`} alt={model} />
                   <strong>{model}</strong>
                 </a>
               ))}
             </div>
+            {productModels.map((model, index) => <div key={`preview-${model}-${index}`} className={`products-menu__floating-preview ${previewIndex === index ? "is-visible" : ""}`} aria-hidden={previewIndex !== index}>
+              <img src={`/images/revised_images/1x/${productImages[index % productImages.length]}`} alt="" />
+              <strong>{model}</strong>
+              <p>{productDescriptions[index % productDescriptions.length]}</p>
+            </div>)}
           </div>
         </div>
       </div>
@@ -188,7 +201,11 @@ export function SiteHeader() {
       const currentY = window.scrollY
       const movingUp = currentY < previousY - 5
       const movingDown = currentY > previousY + 5
-      if (currentY <= 80 || movingDown) setShowSticky(false)
+      if (currentY <= 80 || movingDown) {
+        setShowSticky(false)
+        const focusedElement = document.activeElement
+        if (focusedElement instanceof HTMLElement && focusedElement.closest(".mega-nav")) focusedElement.blur()
+      }
       else if (movingUp) setShowSticky(true)
       previousY = currentY
     }
@@ -198,7 +215,7 @@ export function SiteHeader() {
 
   return <>
     <header className="site-header absolute inset-x-0 top-0 z-50"><HeaderContent sticky={false} open={open} setOpen={setOpen} /><MobileMenu sticky={false} open={open} /></header>
-    <header className={`fixed inset-x-0 top-0 z-[60] transition-all duration-500 ${showSticky ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-full opacity-0"}`}>
+    <header className={`sticky-header fixed inset-x-0 top-0 z-[60] transition-all duration-500 ${showSticky ? "sticky-header--visible translate-y-0 opacity-100" : "sticky-header--hidden pointer-events-none -translate-y-full opacity-0"}`}>
       <div className="sticky-header-bar"><HeaderContent sticky={true} open={open} setOpen={setOpen} /><MobileMenu sticky={true} open={open} /></div>
     </header>
   </>

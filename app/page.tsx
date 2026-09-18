@@ -8,10 +8,12 @@ import { CustomerStories } from "@/components/customer-stories"
 import { TechCtaSection } from "@/components/tech-cta-section"
 import { InsightsSection } from "@/components/insights-section"
 import { SiteFooter } from "@/components/site-footer"
+import { ScrollRevealController } from "@/components/scroll-reveal-controller"
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-white">
+      <ScrollRevealController />
       <SiteHeader />
       <HeroSection />
       <ProductsSection />

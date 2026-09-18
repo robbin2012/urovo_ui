@@ -58,13 +58,15 @@ export function IndustrySection() {
 
   return <section id="industries" className="industry-section">
     <div className="page-container">
-      <h2 className="section-title">Industry Solutions</h2>
-      <p className="section-description">From stores and warehouses to factories and field operations, UROVO combines enterprise devices, data capture technologies and software to help frontline teams work with greater speed, accuracy and visibility.</p>
-      <div ref={tabsRef} className="pill-tabs" aria-label="Industries">{cards.map((card, index) => <button type="button" key={card.tab} onClick={() => carousel?.scrollTo(index)} aria-pressed={active === index} className={active === index ? "active" : ""}>{card.tab}</button>)}</div>
+      <h2 data-reveal className="section-title">Industry Solutions</h2>
+      <p data-reveal data-reveal-delay="1" className="section-description">From stores and warehouses to factories and field operations, UROVO combines enterprise devices, data capture technologies and software to help frontline teams work with greater speed, accuracy and visibility.</p>
+      <div data-reveal data-reveal-delay="2" ref={tabsRef} className="pill-tabs" aria-label="Industries">{cards.map((card, index) => <button type="button" key={card.tab} onClick={() => carousel?.scrollTo(index)} aria-pressed={active === index} className={active === index ? "active" : ""}>{card.tab}</button>)}</div>
     </div>
     <div
       ref={viewportRef}
       className={`industry-viewport${dragging ? " is-dragging" : ""}`}
+      data-reveal
+      data-reveal-delay="3"
       role="region"
       aria-roledescription="carousel"
       aria-label="Industry solutions"

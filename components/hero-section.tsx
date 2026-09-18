@@ -123,19 +123,19 @@ export function HeroSection() {
         <div className="hero-shade absolute inset-0" />
 
         <div className="hero-content page-container">
-          <h1 className="max-w-2xl text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 data-reveal className="max-w-2xl text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
             Devices and Software for Frontline Operations
           </h1>
-          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-white/80">
+          <p data-reveal data-reveal-delay="1" className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-white/80">
             UROVO combines enterprise-grade devices and software to help teams capture data, connect workflows and keep
             operations moving.
           </p>
-          <div className="mt-8">
+          <div data-reveal data-reveal-delay="2" className="mt-8">
             <a
               href="#industries"
-              className="cta-button group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white"
+              className="cta-button hero-fill-button group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white"
             >
-              Explore Solutions
+              <span>Explore Solutions</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -176,7 +176,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="hero-stats page-container">
+      <div data-reveal data-reveal-delay="3" className="hero-stats page-container">
         <div className="grid grid-cols-2 gap-6 rounded-xl bg-white px-8 py-8 shadow-xl md:grid-cols-4 md:gap-4 md:px-10">
           {stats.map((s) => (
             <div key={s.value} className="border-l border-border pl-5 first:border-l-0 first:pl-0 md:border-l md:first:border-l-0">

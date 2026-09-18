@@ -21,15 +21,15 @@ export function ProductsSection() {
   return (
     <section id="products" className="products-section">
       <div className="page-container">
-        <h2 className="section-title">UROVO Devices for Every Frontline Task</h2>
-        <div className="pill-tabs" aria-label="Product categories">
+        <h2 data-reveal className="section-title">UROVO Devices for Every Frontline Task</h2>
+        <div data-reveal data-reveal-delay="1" className="pill-tabs" aria-label="Product categories">
           {tabs.map((tab) => <button key={tab} aria-pressed={active === tab} className={active === tab ? "active" : ""} onClick={() => {
             setActive(tab)
             const next = products.findIndex((item) => item.title === tab)
             if (next >= 0) setIndex(next)
           }}>{tab}</button>)}
         </div>
-        <div className="product-feature">
+        <div data-reveal data-reveal-delay="2" className="product-feature">
           <div className="product-copy">
             <div className="product-details">
               {products.map((product, productIndex) => <div
