@@ -49,11 +49,11 @@ export function ProductsSection() {
             </div>
           </div>
           <div className="product-art">
-            <img className="product-mark" src="/ybx_static/out/images/revised_images/SVG/logo背景.svg" alt="" />
+            <img className="product-mark" src="/images/revised_images/SVG/logo背景.svg" alt="" />
             {products.map((product, productIndex) => <img
               key={product.title}
               className={`product-image${index === productIndex ? " is-active" : ""}`}
-              src={`/ybx_static/out/images/revised_images/1x/${product.image}`}
+              src={`/images/revised_images/1x/${product.image}`}
               alt={product.title}
               aria-hidden={index !== productIndex || undefined}
             />)}

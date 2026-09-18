@@ -58,7 +58,7 @@ export function SiteFooter() {
       <div className="page-container footer-inner">
         <div className="footer-grid">
           <div>
-            <img className="footer-logo" src="/ybx_static/out/images/revised_images/SVG/logo.svg" alt="UROVO" />
+            <img className="footer-logo" src="/images/revised_images/SVG/logo.svg" alt="UROVO" />
             <div className="mt-6 flex gap-3">
               {[LinkedinIcon, FacebookIcon, YoutubeIcon].map((Icon, i) => (
                 <a

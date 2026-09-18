@@ -10,11 +10,11 @@ export function DataActionSection() {
         <p className="section-description">UROVO devices, software and cloud services work together in one continuous operational loop.</p>
         <div className="data-grid">
           <div className="data-loop" aria-label="Operational loop: Capture, Connect, Process, Act">
-            <div className="loop-ring"><div className="loop-center"><img src="/ybx_static/out/images/design/capture-icon.png" alt="" /></div><i /><i /><i /><i /></div>
+            <div className="loop-ring"><div className="loop-center"><img src="/images/design/capture-icon.png" alt="" /></div><i /><i /><i /><i /></div>
             {loop.map((label, i) => <div key={label} className={`loop-step step-${i + 1}`}><span>0{i + 1}</span>{label}</div>)}
           </div>
           <div className="data-card">
-            <img src="/ybx_static/out/images/design/capture.webp" alt="A parcel label being verified using a handheld device" />
+            <img src="/images/design/capture.webp" alt="A parcel label being verified using a handheld device" />
             <div className="data-caption">
               <h3>Capture Accurate Data at the Frontline</h3>
               <p>Use mobile computers, wearables, barcode scanners and RFID devices to collect the information your operations depend on.</p>

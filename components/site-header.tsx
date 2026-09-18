@@ -9,7 +9,7 @@ const navTargets: Record<string, string> = { Products: "#products", Software: "#
 function HeaderContent({ sticky, open, setOpen }: { sticky: boolean; open: boolean; setOpen: (value: boolean) => void }) {
   return (
     <div className={`header-content page-container flex items-center justify-between transition-all duration-300 ${sticky ? "min-h-[76px]" : ""}`}>
-      <a href="#top" aria-label="UROVO home"><img src="/ybx_static/out/images/revised_images/SVG/logo.svg" alt="UROVO" className={`site-logo ${sticky ? "brightness-0" : ""}`} /></a>
+      <a href="#top" aria-label="UROVO home"><img src="/images/revised_images/SVG/logo.svg" alt="UROVO" className={`site-logo ${sticky ? "brightness-0" : ""}`} /></a>
       <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
         {navItems.map((item) => (
           <a key={item} href={navTargets[item]} className={`flex items-center gap-1 transition-colors ${sticky ? "text-brand-navy/85 hover:text-brand" : "text-white/90 hover:text-white"}`}>

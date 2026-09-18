@@ -12,15 +12,15 @@ const stats = [
 
 const slides = [
   {
-    image: "/ybx_static/out/images/design/hero.webp",
+    image: "/images/design/hero.webp",
     alt: "Warehouse worker in a hi-vis vest scanning boxes with a rugged handheld device",
   },
   {
-    image: "/ybx_static/out/images/hero-tablet.jpg",
+    image: "/images/hero-tablet.jpg",
     alt: "Frontline operator reviewing data on a tablet",
   },
   {
-    image: "/ybx_static/out/images/hero-manufacturing.jpg",
+    image: "/images/hero-manufacturing.jpg",
     alt: "Precision manufacturing equipment in operation",
   },
 ]
