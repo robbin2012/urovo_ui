@@ -6,12 +6,24 @@ const partners = [
   { name: "EMVCo", tag: "CERTIFICATION", asset: 4 },
   { name: "Qualcomm", tag: "TECHNOLOGY PLATFORM", asset: 3 },
 ]
+
+function PartnerSet({ hidden = false }: { hidden?: boolean }) {
+  return <div className="partner-set" aria-hidden={hidden}>
+    {partners.map((partner) => <div key={`${hidden ? "clone-" : ""}${partner.name}`} className="partner">
+      <img src={`/images/revised_images/SVG/资源 ${partner.asset}.svg`} alt={hidden ? "" : partner.name} />
+      <p>{partner.tag}</p>
+    </div>)}
+  </div>
+}
+
 export function EcosystemSection() {
   return <section id="partners" className="ecosystem-section page-container">
     <h2 className="section-title">UROVO Technology Ecosystem</h2>
-    <div className="partner-grid">{partners.map((p) => <div key={p.name} className="partner">
-      <img src={`/images/revised_images/SVG/资源 ${p.asset}.svg`} alt={p.name} />
-      <p>{p.tag}</p>
-    </div>)}</div>
+    <div className="partner-marquee" aria-label="Technology ecosystem partners">
+      <div className="partner-track">
+        <PartnerSet />
+        <PartnerSet hidden />
+      </div>
+    </div>
   </section>
 }

@@ -1,8 +1,13 @@
+"use client"
+
+import { useState } from "react"
 import { ArrowRight } from "lucide-react"
 
 const loop = ["Capture", "Connect", "Process", "Act"]
 
 export function DataActionSection() {
+  const [activeStep, setActiveStep] = useState(0)
+
   return (
     <section id="software" className="data-section">
       <div className="page-container">
@@ -10,8 +15,8 @@ export function DataActionSection() {
         <p className="section-description">UROVO devices, software and cloud services work together in one continuous operational loop.</p>
         <div className="data-grid">
           <div className="data-loop" aria-label="Operational loop: Capture, Connect, Process, Act">
-            <div className="loop-ring"><div className="loop-center"><img src="/images/design/capture-icon.png" alt="" /></div><i /><i /><i /><i /></div>
-            {loop.map((label, i) => <div key={label} className={`loop-step step-${i + 1}`}><span>0{i + 1}</span>{label}</div>)}
+            <div className={`loop-ring loop-ring--step-${activeStep + 1}`}><div className="loop-center"><img src="/images/design/capture-icon.png" alt="" /></div>{loop.map((label, index) => <i key={label} className={activeStep === index ? "is-active" : ""} aria-hidden="true" />)}</div>
+            {loop.map((label, index) => <button key={label} type="button" aria-pressed={activeStep === index} className={`loop-step step-${index + 1} ${activeStep === index ? "is-active" : ""}`} onClick={() => setActiveStep(index)}><span>0{index + 1}</span>{label}</button>)}
           </div>
           <div className="data-card">
             <img src="/images/design/capture.webp" alt="A parcel label being verified using a handheld device" />
