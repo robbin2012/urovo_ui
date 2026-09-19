@@ -204,6 +204,10 @@ body { margin: 0; }
 a, button { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--brand); outline-offset: 5px; }
 .pill-tabs { display: flex; gap: calc(16 * var(--u)); margin-block: calc(50 * var(--u)) calc(28 * var(--u)); }
+.pill-tabs { scrollbar-width: none; -ms-overflow-style: none; }
+.pill-tabs::-webkit-scrollbar { display: none; }
+.products-section .pill-tabs { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.products-section .pill-tabs.is-dragging { cursor: grabbing; }
 .pill-tabs button { white-space: nowrap; border-radius: 999px; padding: calc(15 * var(--u)) calc(22 * var(--u)); background: white; color: #26304b; font-size: calc(16 * var(--u)); font-weight: 700; line-height: 1.2; transition: background .2s, color .2s; }
 .pill-tabs button:hover { background: #d9f4ff; }
 .pill-tabs button.active { background: var(--brand); color: white; }
