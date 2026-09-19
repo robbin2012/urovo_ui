@@ -436,7 +436,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   transform: translateY(-10px);
   box-shadow: 0 10px 22px rgb(10 19 48 / 0%);
   backdrop-filter: blur(14px);
-  transition: max-height .55s cubic-bezier(.22, 1, .36, 1), padding .55s cubic-bezier(.22, 1, .36, 1), opacity .3s ease, transform .45s cubic-bezier(.22, 1, .36, 1), border-color .3s ease, box-shadow .45s ease;
+  transition: max-height .72s cubic-bezier(.22, 1, .36, 1), padding .72s cubic-bezier(.22, 1, .36, 1), opacity .42s ease, transform .68s cubic-bezier(.22, 1, .36, 1), border-color .42s ease, box-shadow .6s ease;
 }
 .mobile-menu.is-open {
   max-height: 420px;
