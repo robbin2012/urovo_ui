@@ -32,24 +32,27 @@ export function ProductsSection() {
           className={`pill-tabs${draggingTabs ? " is-dragging" : ""}`}
           aria-label="Product categories"
           onPointerDown={(event) => {
-            if (event.button !== 0) return
+            if (event.pointerType !== "mouse" || event.button !== 0) return
             const tabsElement = tabsRef.current
             if (!tabsElement) return
             dragRef.current = { pointerId: event.pointerId, startX: event.clientX, scrollLeft: tabsElement.scrollLeft, moved: false }
-            tabsElement.setPointerCapture(event.pointerId)
-            setDraggingTabs(true)
           }}
           onPointerMove={(event) => {
             const tabsElement = tabsRef.current
             const drag = dragRef.current
             if (!tabsElement || drag.pointerId !== event.pointerId) return
             const distance = event.clientX - drag.startX
-            if (Math.abs(distance) > 4) drag.moved = true
+            if (!drag.moved && Math.abs(distance) > 4) {
+              drag.moved = true
+              tabsElement.setPointerCapture(event.pointerId)
+              setDraggingTabs(true)
+            }
+            if (!drag.moved) return
             tabsElement.scrollLeft = drag.scrollLeft - distance
           }}
           onPointerUp={(event) => {
             if (dragRef.current.pointerId !== event.pointerId) return
-            tabsRef.current?.releasePointerCapture(event.pointerId)
+            if (tabsRef.current?.hasPointerCapture(event.pointerId)) tabsRef.current.releasePointerCapture(event.pointerId)
             dragRef.current.pointerId = -1
             setDraggingTabs(false)
           }}

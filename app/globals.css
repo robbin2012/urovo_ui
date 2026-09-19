@@ -206,7 +206,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .pill-tabs { display: flex; gap: calc(16 * var(--u)); margin-block: calc(50 * var(--u)) calc(28 * var(--u)); }
 .pill-tabs { scrollbar-width: none; -ms-overflow-style: none; }
 .pill-tabs::-webkit-scrollbar { display: none; }
-.products-section .pill-tabs { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.products-section .pill-tabs { cursor: grab; touch-action: pan-x pan-y; user-select: none; -webkit-user-select: none; }
 .products-section .pill-tabs.is-dragging { cursor: grabbing; }
 .pill-tabs button { white-space: nowrap; border-radius: 999px; padding: calc(15 * var(--u)) calc(22 * var(--u)); background: white; color: #26304b; font-size: calc(16 * var(--u)); font-weight: 700; line-height: 1.2; transition: background .2s, color .2s; }
 .pill-tabs button:hover { background: #d9f4ff; }
@@ -426,6 +426,26 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .story-copy a { transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .3s ease, translate .3s var(--action-ease), scale .18s ease, margin-top .65s cubic-bezier(.22, 1, .36, 1); }
 .header-action { border-radius: 999px; }
 .site-header { transition: background-color .25s ease; }
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  border-top: 1px solid transparent;
+  background: rgb(255 255 255 / 96%);
+  padding: 0 24px;
+  opacity: 0;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 22px rgb(10 19 48 / 0%);
+  backdrop-filter: blur(14px);
+  transition: max-height .55s cubic-bezier(.22, 1, .36, 1), padding .55s cubic-bezier(.22, 1, .36, 1), opacity .3s ease, transform .45s cubic-bezier(.22, 1, .36, 1), border-color .3s ease, box-shadow .45s ease;
+}
+.mobile-menu.is-open {
+  max-height: 420px;
+  border-color: rgb(10 19 48 / 9%);
+  padding-block: 20px;
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 12px 22px rgb(10 19 48 / 8%);
+}
 .sticky-header-bar {
   width: 100%;
   border-bottom: 1px solid #dfe5ea;

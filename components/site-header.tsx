@@ -224,8 +224,7 @@ function HeaderContent({ sticky, open, setOpen, forceIndustriesOpen, onDesktopMe
 }
 
 function MobileMenu({ sticky, open }: { sticky: boolean; open: boolean }) {
-  if (!open) return null
-  return <div className={`border-t px-6 py-4 backdrop-blur-xl lg:hidden ${sticky ? "border-brand-navy/10 bg-white/80" : "border-white/10 bg-brand-navy/90"}`}><nav className="flex flex-col gap-4 text-sm font-medium">{navItems.map((item) => <a key={item} href={navTargets[item]} className={sticky ? "text-brand-navy/85 hover:text-brand" : "text-white/90 hover:text-white"}>{item}</a>)}</nav></div>
+  return <div className={`mobile-menu lg:hidden ${open ? "is-open" : ""}`} aria-hidden={!open} inert={!open}><nav className="flex flex-col gap-4 text-sm font-medium">{navItems.map((item) => <a key={item} href={navTargets[item]} className="text-brand-navy/85 hover:text-brand">{item}</a>)}</nav></div>
 }
 
 export function SiteHeader() {
