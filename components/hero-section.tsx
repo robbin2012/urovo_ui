@@ -99,7 +99,7 @@ export function HeroSection() {
     <section id="top" className="hero-section">
       <div
         ref={bannerRef}
-        className={`hero-banner relative w-full touch-pan-y select-none overflow-hidden ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+        className="hero-banner relative w-full cursor-default touch-pan-y select-none overflow-hidden"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerEnd}

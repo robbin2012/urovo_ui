@@ -65,8 +65,6 @@ export function IndustrySection() {
     <div
       ref={viewportRef}
       className={`industry-viewport${dragging ? " is-dragging" : ""}`}
-      data-reveal
-      data-reveal-delay="3"
       role="region"
       aria-roledescription="carousel"
       aria-label="Industry solutions"

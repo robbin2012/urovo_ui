@@ -17,8 +17,8 @@ function PartnerSet({ hidden = false }: { hidden?: boolean }) {
 }
 
 export function EcosystemSection() {
-  return <section id="partners" className="ecosystem-section page-container">
-    <h2 data-reveal className="section-title">UROVO Technology Ecosystem</h2>
+  return <section id="partners" className="ecosystem-section">
+    <h2 data-reveal className="section-title page-container">UROVO Technology Ecosystem</h2>
     <div data-reveal data-reveal-delay="1" className="partner-marquee" aria-label="Technology ecosystem partners">
       <div className="partner-track">
         <PartnerSet />

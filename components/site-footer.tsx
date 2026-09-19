@@ -65,7 +65,7 @@ export function SiteFooter() {
                   key={i}
                   aria-label={["LinkedIn", "Facebook", "YouTube"][i]}
                   href="#"
-                  className="footer-social-link flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80"
+                  className="footer-social-link flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
