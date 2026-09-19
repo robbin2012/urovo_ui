@@ -5,7 +5,15 @@ import { Search, Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-r
 
 const navItems = ["Products", "Software", "Resources", "Partners", "Support", "About"]
 const navTargets: Record<string, string> = { Products: "#products", Software: "#software", Resources: "#resources", Partners: "#partners", Support: "#footer", About: "#stories" }
-const industryItems = ["Retail", "Logistics & Transportation", "Manufacturing", "Hospitality", "Utilities", "Healthcare", "Financial Technology"]
+const industryMenus = [
+  { title: "Retail", description: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations, from inventory and fulfillment to customer service and checkout.", image: "/images/design/retail.webp" },
+  { title: "Logistics & Transportation", description: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery with rugged devices, reliable data capture, mobile printing and device software.", image: "/images/design/watsons.webp" },
+  { title: "Manufacturing", description: "Connect production teams with enterprise devices and data capture tools for greater visibility, accuracy and control across manufacturing operations.", image: "/images/design/blog-factory.webp" },
+  { title: "Hospitality", description: "Support frontline service teams with connected mobile devices, secure payment technology and dependable data capture tools that keep guest experiences moving.", image: "/images/design/miniso.webp" },
+  { title: "Utilities", description: "Keep field operations connected with rugged mobile computers and reliable access to work orders, asset information and operational data in demanding environments.", image: "/images/hero-manufacturing.jpg" },
+  { title: "Healthcare", description: "Help care teams capture accurate information, identify patients and assets, and stay connected with purpose-built mobile devices and scanning technology.", image: "/images/design/capture.webp" },
+  { title: "Financial Technology", description: "Bring secure payment technology, smart terminals and mobile devices to customer-facing financial operations and modern transaction workflows.", image: "/images/design/banks.webp" },
+]
 const productCategories = ["Mobile Computers", "Wearables", "Tablets", "RFID Devices", "Barcode Scanners", "Printers", "Smart Payment Terminals", "Smart Mobile Terminals"]
 const productImages = ["资源 1.png", "资源 2.png", "资源 10.png"]
 const productCatalog: Record<string, { models: string[]; description: string }> = {
@@ -53,7 +61,9 @@ function DropdownCloseButton({ onClose }: { onClose: () => void }) {
 }
 
 function IndustriesDropdown({ sticky, linkClass, onOpenChange, forcedOpen, onForceClose }: { sticky: boolean; linkClass: string; onOpenChange: (open: boolean) => void; forcedOpen: boolean; onForceClose: () => void }) {
+  const [activeIndustry, setActiveIndustry] = useState(0)
   const [dismissed, setDismissed] = useState(false)
+  const industry = industryMenus[activeIndustry]
   const close = () => {
     setDismissed(true)
     onOpenChange(false)
@@ -67,11 +77,11 @@ function IndustriesDropdown({ sticky, linkClass, onOpenChange, forcedOpen, onFor
         <div className="industries-menu">
           <nav className="industries-menu__categories" aria-label="Industry categories">
             <ul>
-              {industryItems.map((industry, index) => (
-                <li key={industry}>
-                  <button type="button" className={index === 0 ? "is-active" : ""}>
-                    {industry}
-                    {index === 0 && <ChevronRight aria-hidden="true" />}
+              {industryMenus.map((industryItem, index) => (
+                <li key={industryItem.title}>
+                  <button type="button" className={index === activeIndustry ? "is-active" : ""} onMouseEnter={() => setActiveIndustry(index)} onFocus={() => setActiveIndustry(index)}>
+                    {industryItem.title}
+                    {index === activeIndustry && <ChevronRight aria-hidden="true" />}
                   </button>
                 </li>
               ))}
@@ -79,12 +89,12 @@ function IndustriesDropdown({ sticky, linkClass, onOpenChange, forcedOpen, onFor
           </nav>
           <div className="industries-menu__detail">
             <div className="industries-menu__copy">
-              <h2>Retail</h2>
-              <p>UROVO empowers retail teams with fast, accurate mobile data capture - from inventory and shelf management to checkout and loss prevention - driving seamless in-store and omnichannel operations.</p>
-              <a href="#industries">View all solutions <ArrowRight aria-hidden="true" /></a>
+              <h2>{industry.title}</h2>
+              <p>{industry.description}</p>
+              <a href="#industries">View {industry.title} solutions <ArrowRight aria-hidden="true" /></a>
             </div>
             <div className="industries-menu__media">
-              <img src="/images/drop1.png" alt="Retail solutions" />
+              <img src={industry.image} alt={`${industry.title} solutions`} />
             </div>
           </div>
         </div>
