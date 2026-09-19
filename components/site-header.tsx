@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Search, Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react"
 
 const navItems = ["Products", "Software", "Resources", "Partners", "Support", "About"]
-const navTargets: Record<string, string> = { Products: "#products", Software: "#software", Resources: "#resources", Partners: "#partners", Support: "#footer", About: "#stories" }
+const navTargets: Record<string, string> = { Products: "/products", Software: "#software", Resources: "#resources", Partners: "#partners", Support: "#footer", About: "#stories" }
 const industryMenus = [
   { title: "Retail", description: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations, from inventory and fulfillment to customer service and checkout.", image: "/images/design/retail.webp" },
   { title: "Logistics & Transportation", description: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery with rugged devices, reliable data capture, mobile printing and device software.", image: "/images/design/watsons.webp" },
@@ -116,7 +116,7 @@ function ProductsDropdown({ sticky, linkClass, onOpenChange }: { sticky: boolean
 
   return (
     <div className="mega-nav group relative" onMouseEnter={() => onOpenChange(true)} onMouseLeave={() => onOpenChange(false)}>
-      <a href="#products" aria-haspopup="true" className={linkClass} onMouseEnter={() => setDismissed(false)}>Products</a>
+      <a href="/products" aria-haspopup="true" className={linkClass} onMouseEnter={() => setDismissed(false)}>Products</a>
       <div className={dropdownClassName(sticky, dismissed)}>
         <DropdownCloseButton onClose={close} />
         <div className="products-menu">
@@ -131,11 +131,11 @@ function ProductsDropdown({ sticky, linkClass, onOpenChange }: { sticky: boolean
           <div className="products-menu__catalog" onMouseLeave={() => setPreviewIndex(null)}>
             <div className="products-menu__heading">
               <strong>{category}</strong>
-              <a href="#products">View all products <ArrowRight aria-hidden="true" /></a>
+              <a href="/products">View all products <ArrowRight aria-hidden="true" /></a>
             </div>
             <div className="products-menu__grid">
               {products.models.map((model, index) => (
-                <a href="#products" className="products-menu__card" key={`${model}-${index}`} onMouseEnter={() => setPreviewIndex(index)} onMouseLeave={() => setPreviewIndex(null)} onFocus={() => setPreviewIndex(index)} onBlur={() => setPreviewIndex(null)}>
+                <a href="/products" className="products-menu__card" key={`${model}-${index}`} onMouseEnter={() => setPreviewIndex(index)} onMouseLeave={() => setPreviewIndex(null)} onFocus={() => setPreviewIndex(index)} onBlur={() => setPreviewIndex(null)}>
                   <img src={`/images/revised_images/1x/${productImages[index % productImages.length]}`} alt={model} />
                   <strong>{model}</strong>
                 </a>
@@ -184,8 +184,9 @@ function FeatureDropdown({ item, sticky, linkClass, onOpenChange }: { item: stri
   )
 }
 
-function HeaderContent({ sticky, open, setOpen, forceIndustriesOpen, onDesktopMenuOpenChange }: { sticky: boolean; open: boolean; setOpen: (value: boolean) => void; forceIndustriesOpen: boolean; onDesktopMenuOpenChange: (open: boolean) => void }) {
-  const desktopLinkClass = `flex items-center gap-1 transition-colors ${sticky ? "text-brand-navy/85 hover:text-brand" : "text-white/90 hover:text-white"}`
+function HeaderContent({ sticky, solid = false, open, setOpen, forceIndustriesOpen, onDesktopMenuOpenChange }: { sticky: boolean; solid?: boolean; open: boolean; setOpen: (value: boolean) => void; forceIndustriesOpen: boolean; onDesktopMenuOpenChange: (open: boolean) => void }) {
+  const darkText = sticky || solid
+  const desktopLinkClass = `flex items-center gap-1 transition-colors ${darkText ? "text-brand-navy/85 hover:text-brand" : "text-white/90 hover:text-white"}`
   const handleOtherMenuOpenChange = (menuOpen: boolean) => {
     if (menuOpen) setOpen(false)
     onDesktopMenuOpenChange(menuOpen)
@@ -193,7 +194,7 @@ function HeaderContent({ sticky, open, setOpen, forceIndustriesOpen, onDesktopMe
 
   return (
     <div className={`header-content page-container flex items-center justify-between transition-all duration-300 ${sticky ? "min-h-[76px]" : ""}`}>
-      <a href="#top" aria-label="UROVO home"><img src="/images/revised_images/SVG/logo.svg" alt="UROVO" className="site-logo" /></a>
+      <a href="/" aria-label="UROVO home"><img src="/images/revised_images/SVG/logo.svg" alt="UROVO" className="site-logo" /></a>
       <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
         <IndustriesDropdown sticky={sticky} linkClass={desktopLinkClass} onOpenChange={onDesktopMenuOpenChange} forcedOpen={forceIndustriesOpen} onForceClose={() => setOpen(false)} />
         {navItems.map((item) => {
@@ -206,7 +207,7 @@ function HeaderContent({ sticky, open, setOpen, forceIndustriesOpen, onDesktopMe
         <div className="header-search-slot relative hidden flex-shrink-0 sm:block">
           <form
             role="search"
-            className={`header-action header-search-form group absolute right-0 top-0 z-10 flex h-9 w-9 items-center justify-end gap-2 overflow-hidden rounded-full border border-current/25 px-2 ${sticky ? "text-brand-navy/80" : "text-white/90"}`}
+            className={`header-action header-search-form group absolute right-0 top-0 z-10 flex h-9 w-9 items-center justify-end gap-2 overflow-hidden rounded-full border border-current/25 px-2 ${darkText ? "text-brand-navy/80" : "text-white/90"}`}
           >
             <input
               type="search"
@@ -216,18 +217,18 @@ function HeaderContent({ sticky, open, setOpen, forceIndustriesOpen, onDesktopMe
             <Search className="h-5 w-5 flex-shrink-0" />
           </form>
         </div>
-        <button className={`header-language header-action group hidden items-center gap-1 text-sm font-medium sm:flex ${sticky ? "text-brand-navy/80" : "text-white/90"}`}>EN <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" /></button>
-        <a href="#contact" className={`cta-button rounded-full px-5 py-2 text-sm font-semibold ${sticky ? "bg-brand text-white" : "cta-button--light bg-white text-brand-navy"}`}>Talk to Sales</a>
+        <button className={`header-language header-action group hidden items-center gap-1 text-sm font-medium sm:flex ${darkText ? "text-brand-navy/80" : "text-white/90"}`}>EN <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" /></button>
+        <a href="#contact" className={`cta-button rounded-full px-5 py-2 text-sm font-semibold ${darkText ? "bg-brand text-white" : "cta-button--light bg-white text-brand-navy"}`}>Talk to Sales</a>
         <button
           type="button"
           aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(!open)}
           className="header-menu-toggle header-action group hidden flex-col items-center justify-center gap-1.5 lg:inline-flex"
         >
-          <span className={`h-0.5 w-6 rounded-full transition-all group-hover:w-4 ${sticky ? "bg-brand-navy" : "bg-white"}`} />
-          <span className={`h-0.5 w-4 rounded-full transition-all group-hover:w-6 ${sticky ? "bg-brand-navy" : "bg-white"}`} />
-          <span className={`h-0.5 w-6 rounded-full transition-all group-hover:w-4 ${sticky ? "bg-brand-navy" : "bg-white"}`} />
+          <span className={`h-0.5 w-6 rounded-full transition-all group-hover:w-4 ${darkText ? "bg-brand-navy" : "bg-white"}`} />
+          <span className={`h-0.5 w-4 rounded-full transition-all group-hover:w-6 ${darkText ? "bg-brand-navy" : "bg-white"}`} />
+          <span className={`h-0.5 w-6 rounded-full transition-all group-hover:w-4 ${darkText ? "bg-brand-navy" : "bg-white"}`} />
         </button>
-        <button type="button" aria-label="Toggle menu" aria-expanded={open} className={`header-action rounded-md p-1 lg:hidden ${sticky ? "text-brand-navy" : "text-white"}`} onClick={() => setOpen(!open)}>{open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}</button>
+        <button type="button" aria-label="Toggle menu" aria-expanded={open} className={`header-action rounded-md p-1 lg:hidden ${darkText ? "text-brand-navy" : "text-white"}`} onClick={() => setOpen(!open)}>{open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}</button>
       </div>
     </div>
   )
@@ -237,7 +238,7 @@ function MobileMenu({ sticky, open }: { sticky: boolean; open: boolean }) {
   return <div className={`mobile-menu lg:hidden ${open ? "is-open" : ""}`} aria-hidden={!open} inert={!open}><nav className="flex flex-col gap-4 text-sm font-medium">{navItems.map((item) => <a key={item} href={navTargets[item]} className="text-brand-navy/85 hover:text-brand">{item}</a>)}</nav></div>
 }
 
-export function SiteHeader() {
+export function SiteHeader({ solid = false }: { solid?: boolean }) {
   const [open, setOpen] = useState(false)
   const [showSticky, setShowSticky] = useState(false)
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(false)
@@ -270,7 +271,7 @@ export function SiteHeader() {
   }, [])
 
   return <>
-    <header className={`site-header absolute inset-x-0 top-0 z-50 ${open && !showSticky ? "site-header--menu-open" : ""}`}><HeaderContent sticky={false} open={open} setOpen={setOpen} forceIndustriesOpen={open && !showSticky} onDesktopMenuOpenChange={setDesktopMenuOpen} /><MobileMenu sticky={false} open={open} /></header>
+    <header className={`site-header absolute inset-x-0 top-0 z-50 ${solid ? "site-header--solid" : ""} ${open && !showSticky ? "site-header--menu-open" : ""}`}><HeaderContent sticky={false} solid={solid} open={open} setOpen={setOpen} forceIndustriesOpen={open && !showSticky} onDesktopMenuOpenChange={setDesktopMenuOpen} /><MobileMenu sticky={false} open={open} /></header>
     <header className={`sticky-header fixed inset-x-0 top-0 z-[60] transition-all duration-500 ${showSticky ? "sticky-header--visible translate-y-0 opacity-100" : "sticky-header--hidden pointer-events-none -translate-y-full opacity-0"}`}>
       <div className="sticky-header-bar"><HeaderContent sticky={true} open={open} setOpen={setOpen} forceIndustriesOpen={open && showSticky} onDesktopMenuOpenChange={setDesktopMenuOpen} /><MobileMenu sticky={true} open={open} /></div>
     </header>
