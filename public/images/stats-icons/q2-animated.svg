@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.85 82.85" role="img" aria-label="四个椭圆依次从零到完整、由快到慢绘制的动态图标">
+  <style>
+    .oval {
+      fill: none;
+      stroke: #3b82f6;
+      stroke-width: 1;
+      stroke-miterlimit: 10;
+      stroke-dasharray: 100 100;
+      stroke-dashoffset: 100;
+      animation: draw-oval 2.2s cubic-bezier(0.22, 0.72, 0.25, 1) both;
+    }
+    .oval:nth-child(1) { animation-delay: 0s; }
+    .oval:nth-child(2) { animation-delay: 0.24s; }
+    .oval:nth-child(3) { animation-delay: 0.48s; }
+    .oval:nth-child(4) { animation-delay: 0.72s; }
+    @keyframes draw-oval {
+      from { stroke-dashoffset: 100; }
+      to   { stroke-dashoffset: 0; }
+    }
+  </style>
+  <g id="ellipses">
+    <ellipse class="oval" cx="41.43" cy="41.43" rx="9.44" ry="40.93" pathLength="100"/>
+    <ellipse class="oval" cx="41.43" cy="41.43" rx="9.44" ry="40.93" transform="translate(-17.16 41.43) rotate(-45)" pathLength="100"/>
+    <ellipse class="oval" cx="41.43" cy="41.43" rx="40.93" ry="9.44" pathLength="100"/>
+    <ellipse class="oval" cx="41.43" cy="41.43" rx="40.93" ry="9.44" transform="translate(-17.16 41.43) rotate(-45)" pathLength="100"/>
+  </g>
+</svg>

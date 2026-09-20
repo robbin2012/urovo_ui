@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.85 81.85" width="240" height="240">
+<defs><style>
+
+.burstline {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+</style></defs>
+<g id="icon" transform="rotate(0 40.925 40.925)">
+<animateTransform attributeName="transform"
+  type="rotate"
+  values="0 40.925 40.925; 180 40.925 40.925"
+  keyTimes="0;1"
+  dur="2.6s"
+  calcMode="spline"
+  keySplines="0.445 0.05 0.55 0.95"
+  fill="freeze"/>
+
+<g transform="translate(40.91 0) rotate(90.0)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.0s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.850" begin="0.0s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(30.32 1.39) rotate(74.99779778863956)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.05s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.860" begin="0.05s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(20.46 5.48) rotate(60.005068245607454)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.1s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.853" begin="0.1s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(11.98 11.98) rotate(45.0)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.15s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.855" begin="0.15s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(5.48 20.46) rotate(29.994931754392546)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.2s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.853" begin="0.2s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(1.39 30.32) rotate(15.002202211360451)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.25s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.860" begin="0.25s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(0 40.91) rotate(0.0)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.3s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.850" begin="0.3s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(1.39 51.5) rotate(-15.002202211360451)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.35s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.860" begin="0.35s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(5.48 61.37) rotate(-30.000993765793293)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.4s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.858" begin="0.4s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(11.98 69.84) rotate(-45.00000000000001)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.45s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.855" begin="0.45s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(20.46 76.34) rotate(-60.005068245607454)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.5s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.853" begin="0.5s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+<g transform="translate(30.32 80.43) rotate(-74.99779778863956)">
+  <line class="burstline" x1="0" y1="0" x2="0" y2="0" opacity="0">
+    <set attributeName="opacity" to="1" begin="0.55s" fill="freeze"/>
+    <animate attributeName="x2" from="0" to="81.860" begin="0.55s" dur="0.32s" calcMode="linear" fill="freeze"/>
+  </line>
+</g>
+</g></svg>

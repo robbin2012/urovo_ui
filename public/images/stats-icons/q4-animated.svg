@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 82.85 82.51" width="82" height="82" role="img" aria-labelledby="title desc">
+  <title id="title">蓝色放射线旋转收缩动态图标</title>
+  <desc id="desc">灰色放射线由快到慢顺时针旋转30度，线条从外向内缩短后伸展，最终停留在蓝色参考图标形态。</desc>
+  <g fill="none" stroke="#cddae0" stroke-width="1" stroke-miterlimit="10">
+    <animate attributeName="stroke" values="#cddae0;#3b82f6;#3b82f6" keyTimes="0;0.35;1" dur="1.8s" fill="freeze"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 40.925 40.755;30 40.925 40.755" dur="1.8s" calcMode="spline" keyTimes="0;1" keySplines="0.08 0.72 0.17 1" fill="freeze"/>
+      <path d="M 40.92 -0.17 L 40.92 13.62">
+        <animate attributeName="d" values="M 40.92 -0.17 L 40.92 13.62;M 40.92 11.4136 L 40.92 13.62;M 40.9257 -0.1738 L 40.9288 13.6116" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 37.38 6.99 L 38.79 20.4">
+        <animate attributeName="d" values="M 37.38 6.99 L 38.79 20.4;M 38.5644 18.2544 L 38.79 20.4;M 37.3816 6.9877 L 38.7872 20.4022" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 32.42 0.72 L 35.28 14.21">
+        <animate attributeName="d" values="M 32.42 0.72 L 35.28 14.21;M 34.8224 12.0516 L 35.28 14.21;M 32.4134 0.7225 L 35.2791 14.2061" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 30.43 8.47 L 34.6 21.29">
+        <animate attributeName="d" values="M 30.43 8.47 L 34.6 21.29;M 33.9328 19.2388 L 34.6 21.29;M 30.441 8.4661 L 34.6024 21.294" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 24.28 3.37 L 29.89 15.96">
+        <animate attributeName="d" values="M 24.28 3.37 L 29.89 15.96;M 28.9924 13.9456 L 29.89 15.96;M 24.2748 3.3659 L 29.8877 15.9678" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 23.95 11.35 L 30.69 23.03">
+        <animate attributeName="d" values="M 23.95 11.35 L 30.69 23.03;M 29.6116 21.1612 L 30.69 23.03;M 23.9518 11.3466 L 30.6968 23.0293" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 16.87 7.65 L 24.97 18.8">
+        <animate attributeName="d" values="M 16.87 7.65 L 24.97 18.8;M 23.674 17.016 L 24.97 18.8;M 16.8702 7.6409 L 24.9773 18.8028" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 18.21 15.53 L 27.23 25.55">
+        <animate attributeName="d" values="M 18.21 15.53 L 27.23 25.55;M 25.7868 23.9468 L 27.23 25.55;M 18.2127 15.5261 L 27.2326 25.549" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 10.51 13.37 L 20.76 22.6">
+        <animate attributeName="d" values="M 10.51 13.37 L 20.76 22.6;M 19.12 21.1232 L 20.76 22.6;M 10.5116 13.3675 L 20.7559 22.5911" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 13.46 20.8 L 24.37 28.73">
+        <animate attributeName="d" values="M 13.46 20.8 L 24.37 28.73;M 22.6244 27.4612 L 24.37 28.73;M 13.462 20.7977 L 24.3678 28.7272" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 5.48 20.29 L 17.42 27.19">
+        <animate attributeName="d" values="M 5.48 20.29 L 17.42 27.19;M 15.5096 26.086 L 17.42 27.19;M 5.4793 20.2912 L 17.4249 27.1816" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 9.91 26.95 L 22.23 32.43">
+        <animate attributeName="d" values="M 9.91 26.95 L 22.23 32.43;M 20.2588 31.5532 L 22.23 32.43;M 9.911 26.9471 L 22.2335 32.4304" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 2 28.11 L 15.11 32.37">
+        <animate attributeName="d" values="M 2 28.11 L 15.11 32.37;M 13.0124 31.6884 L 15.11 32.37;M 2.0014 28.1073 L 15.1198 32.3691" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 7.72 33.7 L 20.91 36.5">
+        <animate attributeName="d" values="M 7.72 33.7 L 20.91 36.5;M 18.7996 36.052 L 20.91 36.5;M 7.722 33.6957 L 20.9096 36.4973" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 0.22 36.48 L 13.94 37.92">
+        <animate attributeName="d" values="M 0.22 36.48 L 13.94 37.92;M 11.7448 37.6896 L 13.94 37.92;M 0.2277 36.4753 L 13.9339 37.9151" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 6.97 40.76 L 20.46 40.76">
+        <animate attributeName="d" values="M 6.97 40.76 L 20.46 40.76;M 18.3016 40.76 L 20.46 40.76;M 6.972 40.7567 L 20.4572 40.7537" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 0.22 45.03 L 13.94 43.59">
+        <animate attributeName="d" values="M 0.22 45.03 L 13.94 43.59;M 11.7448 43.8204 L 13.94 43.59;M 0.2261 45.0325 L 13.9344 43.5959" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 7.72 47.82 L 20.91 45.01">
+        <animate attributeName="d" values="M 7.72 47.82 L 20.91 45.01;M 18.7996 45.4596 L 20.91 45.01;M 7.7179 47.8086 L 20.9053 45.0099" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 2 53.4 L 15.11 49.14">
+        <animate attributeName="d" values="M 2 53.4 L 15.11 49.14;M 13.0124 49.8216 L 15.11 49.14;M 2.0012 53.407 L 15.1139 49.1388" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 9.91 54.57 L 22.23 49.08">
+        <animate attributeName="d" values="M 9.91 54.57 L 22.23 49.08;M 20.2588 49.9584 L 22.23 49.08;M 9.9112 54.5674 L 22.2296 49.0835" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 5.48 61.22 L 17.42 54.33">
+        <animate attributeName="d" values="M 5.48 61.22 L 17.42 54.33;M 15.5096 55.4324 L 17.42 54.33;M 5.4804 61.2132 L 17.4229 54.3182" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 13.46 60.71 L 24.37 52.79">
+        <animate attributeName="d" values="M 13.46 60.71 L 24.37 52.79;M 22.6244 54.0572 L 24.37 52.79;M 13.4562 60.7076 L 24.3646 52.7815" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 10.51 68.14 L 20.76 58.92">
+        <animate attributeName="d" values="M 10.51 68.14 L 20.76 58.92;M 19.12 60.3952 L 20.76 58.92;M 10.5062 68.138 L 20.7589 58.9162" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 18.21 65.99 L 27.23 55.97">
+        <animate attributeName="d" values="M 18.21 65.99 L 27.23 55.97;M 25.7868 57.5732 L 27.23 55.97;M 18.2129 65.9864 L 27.2303 55.9651" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 16.87 73.87 L 24.97 62.71">
+        <animate attributeName="d" values="M 16.87 73.87 L 24.97 62.71;M 23.674 64.4956 L 24.97 62.71;M 16.8711 73.8625 L 24.9694 62.7091" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 23.95 70.16 L 30.69 58.48">
+        <animate attributeName="d" values="M 23.95 70.16 L 30.69 58.48;M 29.6116 60.3488 L 30.69 58.48;M 23.947 70.1583 L 30.6922 58.4813" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 24.28 78.14 L 29.89 65.55">
+        <animate attributeName="d" values="M 24.28 78.14 L 29.89 65.55;M 28.9924 67.5644 L 29.89 65.55;M 24.2827 78.1397 L 29.8889 65.5499" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 30.43 73.05 L 34.6 60.22">
+        <animate attributeName="d" values="M 30.43 73.05 L 34.6 60.22;M 33.9328 62.2728 L 34.6 60.22;M 30.437 73.0393 L 34.6046 60.2177" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 32.42 80.79 L 35.28 67.3">
+        <animate attributeName="d" values="M 32.42 80.79 L 35.28 67.3;M 34.8224 69.4584 L 35.28 67.3;M 32.4164 80.7877 L 35.2848 67.2959" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 37.38 74.52 L 38.79 61.11">
+        <animate attributeName="d" values="M 37.38 74.52 L 38.79 61.11;M 38.5644 63.2556 L 38.79 61.11;M 37.376 74.5179 L 38.7885 61.1046" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 40.92 81.68 L 40.92 67.89">
+        <animate attributeName="d" values="M 40.92 81.68 L 40.92 67.89;M 40.92 70.0964 L 40.92 67.89;M 40.9243 81.6838 L 40.9299 67.8934" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 44.47 74.52 L 43.06 61.11">
+        <animate attributeName="d" values="M 44.47 74.52 L 43.06 61.11;M 43.2856 63.2556 L 43.06 61.11;M 44.477 74.5173 L 43.0628 61.1078" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 49.43 80.79 L 46.57 67.3">
+        <animate attributeName="d" values="M 49.43 80.79 L 46.57 67.3;M 47.0276 69.4584 L 46.57 67.3;M 49.4366 80.7875 L 46.5659 67.2953" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 51.42 73.05 L 47.25 60.22">
+        <animate attributeName="d" values="M 51.42 73.05 L 47.25 60.22;M 47.9172 62.2728 L 47.25 60.22;M 51.4177 73.0389 L 47.2476 60.216" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 57.57 78.14 L 51.96 65.55">
+        <animate attributeName="d" values="M 57.57 78.14 L 51.96 65.55;M 52.8576 67.5644 L 51.96 65.55;M 57.5752 78.1441 L 51.9623 65.5422" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 57.9 70.16 L 51.16 58.48">
+        <animate attributeName="d" values="M 57.9 70.16 L 51.16 58.48;M 52.2384 60.3488 L 51.16 58.48;M 57.9068 70.1584 L 51.1618 58.4757" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 64.98 73.87 L 56.88 62.71">
+        <animate attributeName="d" values="M 64.98 73.87 L 56.88 62.71;M 58.176 64.4956 L 56.88 62.71;M 64.9798 73.8691 L 56.8727 62.7072" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 63.64 65.99 L 54.62 55.96">
+        <animate attributeName="d" values="M 63.64 65.99 L 54.62 55.96;M 56.0632 57.5648 L 54.62 55.96;M 63.646 65.9789 L 54.6174 55.961" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 71.34 68.14 L 61.09 58.92">
+        <animate attributeName="d" values="M 71.34 68.14 L 61.09 58.92;M 62.73 60.3952 L 61.09 58.92;M 71.3384 68.1425 L 61.0891 58.9103" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 68.39 60.71 L 57.48 52.79">
+        <animate attributeName="d" values="M 68.39 60.71 L 57.48 52.79;M 59.2256 54.0572 L 57.48 52.79;M 68.3966 60.7073 L 57.4822 52.7828" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 76.37 61.22 L 64.43 54.33">
+        <animate attributeName="d" values="M 76.37 61.22 L 64.43 54.33;M 66.3404 55.4324 L 64.43 54.33;M 76.3707 61.2188 L 64.4338 54.3234" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 71.94 54.57 L 59.62 49.08">
+        <animate attributeName="d" values="M 71.94 54.57 L 59.62 49.08;M 61.5912 49.9584 L 59.62 49.08;M 71.939 54.5629 L 59.6251 49.0746" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 79.85 53.4 L 66.73 49.14">
+        <animate attributeName="d" values="M 79.85 53.4 L 66.73 49.14;M 68.8292 49.8216 L 66.73 49.14;M 79.8486 53.4027 L 66.7389 49.1359" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 74.13 47.82 L 60.94 45.01">
+        <animate attributeName="d" values="M 74.13 47.82 L 60.94 45.01;M 63.0504 45.4596 L 60.94 45.01;M 74.1367 47.8093 L 60.9491 45.0077" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 81.63 45.03 L 67.91 43.59">
+        <animate attributeName="d" values="M 81.63 45.03 L 67.91 43.59;M 70.1052 43.8204 L 67.91 43.59;M 81.6309 45.0297 L 67.9161 43.5949" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 74.88 40.76 L 61.39 40.76">
+        <animate attributeName="d" values="M 74.88 40.76 L 61.39 40.76;M 63.5484 40.76 L 61.39 40.76;M 74.878 40.7533 L 61.3928 40.7563" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 81.63 36.48 L 67.91 37.92">
+        <animate attributeName="d" values="M 81.63 36.48 L 67.91 37.92;M 70.1052 37.6896 L 67.91 37.92;M 81.6239 36.4775 L 67.9156 37.9141" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 74.13 33.7 L 60.94 36.5">
+        <animate attributeName="d" values="M 74.13 33.7 L 60.94 36.5;M 63.0504 36.052 L 60.94 36.5;M 74.1408 33.6964 L 60.9447 36.5001" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 79.85 28.11 L 66.73 32.37">
+        <animate attributeName="d" values="M 79.85 28.11 L 66.73 32.37;M 68.8292 31.6884 L 66.73 32.37;M 79.8488 28.103 L 66.7361 32.3712" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 71.94 26.95 L 59.62 32.43">
+        <animate attributeName="d" values="M 71.94 26.95 L 59.62 32.43;M 61.5912 31.5532 L 59.62 32.43;M 71.9388 26.9426 L 59.6204 32.4265" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 76.37 20.29 L 64.43 27.19">
+        <animate attributeName="d" values="M 76.37 20.29 L 64.43 27.19;M 66.3404 26.086 L 64.43 27.19;M 76.3646 20.2882 L 64.4221 27.1832" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 68.39 20.8 L 57.48 28.73">
+        <animate attributeName="d" values="M 68.39 20.8 L 57.48 28.73;M 59.2256 27.4612 L 57.48 28.73;M 68.3938 20.8024 L 57.4854 28.7285" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 71.34 13.37 L 61.09 22.6">
+        <animate attributeName="d" values="M 71.34 13.37 L 61.09 22.6;M 62.73 21.1232 L 61.09 22.6;M 71.3438 13.372 L 61.0911 22.5938" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 63.64 15.53 L 54.62 25.55">
+        <animate attributeName="d" values="M 63.64 15.53 L 54.62 25.55;M 56.0632 23.9468 L 54.62 25.55;M 63.6458 15.5186 L 54.6197 25.5449" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 64.98 7.65 L 56.88 18.8">
+        <animate attributeName="d" values="M 64.98 7.65 L 56.88 18.8;M 58.176 17.016 L 56.88 18.8;M 64.9789 7.6475 L 56.8806 18.8009" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 57.9 11.35 L 51.16 23.03">
+        <animate attributeName="d" values="M 57.9 11.35 L 51.16 23.03;M 52.2384 21.1612 L 51.16 23.03;M 57.903 11.3517 L 51.1578 23.0287" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 57.57 3.37 L 51.96 15.96">
+        <animate attributeName="d" values="M 57.57 3.37 L 51.96 15.96;M 52.8576 13.9456 L 51.96 15.96;M 57.5759 3.3653 L 51.9611 15.9601" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 51.42 8.47 L 47.25 21.29">
+        <animate attributeName="d" values="M 51.42 8.47 L 47.25 21.29;M 47.9172 19.2388 L 47.25 21.29;M 51.4217 8.4657 L 47.2454 21.2923" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 49.43 0.72 L 46.57 14.21">
+        <animate attributeName="d" values="M 49.43 0.72 L 46.57 14.21;M 47.0276 12.0516 L 46.57 14.21;M 49.4336 0.7223 L 46.5739 14.2091" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+      <path d="M 44.47 6.99 L 43.06 20.4">
+        <animate attributeName="d" values="M 44.47 6.99 L 43.06 20.4;M 43.2856 18.2544 L 43.06 20.4;M 44.474 6.9921 L 43.0701 20.4004" keyTimes="0;0.56;1" calcMode="spline" keySplines="0.27 0.05 0.2 1;0.19 0.8 0.25 1" dur="1.8s" fill="freeze"/>
+      </path>
+    </g>
+  </g>
+</svg>
