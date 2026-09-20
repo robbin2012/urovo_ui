@@ -426,8 +426,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .footer-links h4 { font-size: calc(18 * var(--u)); }
 .footer-links ul { margin-top: calc(24 * var(--u)); }
 .footer-links ul { display: flex; flex-direction: column; gap: calc(12 * var(--u)); }
-.footer-links li { margin: 0; font-size: calc(12 * var(--u)); line-height: 1.5; }
-.footer-links a { font-size: calc(12 * var(--u)); line-height: 1.5; }
+.footer-links li { margin: 0; font-size: calc(14 * var(--u)); line-height: 1.5; }
+.footer-links a { font-size: calc(14 * var(--u)); line-height: 1.5; }
 .footer-copyright { margin-top: calc(54 * var(--u)); }
 .footer-copyright p { font-size: calc(16 * var(--u)); }
 :root { --action-hover: #007cae; --action-ease: cubic-bezier(.22, 1, .36, 1); --sticky-header-height: 76px; }
@@ -985,7 +985,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   .featured-news { grid-template-columns: 1fr; margin-top: 28px; gap: 18px; }.featured-news-image { height: 230px; }
   .news-copy h3 { font-size: 22px; }.news-copy p { font-size: 14px; }.news-category { font-size: 13px; }.news-controls { margin-top: 20px; }
   .blog-grid { grid-template-columns: 1fr; gap: 25px; padding-top: 28px; margin-top: 24px; }.blog-grid article { grid-template-columns: .9fr 1.1fr; gap: 16px; }.blog-image { height: 150px; }.blog-grid h4 { font-size: 15px; }.blog-grid time { font-size: 12px; }
-  .footer-inner { padding-block: 36px 25px; }.footer-grid { gap: 38px; }.footer-logo { width: 135px; }.footer-links { gap: 30px 20px; }.footer-links h4 { font-size: 14px; }.footer-links a { font-size: 11px; }.footer-copyright p { font-size: 10px; }
+  .footer-inner { padding-block: 36px 25px; }.footer-grid { gap: 38px; }.footer-logo { width: 135px; }.footer-links { gap: 30px 20px; }.footer-links h4 { font-size: 14px; }.footer-links a { font-size: 12px; }.footer-copyright p { font-size: 10px; }
   .newsletter-form { width: 270px; }.newsletter-form input { font-size: 12px; }.newsletter-form button { font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) {
