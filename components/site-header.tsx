@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Search, Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react"
 
 const navItems = ["Products", "Software", "Resources", "Partners", "Support", "About"]
-const navTargets: Record<string, string> = { Products: "/products", Software: "#software", Resources: "#resources", Partners: "#partners", Support: "#footer", About: "#stories" }
+const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Resources: "#resources", Partners: "#partners", Support: "#footer", About: "#stories" }
 const industryMenus = [
   { title: "Retail", description: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations, from inventory and fulfillment to customer service and checkout.", image: "/images/design/retail.webp" },
   { title: "Logistics & Transportation", description: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery with rugged devices, reliable data capture, mobile printing and device software.", image: "/images/design/watsons.webp" },
@@ -116,7 +116,7 @@ function ProductsDropdown({ sticky, linkClass, onOpenChange }: { sticky: boolean
 
   return (
     <div className="mega-nav group relative" onMouseEnter={() => onOpenChange(true)} onMouseLeave={() => onOpenChange(false)}>
-      <a href="/products" aria-haspopup="true" className={linkClass} onMouseEnter={() => setDismissed(false)}>Products</a>
+      <a href="/products/" aria-haspopup="true" className={linkClass} onMouseEnter={() => setDismissed(false)}>Products</a>
       <div className={dropdownClassName(sticky, dismissed)}>
         <DropdownCloseButton onClose={close} />
         <div className="products-menu">
@@ -131,11 +131,11 @@ function ProductsDropdown({ sticky, linkClass, onOpenChange }: { sticky: boolean
           <div className="products-menu__catalog" onMouseLeave={() => setPreviewIndex(null)}>
             <div className="products-menu__heading">
               <strong>{category}</strong>
-              <a href="/products">View all products <ArrowRight aria-hidden="true" /></a>
+              <a href="/products/">View all products <ArrowRight aria-hidden="true" /></a>
             </div>
             <div className="products-menu__grid">
               {products.models.map((model, index) => (
-                <a href="/products" className="products-menu__card" key={`${model}-${index}`} onMouseEnter={() => setPreviewIndex(index)} onMouseLeave={() => setPreviewIndex(null)} onFocus={() => setPreviewIndex(index)} onBlur={() => setPreviewIndex(null)}>
+                <a href="/products/" className="products-menu__card" key={`${model}-${index}`} onMouseEnter={() => setPreviewIndex(index)} onMouseLeave={() => setPreviewIndex(null)} onFocus={() => setPreviewIndex(index)} onBlur={() => setPreviewIndex(null)}>
                   <img src={`/images/revised_images/1x/${productImages[index % productImages.length]}`} alt={model} />
                   <strong>{model}</strong>
                 </a>
