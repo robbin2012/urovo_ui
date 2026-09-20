@@ -89,9 +89,9 @@ export function SiteFooter() {
           </div>
 
           <div className="footer-links grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {columns.map((col) => (
-              <div key={col.title}>
-                <h4 className="text-sm font-semibold">{col.title}</h4>
+            {columns.map((col, index) => (
+              <div key={col.title} data-reveal data-reveal-delay={index === 0 ? undefined : String(index)}>
+                <h4 className="text-sm font-normal">{col.title}</h4>
                 <ul className="mt-4 space-y-3">
                   {col.links.map((link) => (
                     <li key={link}>

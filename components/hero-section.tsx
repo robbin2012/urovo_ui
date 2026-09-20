@@ -5,8 +5,8 @@ import { ArrowRight } from "lucide-react"
 
 const stats = [
   { value: "Since 2002", label: "Focused on AIDC and Enterprise Mobility", icon: "q2" },
-  { value: "100+", label: "Countries and Regions Worldwide", icon: "q1" },
-  { value: "Top 3", label: "Global Rugged Handheld Vendor", icon: "q3" },
+  { value: "100+", label: "Countries and Regions Worldwide", icon: "q3" },
+  { value: "Top 3", label: "Global Rugged Handheld Vendor", icon: "q1" },
   { value: "400+", label: "R&D Professionals", icon: "q4" },
 ]
 
@@ -125,7 +125,7 @@ export function HeroSection() {
         <div className="hero-shade absolute inset-0" />
 
         <div className="hero-content page-container">
-          <h1 data-reveal className="max-w-2xl text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 data-reveal className="max-w-2xl text-balance text-4xl font-normal leading-tight text-white sm:text-5xl lg:text-6xl">
             Devices and Software for Frontline Operations
           </h1>
           <p data-reveal data-reveal-delay="1" className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-white/80">

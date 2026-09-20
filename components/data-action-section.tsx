@@ -10,6 +10,8 @@ const loop = [
     description: "Use mobile computers, wearables, barcode scanners and RFID devices to collect the information your operations depend on.",
     cta: "Explore Industry",
     href: "#industries",
+    image: "/images/design/data-capture.jpg",
+    imageAlt: "Frontline workers using UROVO devices to capture inventory data",
   },
   {
     label: "Connect",
@@ -17,6 +19,8 @@ const loop = [
     description: "Cloud platforms and device management services help deploy, connect and support device fleets while keeping information moving across frontline operations.",
     cta: "Explore Device Management",
     href: "#software",
+    image: "/images/design/data-connect.jpg",
+    imageAlt: "UROVO device management platform connecting retail operations",
   },
   {
     label: "Process",
@@ -24,6 +28,8 @@ const loop = [
     description: "Software and AI applications help organize and interpret frontline data so teams can understand what is happening and make more informed decisions.",
     cta: "Explore AI Applications",
     href: "#software",
+    image: "/images/design/data-process.jpg",
+    imageAlt: "Retail teams reviewing operational data on UROVO dashboards",
   },
   {
     label: "Act",
@@ -31,32 +37,60 @@ const loop = [
     description: "Device applications deliver tasks, instructions and tools directly to frontline workers, helping them respond, complete work and create the next data signal.",
     cta: "Explore Device Applications",
     href: "#software",
+    image: "/images/design/data-act.png",
+    imageAlt: "Warehouse worker completing tasks with a UROVO mobile computer",
   },
 ]
 
 export function DataActionSection() {
   const [activeStep, setActiveStep] = useState(0)
+  const [previousStep, setPreviousStep] = useState<number | null>(null)
+  const [transitionCycle, setTransitionCycle] = useState(0)
+
+  const selectStep = (index: number) => {
+    if (index === activeStep) return
+    setPreviousStep(activeStep)
+    setActiveStep(index)
+    setTransitionCycle((cycle) => cycle + 1)
+  }
 
   return (
     <section id="software" className="data-section">
       <div className="page-container">
-        <h2 data-reveal className="section-title">From Data Capture to Business Action</h2>
+        <h2 data-reveal className="section-title">Data Capture to Business Action</h2>
         <p data-reveal data-reveal-delay="1" className="section-description">UROVO devices, software and cloud services work together in one continuous operational loop.</p>
         <div data-reveal data-reveal-delay="2" className="data-grid">
           <div className="data-loop" aria-label="Operational loop: Capture, Connect, Process, Act">
             <div className={`loop-ring loop-ring--step-${activeStep + 1}`}>
-              <div className="loop-particles" aria-hidden="true"><span /><span /><span /><span /></div>
+              <svg className="loop-blue-arc" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 A50 50 0 0 1 100 50" /></svg>
+              <span key={activeStep} className="loop-flow-dot" aria-hidden="true" />
               <div className="loop-center"><img src="/images/design/capture-icon.png" alt="" /></div>
               {loop.map((step, index) => <i key={step.label} className={activeStep === index ? "is-active" : ""} aria-hidden="true" />)}
             </div>
-            {loop.map((step, index) => <button key={step.label} type="button" aria-pressed={activeStep === index} className={`loop-step step-${index + 1} ${activeStep === index ? "is-active" : ""}`} onClick={() => setActiveStep(index)}><span>0{index + 1}</span>{step.label}</button>)}
+            {loop.map((step, index) => <button key={step.label} type="button" aria-pressed={activeStep === index} className={`loop-step step-${index + 1} ${activeStep === index ? "is-active" : ""}`} onClick={() => selectStep(index)}><span>0{index + 1}</span>{step.label}</button>)}
           </div>
           <div className="data-card">
-            <img src="/images/design/capture.webp" alt="A parcel label being verified using a handheld device" />
-            <div className="data-caption">
-              <h3>{loop[activeStep].title}</h3>
-              <p>{loop[activeStep].description}</p>
-              <a href={loop[activeStep].href}>{loop[activeStep].cta} <ArrowRight /></a>
+            {previousStep !== null && previousStep !== activeStep && (
+              <div key={`previous-${transitionCycle}`} className="data-card-slide is-exiting" aria-hidden="true">
+                <img src={loop[previousStep].image} alt="" />
+                <div className="data-caption">
+                  <h3>{loop[previousStep].title}</h3>
+                  <p>{loop[previousStep].description}</p>
+                  <a href={loop[previousStep].href} tabIndex={-1}>{loop[previousStep].cta} <ArrowRight /></a>
+                </div>
+              </div>
+            )}
+            <div
+              key={`active-${transitionCycle}`}
+              className={`data-card-slide${transitionCycle ? " is-entering" : ""}`}
+              onAnimationEnd={() => setPreviousStep(null)}
+            >
+              <img src={loop[activeStep].image} alt={loop[activeStep].imageAlt} />
+              <div className="data-caption">
+                <h3>{loop[activeStep].title}</h3>
+                <p>{loop[activeStep].description}</p>
+                <a href={loop[activeStep].href}>{loop[activeStep].cta} <ArrowRight /></a>
+              </div>
             </div>
           </div>
         </div>

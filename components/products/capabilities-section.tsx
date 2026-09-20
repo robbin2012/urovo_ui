@@ -1,12 +1,10 @@
-import { Target, Zap, Eye, Wifi, ShieldCheck, Smartphone } from "lucide-react"
-
 const capabilities = [
-  { icon: Target, title: "Accuracy", body: "Accurate data capture with fewer errors and less rework." },
-  { icon: Zap, title: "Productivity", body: "Faster workflows and higher operational efficiency." },
-  { icon: Eye, title: "Visibility", body: "Real-time data visibility for faster decisions." },
-  { icon: Wifi, title: "Connectivity", body: "Seamless connectivity to systems and business applications." },
-  { icon: ShieldCheck, title: "Reliability", body: "Built for demanding environments with minimal downtime." },
-  { icon: Smartphone, title: "Android OS", body: "GMS-certified for intuitive use and essential applications." },
+  { icon: "/images/products/capabilities/accuracy.svg", title: "Accuracy", body: "Accurate data capture with fewer errors and less rework." },
+  { icon: "/images/products/capabilities/productivity.svg", title: "Productivity", body: "Faster workflows and higher operational efficiency." },
+  { icon: "/images/products/capabilities/visibility.svg", title: "Visibility", body: "Real-time data visibility for faster decisions." },
+  { icon: "/images/products/capabilities/connectivity.svg", title: "Connectivity", body: "Seamless connectivity to systems and business applications." },
+  { icon: "/images/products/capabilities/reliability.svg", title: "Reliability", body: "Built for demanding environments with minimal downtime." },
+  { icon: "/images/products/capabilities/android-os.svg", title: "Android OS", body: "GMS-certified for intuitive use and essential applications." },
 ]
 
 export function CapabilitiesSection() {
@@ -19,15 +17,15 @@ export function CapabilitiesSection() {
         </p>
         <div className="capability-grid">
           {capabilities.map((item, index) => {
-            const Icon = item.icon
             return (
               <div
                 key={item.title}
                 data-reveal
                 data-reveal-delay={index % 3 === 1 ? "1" : index % 3 === 2 ? "2" : undefined}
                 className={`capability-card${index === 0 ? " capability-card--feature" : ""}`}
+                tabIndex={0}
               >
-                <span className="capability-icon"><Icon aria-hidden="true" /></span>
+                <span className="capability-icon"><img src={item.icon} alt="" /></span>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
               </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Search, Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react"
+import { Search, Menu, X, ChevronRight, ArrowRight } from "lucide-react"
 
 const navItems = ["Products", "Software", "Tools", "Support", "Partners", "About Urovo"]
 const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Tools: "#tools", Support: "#footer", Partners: "#partners", "About Urovo": "#footer" }
@@ -217,8 +217,11 @@ function HeaderContent({ sticky, solid = false, open, setOpen, forceIndustriesOp
             <Search className="h-5 w-5 flex-shrink-0" />
           </form>
         </div>
-        <button className={`header-language header-action group hidden items-center gap-1 text-sm font-medium sm:flex ${darkText ? "text-brand-navy/80" : "text-white/90"}`}>EN <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" /></button>
-        <a href="#contact" className={`cta-button rounded-full px-5 py-2 text-sm font-semibold ${darkText ? "bg-brand text-white" : "cta-button--light bg-white text-brand-navy"}`}>Talk to Sales</a>
+        <button type="button" className={`header-language hidden text-sm font-medium sm:inline-flex ${darkText ? "text-brand-navy/80" : "text-white/90"}`} aria-label="English language">EN</button>
+        <a href="#contact" className={`cta-button talk-sales-button rounded-full px-5 py-2 text-sm font-semibold ${darkText ? "bg-brand text-white" : "cta-button--light bg-white text-brand-navy"}`}>
+          <span className="talk-sales-label talk-sales-label--current">Talk to Sales</span>
+          <span className="talk-sales-label talk-sales-label--incoming" aria-hidden="true">Talk to Sales</span>
+        </a>
         <button
           type="button"
           aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(!open)}
