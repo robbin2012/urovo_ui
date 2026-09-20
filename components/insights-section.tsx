@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 const blogs = ["blog-rfid", "blog-factory"]
 export function InsightsSection() {
   return <section id="insights" className="insights-section page-container">
-    <div data-reveal className="insights-heading"><h2 className="section-title">Insights &amp; News</h2><a href="#news-list">View All <span className="arrow-badge"><ArrowRight /></span></a></div>
+    <div data-reveal className="insights-heading"><h2 className="section-title">Insights &amp; News</h2><a href="#news-list">View All <span className="arrow-badge"><ArrowRight className="arrow-current" /><ArrowRight className="arrow-incoming" /></span></a></div>
     <div data-reveal data-reveal-delay="1" className="featured-news">
       <div className="featured-news-image image-zoom-frame"><img src="/images/design/news.webp" alt="Modern geometric architecture building" /></div>
       <div className="news-copy"><span className="news-category">Market Views</span><h3>Step into the Future of Retail with UROVO at NRF 2026: Retail&apos;s Big Show!</h3><p>Customer story content is pending approval, including geography, deployed products, outcomes and the English story page.</p><time dateTime="2026-08-08">2026.08.08</time><div className="news-controls"><button aria-label="Previous news"><ArrowLeft /></button><span>02 / 04</span><button aria-label="Next news"><ArrowRight /></button></div></div>

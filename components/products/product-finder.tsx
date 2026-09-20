@@ -158,7 +158,7 @@ export function ProductFinder() {
                     ))}
                   </div>
                   <a href="#footer" className="product-card__link">
-                    Learn More <span className="arrow-badge"><ArrowRight aria-hidden="true" /></span>
+                    Learn More <span className="arrow-badge"><ArrowRight className="arrow-current" aria-hidden="true" /><ArrowRight className="arrow-incoming" aria-hidden="true" /></span>
                   </a>
                 </article>
               ))}

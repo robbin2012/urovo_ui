@@ -1,3 +1,7 @@
+"use client"
+
+import { useState } from "react"
+
 const capabilities = [
   { icon: "/images/products/capabilities/accuracy.svg", title: "Accuracy", body: "Accurate data capture with fewer errors and less rework." },
   { icon: "/images/products/capabilities/productivity.svg", title: "Productivity", body: "Faster workflows and higher operational efficiency." },
@@ -8,6 +12,8 @@ const capabilities = [
 ]
 
 export function CapabilitiesSection() {
+  const [activeCard, setActiveCard] = useState(0)
+
   return (
     <section className="capabilities">
       <div className="page-container">
@@ -20,10 +26,10 @@ export function CapabilitiesSection() {
             return (
               <div
                 key={item.title}
-                data-reveal
-                data-reveal-delay={index % 3 === 1 ? "1" : index % 3 === 2 ? "2" : undefined}
-                className={`capability-card${index === 0 ? " capability-card--feature" : ""}`}
+                className={`capability-card${index === activeCard ? " capability-card--feature" : ""}`}
                 tabIndex={0}
+                onMouseEnter={() => setActiveCard(index)}
+                onFocus={() => setActiveCard(index)}
               >
                 <span className="capability-icon"><img src={item.icon} alt="" /></span>
                 <h3>{item.title}</h3>

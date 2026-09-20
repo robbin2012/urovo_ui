@@ -5,13 +5,18 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 const tabs = ["Mobile Computers", "Tablets", "Wearables", "RFID Devices", "Barcode Scanners", "Printers", "Smart Payment Terminals", "Smart Mobile Terminals"]
 const products = [
+  { title: "Mobile Computers", image: "资源 1.png", description: "Rugged handheld computers that connect frontline teams with reliable data capture, real-time workflows and business applications." },
+  { title: "Tablets", image: "资源 10.png", description: "Rugged tablets with larger displays for field service, inventory, dispatch and other workflows that need more information at a glance." },
+  { title: "Wearables", image: "资源 2.png", description: "Hands-free wearable devices that keep workers connected while improving mobility, accuracy and productivity across daily tasks." },
+  { title: "RFID Devices", image: "资源 11.png", description: "RFID readers and solutions that help teams identify, track and manage high volumes of tagged items with speed and confidence." },
   { title: "Barcode Scanners", image: "资源 9.png", description: "Handheld and presentation scanners designed to capture 1D and 2D barcodes quickly and accurately in fast-paced environments." },
-  { title: "Mobile Computers", image: "资源 1.png", description: "Enterprise mobile computers that bring reliable data capture and connected workflows to your frontline teams." },
-  { title: "Tablets", image: "资源 10.png", description: "Rugged tablets that keep teams connected to the information they need in demanding working environments." },
+  { title: "Printers", image: "资源 12.png", description: "Mobile and desktop printing solutions that produce clear, dependable labels and receipts wherever frontline work takes place." },
+  { title: "Smart Payment Terminals", image: "资源 13.png", description: "Secure smart payment terminals that support flexible checkout, payment acceptance and connected customer experiences." },
+  { title: "Smart Mobile Terminals", image: "资源 2.png", description: "All-in-one mobile terminals that combine communication, payment and business applications in a single connected device." },
 ]
 
 export function ProductsSection() {
-  const [active, setActive] = useState(products[0].title)
+  const [active, setActive] = useState("Mobile Computers")
   const [index, setIndex] = useState(0)
   const [draggingTabs, setDraggingTabs] = useState(false)
   const tabsRef = useRef<HTMLDivElement>(null)
@@ -84,7 +89,7 @@ export function ProductsSection() {
               >
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
-                <a href="#contact" className="product-link">Explore {product.title}<span className="arrow-badge"><ArrowRight /></span></a>
+                <a href="#contact" className="product-link">Explore {product.title}<span className="arrow-badge"><ArrowRight className="arrow-current" /><ArrowRight className="arrow-incoming" /></span></a>
               </div>)}
             </div>
             <div className="product-controls">

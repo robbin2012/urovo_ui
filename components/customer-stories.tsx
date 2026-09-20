@@ -13,7 +13,7 @@ export function CustomerStories() {
       <div className="story-copy">
         <div className="story-heading"><span>{s.tag}</span><h3>{s.name}</h3></div>
         <p className="story-description">{s.description}</p>
-        <a href="#contact">Read Customer Story <ArrowRight /></a>
+        <a href="#contact"><span>Read Customer Story</span><ArrowRight /></a>
       </div>
     </article>)}</div>
   </section>
