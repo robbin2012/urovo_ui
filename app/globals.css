@@ -426,6 +426,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .story-copy a { transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .3s ease, translate .3s var(--action-ease), scale .18s ease, margin-top .65s cubic-bezier(.22, 1, .36, 1); }
 .header-action { border-radius: 999px; }
 .site-header { transition: background-color .25s ease; }
+.site-header--solid { background-color: #fff; }
 .mobile-menu {
   max-height: 0;
   overflow: hidden;

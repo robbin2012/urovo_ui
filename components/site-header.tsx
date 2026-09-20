@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import { Search, Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react"
 
-const navItems = ["Products", "Software", "Resources", "Partners", "Support", "About"]
-const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Resources: "#resources", Partners: "#partners", Support: "#footer", About: "#stories" }
+const navItems = ["Products", "Software", "Tools", "Support", "Partners", "About Urovo"]
+const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Tools: "#tools", Support: "#footer", Partners: "#partners", "About Urovo": "#footer" }
 const industryMenus = [
   { title: "Retail", description: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations, from inventory and fulfillment to customer service and checkout.", image: "/images/design/retail.webp" },
   { title: "Logistics & Transportation", description: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery with rugged devices, reliable data capture, mobile printing and device software.", image: "/images/design/watsons.webp" },
@@ -45,7 +45,7 @@ const featureMenus: Record<string, { title?: string; description?: string; links
     image: "/images/drop5.png",
     imageAlt: "UROVO partners",
   },
-  About: {
+  "About Urovo": {
     links: ["Who we are", "Innovation & R&D", "ESG", "Careers", "Contact Us"],
     image: "/images/drop6.png",
     imageAlt: "About UROVO",
@@ -198,9 +198,9 @@ function HeaderContent({ sticky, solid = false, open, setOpen, forceIndustriesOp
       <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
         <IndustriesDropdown sticky={sticky} linkClass={desktopLinkClass} onOpenChange={onDesktopMenuOpenChange} forcedOpen={forceIndustriesOpen} onForceClose={() => setOpen(false)} />
         {navItems.map((item) => {
-          if (item === "Support") return <a key={item} href={navTargets[item]} className={desktopLinkClass} onMouseEnter={() => setOpen(false)}>{item}</a>
+          if (item === "Support" || item === "Tools" || item === "About Urovo") return <a key={item} href={navTargets[item]} className={desktopLinkClass} onMouseEnter={() => setOpen(false)}>{item}</a>
           if (item === "Products") return <ProductsDropdown key={item} sticky={sticky} linkClass={desktopLinkClass} onOpenChange={handleOtherMenuOpenChange} />
-          return <FeatureDropdown key={item} item={item} sticky={sticky} linkClass={desktopLinkClass} onOpenChange={handleOtherMenuOpenChange} />
+          return featureMenus[item] ? <FeatureDropdown key={item} item={item} sticky={sticky} linkClass={desktopLinkClass} onOpenChange={handleOtherMenuOpenChange} /> : null
         })}
       </nav>
       <div className="header-tools flex items-center gap-4">
