@@ -11,7 +11,7 @@ export function ProductsHero() {
             business applications — helping teams work smarter, respond faster, and achieve more across every workflow.
           </p>
           <div data-reveal data-reveal-delay="2">
-            <a href="#finder" className="cta-button products-hero__cta">
+            <a href="#finder" className="cta-button products-hero__cta hero-fill-button">
               <span>Explore Solutions</span>
               <ArrowRight aria-hidden="true" />
             </a>

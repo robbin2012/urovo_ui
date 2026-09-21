@@ -9,7 +9,7 @@ export function MobileCtaSection() {
           Our enterprise team will help you match the right device to your workflow and deployment needs.
         </p>
         <a data-reveal data-reveal-delay="2" href="#footer" className="primary-button">
-          Contact us to get started <ArrowRight aria-hidden="true" />
+          <span>Contact us to get started</span><ArrowRight aria-hidden="true" />
         </a>
       </div>
     </section>

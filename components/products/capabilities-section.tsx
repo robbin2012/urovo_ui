@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import type { PointerEvent as ReactPointerEvent } from "react"
 
 const capabilities = [
   { icon: "/images/products/capabilities/accuracy.svg", title: "Accuracy", body: "Accurate data capture with fewer errors and less rework." },
@@ -12,7 +13,32 @@ const capabilities = [
 ]
 
 export function CapabilitiesSection() {
-  const [activeCard, setActiveCard] = useState(0)
+  const [activeCard, setActiveCard] = useState(-1)
+  type Edge = "top" | "right" | "bottom" | "left"
+
+  const updatePointer = (event: ReactPointerEvent<HTMLDivElement>, index: number) => {
+    if (event.pointerType === "touch") return
+    const rect = event.currentTarget.getBoundingClientRect()
+    const x = Math.min(100, Math.max(0, ((event.clientX - rect.left) / rect.width) * 100))
+    const y = Math.min(100, Math.max(0, ((event.clientY - rect.top) / rect.height) * 100))
+    const distances: Array<[Edge, number]> = [
+      ["top", y],
+      ["right", 100 - x],
+      ["bottom", 100 - y],
+      ["left", x],
+    ]
+    const edge = distances.sort((a, b) => a[1] - b[1])[0][0]
+    const starts = {
+      top: "translate3d(0,-105%,0)",
+      right: "translate3d(105%,0,0)",
+      bottom: "translate3d(0,105%,0)",
+      left: "translate3d(-105%,0,0)",
+    }
+    event.currentTarget.style.setProperty("--capability-mx", `${x}%`)
+    event.currentTarget.style.setProperty("--capability-my", `${y}%`)
+    event.currentTarget.style.setProperty("--capability-panel-start", starts[edge])
+    setActiveCard(index)
+  }
 
   return (
     <section className="capabilities">
@@ -26,11 +52,18 @@ export function CapabilitiesSection() {
             return (
               <div
                 key={item.title}
-                className={`capability-card${index === activeCard ? " capability-card--feature" : ""}`}
+                className={`capability-card${index === activeCard ? " is-active" : ""}`}
                 tabIndex={0}
-                onMouseEnter={() => setActiveCard(index)}
-                onFocus={() => setActiveCard(index)}
+                onPointerEnter={(event) => updatePointer(event, index)}
+                onPointerMove={(event) => updatePointer(event, index)}
+                onPointerLeave={() => setActiveCard(-1)}
+                onFocus={() => {
+                  setActiveCard(index)
+                }}
+                onBlur={() => setActiveCard(-1)}
               >
+                <span className="capability-color-panel" aria-hidden="true"><span className="capability-cloud capability-cloud-one" /><span className="capability-cloud capability-cloud-two" /></span>
+                <span className="capability-white-spot" aria-hidden="true" />
                 <span className="capability-icon"><img src={item.icon} alt="" /></span>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
