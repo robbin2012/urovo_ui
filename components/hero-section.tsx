@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Mouse } from "lucide-react"
 
 const stats = [
   { value: "Since 2002", label: "Focused on AIDC and Enterprise Mobility", icon: "q2" },
@@ -35,17 +35,13 @@ export function HeroSection() {
   const countdownRef = useRef<SVGCircleElement>(null)
   const bannerRef = useRef<HTMLDivElement>(null)
   const dragStartRef = useRef(0)
-  const slideTimeoutRef = useRef<ReturnType<typeof setTimeout>>(null)
+
 
   const changeSlide = (direction: number) => {
-    const bannerWidth = bannerRef.current?.offsetWidth ?? window.innerWidth
     setIsDragging(false)
-    setDragOffset(direction > 0 ? -bannerWidth : bannerWidth)
-    slideTimeoutRef.current = setTimeout(() => {
-      setActiveSlide((current) => (current + direction + slides.length) % slides.length)
-      setDragOffset(0)
-      setCountdownCycle((current) => current + 1)
-    }, 350)
+    setDragOffset(0)
+    setActiveSlide((current) => (current + direction + slides.length) % slides.length)
+    setCountdownCycle((current) => current + 1)
   }
 
   useEffect(() => {
@@ -64,13 +60,8 @@ export function HeroSection() {
     return () => countdown.cancel()
   }, [activeSlide, countdownCycle, dragOffset, isDragging])
 
-  useEffect(() => () => {
-    if (slideTimeoutRef.current) clearTimeout(slideTimeoutRef.current)
-  }, [])
-
-  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).closest("a, button")) return
-    if (slideTimeoutRef.current) clearTimeout(slideTimeoutRef.current)
     dragStartRef.current = event.clientX
     setIsDragging(true)
     event.currentTarget.setPointerCapture(event.pointerId)
@@ -107,32 +98,27 @@ export function HeroSection() {
         onPointerUp={handlePointerEnd}
         onPointerCancel={handlePointerEnd}
       >
-        {[-1, 0, 1].map((position) => {
-          const index = (activeSlide + position + slides.length) % slides.length
-          const slide = slides[index]
-          return (
+        {slides.map((slide, index) => (
           <img
-            key={`${position}-${slide.image}`}
+            key={slide.image}
             src={slide.image}
             alt={slide.alt}
-            aria-hidden={position !== 0}
+            aria-hidden={index !== activeSlide}
             draggable={false}
-            className={`pointer-events-none absolute inset-0 h-full w-full object-cover ${isDragging ? "" : "transition-transform duration-[350ms] ease-out"}`}
-            style={{ transform: `translate3d(calc(${position * 100}% + ${dragOffset}px), 0, 0)` }}
+            className={`hero-background pointer-events-none absolute inset-0 h-full w-full object-cover${index === activeSlide ? " is-active" : ""}`}
           />
-          )
-        })}
+        ))}
         <div className="hero-shade absolute inset-0" />
 
         <div className="hero-content page-container">
-          <h1 data-reveal className="max-w-2xl text-balance text-4xl font-normal leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 key={`title-${activeSlide}`} className="hero-copy-enter max-w-2xl text-balance text-4xl font-normal leading-tight text-white sm:text-5xl lg:text-6xl">
             Devices and Software for Frontline Operations
           </h1>
-          <p data-reveal data-reveal-delay="1" className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-white/80">
+          <p key={`description-${activeSlide}`} className="hero-copy-enter hero-copy-enter--description mt-6 max-w-xl text-pretty text-base leading-relaxed text-white/80">
             UROVO combines enterprise-grade devices and software to help teams capture data, connect workflows and keep
             operations moving.
           </p>
-          <div data-reveal data-reveal-delay="2" className="mt-8">
+          <div className="mt-8">
             <a
               href="#industries"
               className="cta-button hero-fill-button group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white"
@@ -143,7 +129,12 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="absolute right-6 top-1/2 z-10 flex -translate-y-1/2 flex-col items-center gap-4 sm:right-10 lg:right-16" aria-label="Banner slides">
+        <a className="hero-scroll-cue" href="#products" aria-label="Scroll to explore our products">
+          <Mouse size={26} strokeWidth={1.35} aria-hidden="true" />
+          <span>SCROLL TO EXPLORE</span>
+        </a>
+
+        <div className="hero-pagination" role="group" aria-label="Banner slides">
           {slides.map((slide, index) => (
             <button
               type="button"
@@ -151,22 +142,25 @@ export function HeroSection() {
               aria-label={`Show banner ${index + 1}`}
               aria-current={index === activeSlide}
               onClick={() => {
+                setIsDragging(false)
+                setDragOffset(0)
                 setActiveSlide(index)
                 setCountdownCycle((current) => current + 1)
               }}
-              className={`rounded-full transition-all duration-300 hover:scale-125 ${index === activeSlide ? "h-2.5 w-2.5 bg-transparent" : "h-1.5 w-1.5 bg-white/85 hover:bg-white"}`}
+              className={`hero-pagination__item${index === activeSlide ? " is-active" : ""}`}
             >
+              <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
               {index === activeSlide && (
-                <svg viewBox="0 0 16 16" className="h-full w-full -rotate-90" fill="none" aria-hidden="true">
-                  <circle cx="8" cy="8" r="6.5" stroke="white" strokeOpacity="0.3" strokeWidth="1.25" />
+                <svg viewBox="0 0 48 48" className="hero-pagination__ring" fill="none" aria-hidden="true">
+                  <circle cx="24" cy="24" r="22" stroke="white" strokeOpacity="0.25" strokeWidth="1" />
                   <circle
                     ref={countdownRef}
-                    cx="8"
-                    cy="8"
-                    r="6.5"
+                    cx="24"
+                    cy="24"
+                    r="22"
                     pathLength="100"
                     stroke="white"
-                    strokeWidth="1.25"
+                    strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeDasharray="100"
                     strokeDashoffset="100"

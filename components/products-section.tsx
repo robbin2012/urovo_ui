@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 const tabs = ["Mobile Computers", "Tablets", "Wearables", "RFID Devices", "Barcode Scanners", "Printers", "Smart Payment Terminals", "Smart Mobile Terminals"]
 const products = [
@@ -93,8 +93,12 @@ export function ProductsSection() {
               </div>)}
             </div>
             <div className="product-controls">
-              <button aria-label="Previous product" onClick={() => changeProduct(-1)}><ChevronLeft /></button>
-              <button aria-label="Next product" onClick={() => changeProduct(1)}><ChevronRight /></button>
+              <button aria-label="Previous product" onClick={() => changeProduct(-1)}>
+                <span className="product-control-arrow product-control-arrow--previous" aria-hidden="true"><ArrowRight className="product-control-arrow__current" /><ArrowRight className="product-control-arrow__incoming" /></span>
+              </button>
+              <button aria-label="Next product" onClick={() => changeProduct(1)}>
+                <span className="product-control-arrow" aria-hidden="true"><ArrowRight className="product-control-arrow__current" /><ArrowRight className="product-control-arrow__incoming" /></span>
+              </button>
             </div>
           </div>
           <div className="product-art">

@@ -9,6 +9,7 @@ import { TechCtaSection } from "@/components/tech-cta-section"
 import { InsightsSection } from "@/components/insights-section"
 import { SiteFooter } from "@/components/site-footer"
 import { ScrollRevealController } from "@/components/scroll-reveal-controller"
+import { BackToTop } from "@/components/back-to-top"
 
 export default function Page() {
   return (
@@ -24,6 +25,7 @@ export default function Page() {
       <TechCtaSection />
       <InsightsSection />
       <SiteFooter />
+      <BackToTop />
     </main>
   )
 }

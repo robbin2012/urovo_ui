@@ -67,7 +67,9 @@ export function DataActionSection() {
               <div className="loop-center"><img src="/images/design/capture-icon.png" alt="" /></div>
               {loop.map((step, index) => <i key={step.label} className={activeStep === index ? "is-active" : ""} aria-hidden="true" />)}
             </div>
-            {loop.map((step, index) => <button key={step.label} type="button" aria-pressed={activeStep === index} className={`loop-step step-${index + 1} ${activeStep === index ? "is-active" : ""}`} onClick={() => selectStep(index)}><span>0{index + 1}</span>{step.label}</button>)}
+            {loop.map((step, index) => <button key={step.label} type="button" aria-pressed={activeStep === index} className={`loop-step step-${index + 1} ${activeStep === index ? "is-active" : ""}`} onClick={() => selectStep(index)}>
+              <span className="loop-step-text"><span className="loop-step-number">0{index + 1}</span>{step.label}</span>
+            </button>)}
           </div>
           <div className="data-card">
             {previousStep !== null && previousStep !== activeStep && (
