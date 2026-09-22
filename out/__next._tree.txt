@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0ov6i5dyp59ct.css","style"]
+:HL["/_next/static/chunks/00tu62opsh_71.css","style"]
 :HL["/_next/static/media/PlusJakartaSans-s.p.0qnuojqj60ziw.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
 :HL["/images/revised_images/SVG/资源 8.svg","image"]
 :HL["/images/revised_images/SVG/资源 7.svg","image"]
@@ -7,4 +7,4 @@
 :HL["/images/revised_images/SVG/资源 4.svg","image"]
 :HL["/images/revised_images/SVG/资源 3.svg","image"]
 :HL["/images/revised_images/SVG/logo.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"d__HE-OMlYd2JyWNqTlVX"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"QWScrtH_DeFjHZ3l4BWVV"}
