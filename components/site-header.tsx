@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import { Search, Menu, X, ChevronRight, ArrowRight } from "lucide-react"
 
-const navItems = ["Products", "Software", "Tools", "Support", "Partners", "About Urovo"]
-const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Tools: "#tools", Support: "#footer", Partners: "#partners", "About Urovo": "#footer" }
+const navItems = ["Products", "Software", "Tools", "Support", "Partners", "About"]
+const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Tools: "#tools", Support: "#footer", Partners: "#partners", About: "#footer" }
 const industryMenus = [
   { title: "Retail", description: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations, from inventory and fulfillment to customer service and checkout.", image: "/images/design/retail.webp" },
   { title: "Logistics & Transportation", description: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery with rugged devices, reliable data capture, mobile printing and device software.", image: "/images/design/watsons.webp" },
@@ -45,9 +45,9 @@ const featureMenus: Record<string, { title?: string; description?: string; links
     image: "/images/drop5.png",
     imageAlt: "UROVO partners",
   },
-  "About Urovo": {
+  About: {
     links: ["Who we are", "Innovation & R&D", "ESG", "Careers", "Contact Us"],
-    image: "/images/drop6.png",
+    image: "/images/About.png",
     imageAlt: "About UROVO",
   },
 }
@@ -168,7 +168,7 @@ function FeatureDropdown({ item, sticky, linkClass, onOpenChange }: { item: stri
       <a href={navTargets[item]} aria-haspopup="true" className={linkClass} onMouseEnter={() => setDismissed(false)}>{item}</a>
       <div className={dropdownClassName(sticky, dismissed)}>
         <DropdownCloseButton onClose={close} />
-        <div className={`feature-menu ${menu.title ? "feature-menu--software" : ""}`}>
+        <div className={`feature-menu ${menu.title ? "feature-menu--software" : ""} ${item === "About" ? "feature-menu--about" : ""}`}>
           <div className="feature-menu__content">
             {menu.title && <h2>{menu.title}</h2>}
             {menu.description && <p>{menu.description}</p>}
@@ -198,7 +198,7 @@ function HeaderContent({ sticky, solid = false, open, setOpen, forceIndustriesOp
       <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
         <IndustriesDropdown sticky={sticky} linkClass={desktopLinkClass} onOpenChange={onDesktopMenuOpenChange} forcedOpen={forceIndustriesOpen} onForceClose={() => setOpen(false)} />
         {navItems.map((item) => {
-          if (item === "Support" || item === "Tools" || item === "About Urovo") return <a key={item} href={navTargets[item]} className={desktopLinkClass} onMouseEnter={() => setOpen(false)}>{item}</a>
+          if (item === "Support" || item === "Tools") return <a key={item} href={navTargets[item]} className={desktopLinkClass} onMouseEnter={() => setOpen(false)}>{item}</a>
           if (item === "Products") return <ProductsDropdown key={item} sticky={sticky} linkClass={desktopLinkClass} onOpenChange={handleOtherMenuOpenChange} />
           return featureMenus[item] ? <FeatureDropdown key={item} item={item} sticky={sticky} linkClass={desktopLinkClass} onOpenChange={handleOtherMenuOpenChange} /> : null
         })}
@@ -254,6 +254,32 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
       document.body.style.overflow = previousOverflow
     }
   }, [desktopMenuOpen, open])
+
+  useEffect(() => {
+    if (!desktopMenuOpen && !open) return
+    const handleOutsidePointer = (event: PointerEvent) => {
+      const target = event.target
+      if (!(target instanceof Element)) return
+      if (target.closest(".nav-dropdown, .mega-nav, .header-menu-toggle, [aria-label='Toggle menu']")) return
+      setOpen(false)
+      setDesktopMenuOpen(false)
+    }
+    document.addEventListener("pointerdown", handleOutsidePointer)
+    return () => document.removeEventListener("pointerdown", handleOutsidePointer)
+  }, [desktopMenuOpen, open])
+
+  useEffect(() => {
+    if (!open) return
+    const handleMenuPointerMove = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse" && event.pointerType !== "pen") return
+      const target = event.target
+      if (!(target instanceof Element) || target.closest(".nav-dropdown, .site-header, .sticky-header")) return
+      setOpen(false)
+      setDesktopMenuOpen(false)
+    }
+    document.addEventListener("pointermove", handleMenuPointerMove)
+    return () => document.removeEventListener("pointermove", handleMenuPointerMove)
+  }, [open])
 
   useEffect(() => {
     let previousY = window.scrollY

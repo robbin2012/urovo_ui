@@ -3,11 +3,12 @@
 import { useRef, useState } from "react"
 import { ArrowRight } from "lucide-react"
 
-const tabs = ["Mobile Computers", "Tablets", "Wearables", "RFID Devices", "Barcode Scanners", "Printers", "Smart Payment Terminals", "Smart Mobile Terminals"]
+const tabs = ["Mobile Computers", "Wearables", "Tablets", "RFID Devices", "Barcode Scanners", "Printers", "Smart Payment Terminals", "Smart Mobile Terminals"]
+const productImageFiles = ["DT610.png", "SR5750.png", "upad.png", "RFG91.png", "K180.png", "K388Pro.png", "i9600.png", "i9200（非金版）.png"]
 const products = [
   { title: "Mobile Computers", image: "资源 1.png", description: "Rugged handheld computers that connect frontline teams with reliable data capture, real-time workflows and business applications." },
-  { title: "Tablets", image: "资源 10.png", description: "Rugged tablets with larger displays for field service, inventory, dispatch and other workflows that need more information at a glance." },
   { title: "Wearables", image: "资源 2.png", description: "Hands-free wearable devices that keep workers connected while improving mobility, accuracy and productivity across daily tasks." },
+  { title: "Tablets", image: "资源 10.png", description: "Rugged tablets with larger displays for field service, inventory, dispatch and other workflows that need more information at a glance." },
   { title: "RFID Devices", image: "资源 11.png", description: "RFID readers and solutions that help teams identify, track and manage high volumes of tagged items with speed and confidence." },
   { title: "Barcode Scanners", image: "资源 9.png", description: "Handheld and presentation scanners designed to capture 1D and 2D barcodes quickly and accurately in fast-paced environments." },
   { title: "Printers", image: "资源 12.png", description: "Mobile and desktop printing solutions that produce clear, dependable labels and receipts wherever frontline work takes place." },
@@ -106,7 +107,7 @@ export function ProductsSection() {
             {products.map((product, productIndex) => <img
               key={product.title}
               className={`product-image${index === productIndex ? " is-active" : ""}`}
-              src={`/images/revised_images/1x/${product.image}`}
+              src={`/images/${productImageFiles[productIndex]}`}
               alt={product.title}
               aria-hidden={index !== productIndex || undefined}
             />)}
