@@ -71,7 +71,7 @@ function IndustriesDropdown({ sticky, linkClass, onOpenChange, forcedOpen, onFor
   }
   return (
     <div className="mega-nav industries-nav group relative" onMouseEnter={() => onOpenChange(true)} onMouseLeave={() => onOpenChange(false)}>
-      <a href="#industries" aria-haspopup="true" className={linkClass} onMouseEnter={() => setDismissed(false)}>Industries</a>
+      <a href="#industries" aria-haspopup="true" className={linkClass} onClick={(event) => event.preventDefault()} onMouseEnter={() => setDismissed(false)}>Industries</a>
       <div className={dropdownClassName(sticky, dismissed, forcedOpen)}>
         <DropdownCloseButton onClose={close} />
         <div className="industries-menu">
@@ -122,10 +122,17 @@ function ProductsDropdown({ sticky, linkClass, onOpenChange }: { sticky: boolean
         <div className="products-menu">
           <nav className="products-menu__categories" aria-label="Product categories">
             {productCategories.map((categoryName, index) => (
-              <button key={categoryName} type="button" className={index === activeCategory ? "is-active" : ""} onMouseEnter={() => { setActiveCategory(index); setPreviewIndex(null) }} onFocus={() => { setActiveCategory(index); setPreviewIndex(null) }}>
-                {categoryName}
-                {index === activeCategory && <ChevronRight aria-hidden="true" />}
-              </button>
+              index === 0 ? (
+                <a key={categoryName} href="/products/" className={index === activeCategory ? "is-active" : ""} onMouseEnter={() => { setActiveCategory(index); setPreviewIndex(null) }} onFocus={() => { setActiveCategory(index); setPreviewIndex(null) }}>
+                  {categoryName}
+                  {index === activeCategory && <ChevronRight aria-hidden="true" />}
+                </a>
+              ) : (
+                <button key={categoryName} type="button" className={index === activeCategory ? "is-active" : ""} onMouseEnter={() => { setActiveCategory(index); setPreviewIndex(null) }} onFocus={() => { setActiveCategory(index); setPreviewIndex(null) }}>
+                  {categoryName}
+                  {index === activeCategory && <ChevronRight aria-hidden="true" />}
+                </button>
+              )
             ))}
           </nav>
           <div className="products-menu__catalog" onMouseLeave={() => setPreviewIndex(null)}>
