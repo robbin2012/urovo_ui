@@ -32,8 +32,6 @@ export function ProductsSection() {
       <div className="page-container">
         <h2 data-reveal className="section-title">UROVO Devices for Every Frontline Task</h2>
         <div
-          data-reveal
-          data-reveal-delay="1"
           ref={tabsRef}
           className={`pill-tabs${draggingTabs ? " is-dragging" : ""}`}
           aria-label="Product categories"

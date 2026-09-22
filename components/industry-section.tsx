@@ -63,8 +63,6 @@ export function IndustrySection() {
       <div data-reveal data-reveal-delay="2" ref={tabsRef} className="pill-tabs" aria-label="Industries">{cards.map((card, index) => <button type="button" key={card.tab} onClick={() => carousel?.scrollTo(index)} aria-pressed={active === index} className={active === index ? "active" : ""}>{card.tab}</button>)}</div>
     </div>
     <div
-      data-reveal
-      data-reveal-delay="2"
       ref={viewportRef}
       className={`industry-viewport${dragging ? " is-dragging" : ""}`}
       role="region"

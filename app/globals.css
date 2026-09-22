@@ -567,6 +567,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .footer-grid > div:first-child > div:nth-child(3) p { font-size: calc(20 * var(--u)); }
 .newsletter-form { display: flex; align-items: center; background: #303030; border-radius: 999px; padding: calc(3 * var(--u)); width: calc(300 * var(--u)); margin-top: calc(22 * var(--u)); }
 .newsletter-form input { min-width: 0; width: 0; font-size: calc(13 * var(--u)); padding-inline: calc(16 * var(--u)); }
+.newsletter-form input:is(:focus, :focus-visible) { outline: none; box-shadow: none; }
 .newsletter-form button { flex-shrink: 0; font-size: calc(13 * var(--u)); }
 .newsletter-submit { position: relative; justify-content: center; width: calc(112 * var(--u)); min-width: 96px; height: calc(40 * var(--u)); min-height: 34px; overflow: hidden; padding: 0; }
 .newsletter-submit > span { position: relative; z-index: 1; display: flex; align-items: center; height: 100%; line-height: 1; white-space: nowrap; transform: translateX(calc(-12 * var(--u))); transition: transform .78s cubic-bezier(.22, 1, .36, 1); }
