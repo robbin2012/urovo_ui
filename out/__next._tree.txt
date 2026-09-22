@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/10b5n_k2b2acf.css","style"]
+:HL["/_next/static/chunks/35_wo_8bi1_0o.css","style"]
 :HL["/_next/static/media/PlusJakartaSans-s.p.0qnuojqj60ziw.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
 :HL["/images/revised_images/SVG/资源 8.svg","image"]
 :HL["/images/revised_images/SVG/资源 7.svg","image"]
@@ -6,11 +6,5 @@
 :HL["/images/revised_images/SVG/资源 5.svg","image"]
 :HL["/images/revised_images/SVG/资源 4.svg","image"]
 :HL["/images/revised_images/SVG/资源 3.svg","image"]
-:HL["/images/design/watsons.webp","image"]
-:HL["/images/design/banks.webp","image"]
-:HL["/images/design/miniso.webp","image"]
-:HL["/images/design/news.webp","image"]
-:HL["/images/design/blog-rfid.webp","image"]
-:HL["/images/design/blog-factory.webp","image"]
 :HL["/images/revised_images/SVG/logo.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"O5OK0AqQH8UPFBscZQPsv"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"-UzY5-vf-IYTfBGMnkDol"}
