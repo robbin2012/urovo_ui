@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import { Search, Menu, X, ChevronRight, ArrowRight } from "lucide-react"
 
-const navItems = ["Products", "Software", "Tools", "Support", "Partners", "About"]
-const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Tools: "#tools", Support: "#footer", Partners: "#partners", About: "#footer" }
+const navItems = ["Products", "Software", "Resources", "Support", "Partners", "About"]
+const navTargets: Record<string, string> = { Products: "/products/", Software: "#software", Resources: "#insights", Support: "#footer", Partners: "#partners", About: "#footer" }
 const industryMenus = [
   { title: "Retail", description: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations, from inventory and fulfillment to customer service and checkout.", image: "/images/design/retail.webp" },
   { title: "Logistics & Transportation", description: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery with rugged devices, reliable data capture, mobile printing and device software.", image: "/images/design/watsons.webp" },
@@ -168,17 +168,36 @@ function FeatureDropdown({ item, sticky, linkClass, onOpenChange }: { item: stri
       <a href={navTargets[item]} aria-haspopup="true" className={linkClass} onMouseEnter={() => setDismissed(false)}>{item}</a>
       <div className={dropdownClassName(sticky, dismissed)}>
         <DropdownCloseButton onClose={close} />
-        <div className={`feature-menu ${menu.title ? "feature-menu--software" : ""} ${item === "About" ? "feature-menu--about" : ""}`}>
-          <div className="feature-menu__content">
-            {menu.title && <h2>{menu.title}</h2>}
-            {menu.description && <p>{menu.description}</p>}
-            <nav className="feature-menu__links" aria-label={`${item} menu`}>
-              {menu.links.map((link) => <a href={navTargets[item]} key={link}>{link}</a>)}
+        {item === "Software" ? (
+          <div className="software-menu">
+            <nav className="software-menu__categories" aria-label="Software categories">
+              {menu.links.map((link, index) => <a className={index === 0 ? "is-active" : ""} href={navTargets[item]} key={link}>
+                {link}
+                {index === 0 && <ChevronRight aria-hidden="true" />}
+              </a>)}
             </nav>
-            {menu.cta && <a className="feature-menu__cta" href={navTargets[item]}>{menu.cta} <ArrowRight aria-hidden="true" /></a>}
+            <div className="software-menu__detail">
+              <div className="feature-menu__content">
+                <h2>{menu.title}</h2>
+                <p>{menu.description}</p>
+                {menu.cta && <a className="feature-menu__cta" href={navTargets[item]}>{menu.cta} <ArrowRight aria-hidden="true" /></a>}
+              </div>
+              <div className="feature-menu__media"><img src={menu.image} alt={menu.imageAlt} /></div>
+            </div>
           </div>
-          <div className="feature-menu__media"><img src={menu.image} alt={menu.imageAlt} /></div>
-        </div>
+        ) : (
+          <div className="feature-menu">
+            <div className="feature-menu__content">
+              {menu.title && <h2>{menu.title}</h2>}
+              {menu.description && <p>{menu.description}</p>}
+              <nav className="feature-menu__links" aria-label={`${item} menu`}>
+                {menu.links.map((link) => <a href={navTargets[item]} key={link}>{link}</a>)}
+              </nav>
+              {menu.cta && <a className="feature-menu__cta" href={navTargets[item]}>{menu.cta} <ArrowRight aria-hidden="true" /></a>}
+            </div>
+            <div className="feature-menu__media"><img src={menu.image} alt={menu.imageAlt} /></div>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -198,7 +217,7 @@ function HeaderContent({ sticky, solid = false, open, setOpen, forceIndustriesOp
       <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
         <IndustriesDropdown sticky={sticky} linkClass={desktopLinkClass} onOpenChange={onDesktopMenuOpenChange} forcedOpen={forceIndustriesOpen} onForceClose={() => setOpen(false)} />
         {navItems.map((item) => {
-          if (item === "Support" || item === "Tools") return <a key={item} href={navTargets[item]} className={desktopLinkClass} onMouseEnter={() => setOpen(false)}>{item}</a>
+          if (item === "Support") return <a key={item} href={navTargets[item]} className={desktopLinkClass} onMouseEnter={() => setOpen(false)}>{item}</a>
           if (item === "Products") return <ProductsDropdown key={item} sticky={sticky} linkClass={desktopLinkClass} onOpenChange={handleOtherMenuOpenChange} />
           return featureMenus[item] ? <FeatureDropdown key={item} item={item} sticky={sticky} linkClass={desktopLinkClass} onOpenChange={handleOtherMenuOpenChange} /> : null
         })}

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import useEmblaCarousel from "embla-carousel-react"
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 const cards = [
   { tab: "Retail", title: "Retail Operations", body: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations. From inventory and fulfillment to customer service and checkout, UROVO helps teams capture accurate information, respond faster and keep work moving across stores and distribution environments.", image: "design/retail.webp" },
@@ -63,6 +63,8 @@ export function IndustrySection() {
       <div data-reveal data-reveal-delay="2" ref={tabsRef} className="pill-tabs" aria-label="Industries">{cards.map((card, index) => <button type="button" key={card.tab} onClick={() => carousel?.scrollTo(index)} aria-pressed={active === index} className={active === index ? "active" : ""}>{card.tab}</button>)}</div>
     </div>
     <div
+      data-reveal
+      data-reveal-delay="2"
       ref={viewportRef}
       className={`industry-viewport${dragging ? " is-dragging" : ""}`}
       role="region"
@@ -88,8 +90,12 @@ export function IndustrySection() {
       </div>
     </div>
     <div className="industry-controls page-container">
-      <button type="button" aria-label="Previous industry" onClick={() => carousel?.scrollPrev()}><ArrowLeft aria-hidden="true" /></button>
-      <button type="button" aria-label="Next industry" onClick={() => carousel?.scrollNext()}><ArrowRight aria-hidden="true" /></button>
+      <button type="button" aria-label="Previous industry" onClick={() => carousel?.scrollPrev()}>
+        <span className="product-control-arrow product-control-arrow--previous" aria-hidden="true"><ArrowRight className="product-control-arrow__current" /><ArrowRight className="product-control-arrow__incoming" /></span>
+      </button>
+      <button type="button" aria-label="Next industry" onClick={() => carousel?.scrollNext()}>
+        <span className="product-control-arrow" aria-hidden="true"><ArrowRight className="product-control-arrow__current" /><ArrowRight className="product-control-arrow__incoming" /></span>
+      </button>
     </div>
     <p className="sr-only" aria-live="polite" aria-atomic="true">{cards[active].title}, {active + 1} of {cards.length}</p>
   </section>

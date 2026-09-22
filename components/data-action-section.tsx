@@ -68,7 +68,10 @@ export function DataActionSection() {
               {loop.map((step, index) => <i key={step.label} className={activeStep === index ? "is-active" : ""} aria-hidden="true" />)}
             </div>
             {loop.map((step, index) => <button key={step.label} type="button" aria-pressed={activeStep === index} className={`loop-step step-${index + 1} ${activeStep === index ? "is-active" : ""}`} onClick={() => selectStep(index)}>
-              <span className="loop-step-text"><span className="loop-step-number">0{index + 1}</span>{step.label}</span>
+              <span className="loop-step-label">
+                <span className="loop-step-text loop-step-text--current"><span className="loop-step-number">0{index + 1}</span>{step.label}</span>
+                <span className="loop-step-text loop-step-text--incoming" aria-hidden="true"><span className="loop-step-number">0{index + 1}</span>{step.label}</span>
+              </span>
             </button>)}
           </div>
           <div className="data-card">
