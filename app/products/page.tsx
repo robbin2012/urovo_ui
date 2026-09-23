@@ -25,9 +25,9 @@ export default function ProductsPage() {
       <CapabilitiesSection />
       <ProductFinder />
       <EcosystemSection />
-      <IndustrySection />
-      <MobileCtaSection />
+      <IndustrySection cardGrid />
       <FaqSection />
+      <MobileCtaSection />
       <SiteFooter />
     </main>
   )

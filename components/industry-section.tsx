@@ -6,15 +6,15 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures"
 import { ArrowRight } from "lucide-react"
 
 const cards = [
-  { tab: "Retail", title: "Retail Operations", body: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations. From inventory and fulfillment to customer service and checkout, UROVO helps teams capture accurate information, respond faster and keep work moving across stores and distribution environments.", image: "design/retail.webp" },
+  { tab: "Retail", title: "Retail", body: "Bring together mobile computers, barcode scanners, RFID devices, payment terminals, printers and software to support connected retail operations. From inventory and fulfillment to customer service and checkout, UROVO helps teams capture accurate information, respond faster and keep work moving across stores and distribution environments.", image: "design/retail.webp" },
   { tab: "Logistics & Transportation", title: "Logistics & Transportation", body: "Connect teams, goods and information across warehouses, transportation networks and last-mile delivery. Rugged mobile computers, barcode and RFID capture, mobile printing and device software help improve visibility, reduce manual errors and support reliable execution from receiving through final delivery.", image: "design/watsons.webp" },
   { tab: "Manufacturing", title: "Manufacturing", body: "Connect production teams with enterprise devices and data capture tools for greater visibility across manufacturing operations.", image: "design/blog-factory.webp" },
-  { tab: "Hospitality", title: "Hospitality", body: "Support frontline service teams with connected mobile devices and reliable payment and data capture tools.", image: "design/retail.webp" },
   { tab: "Utilities", title: "Utilities", body: "Keep field operations connected with rugged mobile computers and reliable access to operational information.", image: "hero-manufacturing.jpg" },
-  { tab: "Financial Technology", title: "Financial Technology", body: "Bring connected payment technology and mobile devices to customer-facing financial operations.", image: "design/miniso.webp" },
+  { tab: "Healthcare", title: "Healthcare", body: "Give care teams reliable mobile access to patient information, identification and clinical workflows.", image: "design/blog-rfid.webp" },
+  { tab: "Financial Technology", title: "Financial Technology", body: "Bring connected payment technology and mobile devices to customer-facing financial operations.", image: "design/banks.webp" },
 ]
 
-export function IndustrySection() {
+export function IndustrySection({ cardGrid = false }: { cardGrid?: boolean }) {
   const [active, setActive] = useState(0)
   const [dragging, setDragging] = useState(false)
   const tabsRef = useRef<HTMLDivElement>(null)
@@ -55,6 +55,25 @@ export function IndustrySection() {
       tabs.scrollTo({ left: tabs.scrollLeft + item.left - bounds.left - (tabs.clientWidth - item.width) / 2, behavior: "instant" })
     }
   }, [active])
+
+  if (cardGrid) {
+    return <section id="industries" className="industry-section industry-section--grid">
+      <div className="page-container">
+        <h2 data-reveal className="section-title">Industry Solutions</h2>
+        <p data-reveal data-reveal-delay="1" className="section-description">From stores and warehouses to factories and field operations, UROVO connects frontline teams with reliable devices, data and workflows.</p>
+        <div data-reveal data-reveal-delay="2" className="industry-solution-grid">
+          {cards.map((card) => <article className="industry-solution-card" key={card.tab}>
+            <div className="industry-solution-card__image image-zoom-frame"><img src={`/images/${card.image}`} alt="" /></div>
+            <div className="industry-solution-card__copy">
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+              <a href="#contact">Explore {card.tab}<span className="arrow-badge"><ArrowRight className="arrow-current" aria-hidden="true" /><ArrowRight className="arrow-incoming" aria-hidden="true" /></span></a>
+            </div>
+          </article>)}
+        </div>
+      </div>
+    </section>
+  }
 
   return <section id="industries" className="industry-section">
     <div className="page-container">

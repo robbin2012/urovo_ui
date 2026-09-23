@@ -88,7 +88,6 @@ export function ProductFinder() {
           <aside className="filter-panel" aria-label="Filter products">
             <div className="filter-panel__head">
               <span>Filter Products</span>
-              <button type="button" onClick={clearAll}>Clear All</button>
             </div>
             {filterGroups.map((group) => (
               <div key={group.key} className="filter-group">

@@ -13,7 +13,7 @@ import { BackToTop } from "@/components/back-to-top"
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="home-page min-h-screen bg-white">
       <ScrollRevealController />
       <SiteHeader />
       <HeroSection />
