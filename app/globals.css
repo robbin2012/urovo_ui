@@ -1520,3 +1520,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .home-page :is(.hero-copy-enter--description, .section-description, .product-detail p, .workflow-step__content p, .industry-copy p, .story-description, .tech-copy p, .news-copy p) { font-size: 14px; }
 .home-page :is(.product-link, .workflow-step__content button, .industry-copy a, .story-copy a, .insights-heading > a) { font-size: 14px; }
 
+/* Match banner CTA interaction to the product help CTA */
+.hero-content .hero-fill-button:is(:hover, :focus-visible),
+.products-hero__cta:is(:hover, :focus-visible) { color: #3b82f6 !important; }
+.hero-content .hero-fill-button:is(:hover, :focus-visible) > svg,
+.products-hero__cta:is(:hover, :focus-visible) > svg { color: #111; }
+
