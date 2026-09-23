@@ -499,7 +499,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .news-category { color: #00a4f4; font-size: calc(18 * var(--u)); font-weight: 600; }
 .news-copy h3 { margin-top: calc(32 * var(--u)); color: #11141a; font-size: calc(28 * var(--u)); font-weight: 500; line-height: 1.5; letter-spacing: -.025em; }
 .news-copy h3 a, .blog-grid h4 a { color: inherit; text-decoration: none; background-image: linear-gradient(var(--brand), var(--brand)); background-position: 0 100%; background-repeat: no-repeat; background-size: 0 2px; transition: color .3s ease, background-size .48s cubic-bezier(.22, 1, .36, 1); }
-.news-copy h3 a:is(:hover, :focus-visible), .blog-grid h4 a:is(:hover, :focus-visible) { color: #154198; background-size: 100% 2px; }
+.news-copy h3 a { background-size: 0 1px; }
+.news-copy h3 a:is(:hover, :focus-visible) { color: #154198; background-size: 100% 1px; }
+.blog-grid h4 a { background-size: 0 1px; }
+.blog-grid h4 a:is(:hover, :focus-visible) { color: #154198; background-size: 100% 1px; }
 .news-copy p { margin-top: calc(12 * var(--u)); font-size: calc(18 * var(--u)); line-height: 1.5; letter-spacing: .04em; color: #404f63; }
 .news-copy time { margin-top: calc(58 * var(--u)); font-size: calc(14 * var(--u)); color: #829bad; }
 .news-controls { display: flex; align-items: center; gap: calc(16 * var(--u)); margin-top: auto; padding-bottom: calc(12 * var(--u)); color: #29475d; font-size: max(13px, calc(14 * var(--u))); font-weight: 600; }
