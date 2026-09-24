@@ -1516,8 +1516,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 
 /* ===== Data capture workflow ===== */
-.workflow-section { --workflow-timer: 4.6s; position: relative; overflow: hidden; background: linear-gradient(180deg, #e9f2fb 0%, #f1f7fc 52%, #e4eff9 100%); padding-block: calc(84 * var(--u)) calc(92 * var(--u)); color: #11141a; }
-.workflow-section::before { content: ''; position: absolute; z-index: 0; top: calc(-160 * var(--u)); right: calc(-120 * var(--u)); width: calc(560 * var(--u)); height: calc(560 * var(--u)); border-radius: 50%; background: radial-gradient(circle, rgb(0 174 239 / 14%) 0%, transparent 68%); pointer-events: none; }
+.workflow-section { --workflow-timer: 4.6s; position: relative; overflow: hidden; background: linear-gradient(180deg, #eef1f4 0%, #f4f6f8 52%, #e7ebef 100%); padding-block: calc(84 * var(--u)) calc(92 * var(--u)); color: #11141a; }
+.workflow-section::before { content: ''; position: absolute; z-index: 0; top: calc(-160 * var(--u)); right: calc(-120 * var(--u)); width: calc(560 * var(--u)); height: calc(560 * var(--u)); border-radius: 50%; background: radial-gradient(circle, rgb(120 140 160 / 12%) 0%, transparent 68%); pointer-events: none; }
 .workflow-section > .page-container { position: relative; z-index: 1; }
 .workflow-header { max-width: none; }
 .workflow-section .section-title { color: #11141a; white-space: nowrap; }
