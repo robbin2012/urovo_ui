@@ -195,7 +195,7 @@ const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
                 {activeStat === s.icon && <img key={`${s.icon}-${statAnimationCycle}`} className="hero-stat__icon-animated" src={`/images/stats-icons/${s.icon}-animated.svg?cycle=${statAnimationCycle}`} alt="" />}
               </span>
               <span className="hero-stat__copy">
-                <span className="hero-stat__value text-2xl font-bold text-brand-navy">{s.value}</span>
+                <span className={`hero-stat__value${s.value === "Since 2002" ? " hero-stat__value--long" : ""} text-2xl font-bold text-brand-navy`}>{s.value}</span>
                 <span className="hero-stat__label mt-2 text-xs leading-snug text-muted-foreground">{s.label}</span>
               </span>
             </div>
