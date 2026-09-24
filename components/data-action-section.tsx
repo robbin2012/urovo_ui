@@ -4,11 +4,10 @@ import { useEffect, useState } from "react"
 import { ArrowRight } from "lucide-react"
 
 const steps = [
-  { name: "Capture", title: "Capture accurate data at the frontline", description: "Collect barcodes, RFID reads, images and task inputs right where work happens.", image: "/images/workflow/data-capture.jpg", alt: "Frontline worker capturing operational data with a UROVO device" },
-  { name: "Connect", title: "Connect devices, people and operations", description: "Keep device fleets, cloud services and business systems connected as information moves.", image: "/images/workflow/data-connect.jpg", alt: "Connected UROVO devices and business systems" },
-  { name: "Process", title: "Process data into useful insight", description: "Software and cloud services turn frontline inputs into clear, actionable information.", image: "/images/workflow/data-process.jpg", alt: "Operational information being processed into useful insight" },
-  { name: "Act", title: "Put the right information into action", description: "Deliver tasks and guidance to frontline teams, then feed every completed action back into the loop.", image: "/images/workflow/data-act.jpg", alt: "Frontline worker taking action with a UROVO mobile computer" },
-  { name: "Optimize", title: "Optimize every operational decision", description: "Use real-world performance data to refine workflows, remove friction and improve every cycle.", image: "/images/workflow/data-process.jpg", alt: "Operational insight helping teams optimize frontline workflows" },
+  { name: "CAPTURE", description: "Capture barcode, RFID, voice, and other frontline data with UROVO devices. Turn information from products, assets, and everyday operations into digital data your business can use.", image: "/images/workflow/data-capture.jpg", alt: "Frontline worker capturing operational data with a UROVO device" },
+  { name: "CONNECT", description: "Connect people, devices, and business systems through seamless connectivity and system integration. Move data where it is needed, when it is needed.", image: "/images/workflow/data-connect.jpg", alt: "Connected UROVO devices and business systems" },
+  { name: "INTELLIGENCE", description: "Transform operational data into actionable intelligence with AI and analytics. Reveal patterns, identify exceptions, and gain real-time visibility into what is happening across your operations.", image: "/images/workflow/data-process.jpg", alt: "Operational data transformed into actionable intelligence" },
+  { name: "ACTION", description: "Turn intelligence into decisions and action. Trigger workflows, assign tasks, print labels, process payments, and help frontline teams move work forward.", image: "/images/workflow/data-act.jpg", alt: "Frontline worker taking action with a UROVO mobile computer" },
 ]
 
 export function DataActionSection() {
@@ -63,7 +62,7 @@ export function DataActionSection() {
                   </button>
                   <div id={`workflow-panel-${index}`} className="workflow-step__panel" aria-hidden={!isActive}>
                     <div className="workflow-step__content">
-                      <h3>{step.title}</h3><p>{step.description}</p>
+                      <p>{step.description}</p>
                       <button type="button" onClick={() => selectStep((index + 1) % steps.length)}>Explore Industry<ArrowRight aria-hidden="true" /></button>
                     </div>
                   </div>
