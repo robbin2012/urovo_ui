@@ -79,16 +79,34 @@ export function ProductFinder() {
   return (
     <section id="finder" className="finder">
       <div className="page-container">
-        <h2 data-reveal className="section-title finder__title">Find the Right Mobile Computer for Your Team</h2>
-        <p data-reveal data-reveal-delay="1" className="finder__subtitle">
-          Filter by form factor, display size, connectivity, and more to find the right fit.
-        </p>
+        <div className="finder__head" data-reveal>
+          <div>
+            <h2 className="section-title finder__title">Find the Right Mobile Computer for Your Team</h2>
+            <p className="finder__subtitle">
+              Filter by form factor, display size, connectivity, and more to find the right fit.
+            </p>
+          </div>
+        </div>
 
-        <div className="finder__layout" data-reveal data-reveal-delay="2">
+        <div className="finder__layout" data-reveal data-reveal-delay="1">
           <aside className="filter-panel" aria-label="Filter products">
             <div className="filter-panel__head">
-              <span>Filter Products</span>
+              <span>Filter</span>
+              {activeChips.length > 0 && (
+                <button type="button" className="finder__chip-clear" onClick={clearAll}>Remove all</button>
+              )}
             </div>
+            {activeChips.length > 0 && (
+              <div className="filter-panel__selected">
+                <div className="filter-panel__chips">
+                  {activeChips.map((chip) => (
+                    <button type="button" key={`${chip.key}-${chip.value}`} className="finder__chip" onClick={() => toggle(chip.key, chip.value)}>
+                      {chip.value}<X aria-hidden="true" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             {filterGroups.map((group) => (
               <div key={group.key} className="filter-group">
                 <button
@@ -121,35 +139,13 @@ export function ProductFinder() {
           </aside>
 
           <div className="finder__main">
-            <div className="finder__chips">
-              {activeChips.length > 0 ? (
-                <>
-                  {activeChips.map((chip) => (
-                    <button
-                      type="button"
-                      key={`${chip.key}-${chip.value}`}
-                      className="finder__chip"
-                      onClick={() => toggle(chip.key, chip.value)}
-                    >
-                      {chip.value}
-                      <X aria-hidden="true" />
-                    </button>
-                  ))}
-                  <button type="button" className="finder__chip-clear" onClick={clearAll}>Clear All</button>
-                </>
-              ) : (
-                <span className="finder__chip-hint">Showing all mobile computers</span>
-              )}
-            </div>
-
-            <p className="finder__count">{filtered.length} Products</p>
-
             <div className="product-grid">
               {filtered.map((product) => (
                 <article key={product.name} className="product-card">
                   <div className="product-card__media image-zoom-frame">
                     <img src={`/images/revised_images/1x/${product.image}`} alt={product.name} />
                   </div>
+                  <span className="product-card__type">Mobile Computer</span>
                   <h3>{product.name}</h3>
                   <div className="product-card__specs">
                     {product.specs.map((spec) => (
