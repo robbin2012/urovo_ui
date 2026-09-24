@@ -1298,7 +1298,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .products-hero__copy { translate: 0 calc(24 * var(--u)); }
 .products-hero__copy h1 { max-width: calc(680 * var(--u)); color: #fff; font-size: calc(46 * var(--u)); font-weight: 500; line-height: 1.16; letter-spacing: -.025em; }
 .products-hero__copy h1 span { white-space: nowrap; }
-.products-hero__copy p { max-width: calc(560 * var(--u)); margin-top: calc(30 * var(--u)); color: #fff; font-size: calc(18 * var(--u)); line-height: 1.55; }
+.products-hero__copy p { max-width: calc(660 * var(--u)); margin-top: calc(30 * var(--u)); color: #fff; font-size: calc(18 * var(--u)); line-height: 1.55; }
 .products-hero__copy > div { margin-top: calc(48 * var(--u)); }
 .products-hero__cta { display: inline-flex; align-items: center; gap: calc(20 * var(--u)); border-radius: 999px; background: var(--brand); color: white; padding: calc(16 * var(--u)) calc(30 * var(--u)); font-size: calc(17 * var(--u)); font-weight: 700; }
 .products-hero__cta svg { width: calc(19 * var(--u)); height: calc(19 * var(--u)); }

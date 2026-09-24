@@ -8,7 +8,7 @@ export function ProductsHero() {
           <h1 data-reveal>Rugged Mobile Computers for <span>Frontline Work</span></h1>
           <p data-reveal data-reveal-delay="1">
             UROVO Mobile Computers connect frontline workers with real-time data, powerful capture capabilities, and
-            business applications — helping teams work smarter, respond faster, and achieve more across every workflow.
+            business applications, helping teams work smarter, respond faster, and achieve more across every workflow.
           </p>
           <div data-reveal data-reveal-delay="2">
             <a href="#finder" className="cta-button products-hero__cta hero-fill-button">
