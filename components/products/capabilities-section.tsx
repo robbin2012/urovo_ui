@@ -1,3 +1,7 @@
+"use client"
+
+import type { PointerEvent as ReactPointerEvent } from "react"
+
 const capabilities = [
   { icon: "/images/products/capabilities/accuracy.svg", title: "Accuracy", body: "Accurate data capture with fewer errors and less rework." },
   { icon: "/images/products/capabilities/productivity.svg", title: "Productivity", body: "Faster workflows and higher operational efficiency." },
@@ -8,6 +12,23 @@ const capabilities = [
 ]
 
 export function CapabilitiesSection() {
+  const activate = (event: ReactPointerEvent<HTMLDivElement>) => {
+    event.currentTarget.classList.add("is-active")
+  }
+
+  const deactivate = (event: ReactPointerEvent<HTMLDivElement>) => {
+    event.currentTarget.classList.remove("is-active")
+  }
+
+  const track = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const card = event.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = ((event.clientX - rect.left) / rect.width) * 100
+    const y = ((event.clientY - rect.top) / rect.height) * 100
+    card.style.setProperty("--capability-mx", `${x}%`)
+    card.style.setProperty("--capability-my", `${y}%`)
+  }
+
   return (
     <section className="capabilities">
       <div className="page-container">
@@ -22,8 +43,18 @@ export function CapabilitiesSection() {
                 key={item.title}
                 className="capability-card"
                 tabIndex={0}
+                onPointerEnter={activate}
+                onPointerMove={track}
+                onPointerLeave={deactivate}
+                onFocus={(event) => event.currentTarget.classList.add("is-active")}
+                onBlur={(event) => event.currentTarget.classList.remove("is-active")}
               >
-                <span className="capability-icon" aria-hidden="true"><img src={item.icon} alt="" /></span>
+                <span className="capability-color-panel" aria-hidden="true">
+                  <span className="capability-cloud capability-cloud-one" />
+                  <span className="capability-cloud capability-cloud-two" />
+                </span>
+                <span className="capability-white-spot" aria-hidden="true" />
+                <span className="capability-icon" aria-hidden="true"><img src={item.icon || "/placeholder.svg"} alt="" /></span>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
               </div>

@@ -1324,9 +1324,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .capability-white-spot { position: absolute; z-index: 1; pointer-events: none; left: var(--capability-mx, 50%); top: var(--capability-my, 50%); width: clamp(108px, 44%, 155px); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; opacity: 0; filter: blur(13px); background: radial-gradient(circle, #fff 0%, rgb(255 255 255 / 98%) 12%, rgb(255 255 255 / 86%) 27%, rgb(255 255 255 / 58%) 44%, rgb(255 255 255 / 24%) 64%, rgb(255 255 255 / 0%) 88%); transition: opacity .3s ease, left .13s ease-out, top .13s ease-out; }
 .capability-card.is-active .capability-white-spot { opacity: 1; }
 .capability-icon, .capability-card h3, .capability-card p { position: relative; z-index: 2; }
-.capability-icon { display: inline-flex; align-items: center; justify-content: center; width: calc(42 * var(--u)); height: calc(42 * var(--u)); border-radius: calc(9 * var(--u)); background: #eaf4ff; transition: transform .42s cubic-bezier(.22, 1, .36, 1); }
+.capability-icon { display: inline-flex; align-items: center; justify-content: center; width: calc(42 * var(--u)); height: calc(42 * var(--u)); border-radius: calc(9 * var(--u)); background: #eaf4ff; box-shadow: 0 1px 2px rgb(3 105 245 / 8%); transition: transform .45s cubic-bezier(.22, 1, .36, 1), background-color .35s ease, box-shadow .45s cubic-bezier(.22, 1, .36, 1); }
 .capability-icon img { width: 52%; height: 52%; object-fit: contain; }
-.capability-card:is(:hover, :focus-visible) .capability-icon { transform: none; }
+.capability-card.is-active .capability-icon { transform: translateY(calc(-3 * var(--u))) scale(1.06); background: #dcefff; box-shadow: 0 10px 22px rgb(3 105 245 / 18%); }
 .reveal-enabled .capability-grid[data-reveal] { opacity: 1; translate: 0; transition: none; }
 .reveal-enabled .capability-grid[data-reveal] .capability-card { opacity: 0; transform: translateY(calc(34 * var(--u))) scale(.985); }
 .reveal-enabled .capability-grid[data-reveal].is-revealed .capability-card { animation: capability-card-enter .68s cubic-bezier(.22, 1, .36, 1) both; }
@@ -1337,7 +1337,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .reveal-enabled .capability-grid[data-reveal].is-revealed .capability-card:nth-child(5) { animation-delay: .4s; }
 .reveal-enabled .capability-grid[data-reveal].is-revealed .capability-card:nth-child(6) { animation-delay: .46s; }
 @keyframes capability-card-enter { to { opacity: 1; transform: translateY(0) scale(1); } }
-.capability-card h3 { margin-top: calc(15 * var(--u)); color: #11141a; font-size: calc(22 * var(--u)); font-weight: 700; letter-spacing: -.02em; }
+.capability-card h3 { margin-top: calc(15 * var(--u)); color: #11141a; font-size: calc(22 * var(--u)); font-weight: 700; letter-spacing: -.02em; transition: color .35s ease; }
+.capability-card.is-active h3 { color: #0369f5; }
 .capability-card p { max-width: calc(440 * var(--u)); margin-top: calc(8 * var(--u)); color: #535d68; font-size: calc(15 * var(--u)); line-height: 1.45; }
 @keyframes capability-drift-one { 0% { transform: translate(27%, -6%) scale(.78, .86); } 50% { transform: translate(-16%, -27%) scale(1.19, 1); } 100% { transform: translate(-37%, 10%) scale(1.25, 1.13); } }
 @keyframes capability-drift-two { 0% { transform: translate(-20%, 0) scale(.8); } 100% { transform: translate(77%, 42%) scale(1.25); } }
