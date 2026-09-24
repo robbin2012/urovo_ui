@@ -1516,9 +1516,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 
 /* ===== Data capture workflow ===== */
-.workflow-section { --workflow-timer: 4.6s; position: relative; overflow: hidden; background: radial-gradient(120% 90% at 82% -6%, #123a6b 0%, transparent 52%), linear-gradient(168deg, #0a1a3c 0%, #081227 58%, #060d1e 100%); padding-block: calc(90 * var(--u)) calc(96 * var(--u)); color: #eaf1fb; }
-.workflow-section::before { content: ''; position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgb(120 170 255 / 6%) 1px, transparent 1px), linear-gradient(90deg, rgb(120 170 255 / 6%) 1px, transparent 1px); background-size: calc(58 * var(--u)) calc(58 * var(--u)); mask-image: radial-gradient(115% 100% at 78% 8%, black 0%, transparent 66%); pointer-events: none; }
-.workflow-section::after { content: ''; position: absolute; z-index: 0; bottom: calc(-260 * var(--u)); left: calc(-160 * var(--u)); width: calc(680 * var(--u)); height: calc(680 * var(--u)); border-radius: 50%; background: radial-gradient(circle, rgb(0 174 239 / 16%) 0%, transparent 66%); pointer-events: none; }
+.workflow-section { --workflow-timer: 4.6s; position: relative; overflow: hidden; background: radial-gradient(120% 90% at 82% -6%, #2a5aa0 0%, transparent 54%), linear-gradient(168deg, #1c3d72 0%, #16305c 58%, #12294e 100%); padding-block: calc(90 * var(--u)) calc(96 * var(--u)); color: #eaf1fb; }
+.workflow-section::before { content: ''; position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgb(150 190 255 / 8%) 1px, transparent 1px), linear-gradient(90deg, rgb(150 190 255 / 8%) 1px, transparent 1px); background-size: calc(58 * var(--u)) calc(58 * var(--u)); mask-image: radial-gradient(115% 100% at 78% 8%, black 0%, transparent 66%); pointer-events: none; }
+.workflow-section::after { content: ''; position: absolute; z-index: 0; bottom: calc(-260 * var(--u)); left: calc(-160 * var(--u)); width: calc(680 * var(--u)); height: calc(680 * var(--u)); border-radius: 50%; background: radial-gradient(circle, rgb(0 174 239 / 18%) 0%, transparent 66%); pointer-events: none; }
 .workflow-section > .page-container { position: relative; z-index: 1; }
 .workflow-header { max-width: none; }
 .workflow-section .section-title { color: #fff; white-space: nowrap; }
