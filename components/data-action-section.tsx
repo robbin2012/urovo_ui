@@ -10,7 +10,7 @@ const steps = [
   { name: "ACTION", description: "Turn intelligence into decisions and action. Trigger workflows, assign tasks, print labels, process payments, and help frontline teams move work forward.", image: "/images/workflow/data-act.jpg", alt: "Frontline worker taking action with a UROVO mobile computer" },
 ]
 
-export function DataActionSection() {
+export function DataActionSection({ variant = "default" }: { variant?: "default" | "home1a" }) {
   const [activeStep, setActiveStep] = useState(0)
   const [previousStep, setPreviousStep] = useState<number | null>(null)
   const [cycle, setCycle] = useState(0)
@@ -34,7 +34,7 @@ export function DataActionSection() {
   }, [previousStep])
 
   return (
-    <section id="software" className="data-section workflow-section" aria-labelledby="workflow-title">
+    <section id="software" className={`data-section workflow-section${variant === "home1a" ? " workflow-section--home1a" : ""}`} aria-labelledby="workflow-title">
       <div className="page-container">
         <header data-reveal className="workflow-header">
           <h2 id="workflow-title" className="section-title">From Data Capture to Business Action</h2>

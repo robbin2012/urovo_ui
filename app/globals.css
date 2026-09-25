@@ -1525,6 +1525,12 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 
 /* ===== Data capture workflow ===== */
 .workflow-section { --workflow-timer: 4.6s; position: relative; overflow: hidden; background: #fff; padding-block: calc(92 * var(--u)) calc(100 * var(--u)); color: #10263a; }
+.workflow-section--home1a { background: #eaf3f6 url('/images/industry-light-bg.jpg') center/cover no-repeat; }
+.workflow-section--home1a .section-title { color: #11141a; }
+.workflow-section--home1a .section-description { color: #40576a; }
+.workflow-section--home1a .workflow-visual { border-color: rgb(55 104 137 / 18%); box-shadow: 0 18px 45px rgb(44 94 117 / 12%); }
+.workflow-section--home1a .workflow-step { border-color: rgb(55 104 137 / 18%); background: rgb(255 255 255 / 72%); backdrop-filter: blur(4px); }
+.workflow-section--home1a .workflow-step.is-active { background: rgb(255 255 255 / 90%); }
 .workflow-section::before { content: none; }
 .workflow-section > .page-container { position: relative; z-index: 1; }
 .workflow-header { max-width: none; }
