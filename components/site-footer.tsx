@@ -107,7 +107,7 @@ export function SiteFooter() {
         </div>
 
         <div className="footer-copyright">
-          <p className="text-xs text-white/40">© 2021 UROVO PTE. LIMITED All RIGHTS RESERVED.</p>
+          <p className="text-xs text-white/40">© 2026 UROVO PTE. LIMITED ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>
