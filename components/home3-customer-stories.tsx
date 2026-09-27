@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 const stories = [
   { name: "Watsons China", tag: "Retail", image: "/images/design/watsons.webp", description: "Mobile scanning and connected workflows help store teams manage inventory, serve customers and keep daily operations moving." },
@@ -40,11 +40,10 @@ export function CustomerStories() {
           <p className="story-workflow-tag">{stories[active].tag}</p>
           <h3>{stories[active].name}</h3>
           <p>{stories[active].description}</p>
-          <a className="story-workflow-link" href="#contact">Read Customer Story</a>
+          <a className="story-workflow-link explore-orbit-button" href="#contact"><span className="explore-orbit-label">Read Customer Story</span><span className="explore-orbit-icon" aria-hidden="true"><span className="explore-orbit-surface" /><ArrowRight /></span></a>
           <div className="workflow-stage__controls">
             <button type="button" aria-label="Previous customer story" onClick={() => select(active - 1)}><ChevronLeft aria-hidden="true" /></button>
             <button type="button" aria-label="Next customer story" onClick={() => select(active + 1)}><ChevronRight aria-hidden="true" /></button>
-            <span><strong>{active + 1}</strong> / {stories.length}</span>
           </div>
         </div>
       </div>

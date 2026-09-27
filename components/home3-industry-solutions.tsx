@@ -18,6 +18,6 @@ export function Home3IndustrySolutions() {
   return <section className="home3-industry-solutions" id="industries">
     <div className="page-container home3-industry-solutions__head"><h2>Industry Solutions</h2><p>From stores and warehouses to factories and field operations, UROVO combines enterprise devices, data capture technologies and software to help frontline teams work with greater speed, accuracy and visibility.</p></div>
     <div className="home3-industry-solutions__tabs">{industries.map(([tab], index) => <button key={tab} className={active === index ? "is-active" : ""} onClick={() => setActive(index)}>{tab}</button>)}</div>
-    <article className="page-container home3-industry-solutions__card" key={item[0]}><div className="home3-industry-solutions__image"><img src={item[3]} alt={item[1]} /></div><div className="home3-industry-solutions__copy"><h3>{item[1]}</h3><p>{item[2]}</p><a href="#contact">Explore <ArrowRight /></a></div></article>
+    <article className="page-container home3-industry-solutions__card" key={item[0]}><div className="home3-industry-solutions__image"><img src={item[3]} alt={item[1]} /></div><div className="home3-industry-solutions__copy"><h3>{item[1]}</h3><p>{item[2]}</p><a className="explore-orbit-button" href="#contact"><span className="explore-orbit-label">Explore</span><span className="explore-orbit-icon" aria-hidden="true"><span className="explore-orbit-surface" /><ArrowRight /></span></a></div></article>
   </section>
 }

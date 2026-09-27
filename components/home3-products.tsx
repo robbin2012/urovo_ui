@@ -28,7 +28,7 @@ export function Home3Products() {
         <div className="home3-products__details" key={`copy-${product.title}`}>
           <h3>{product.title}</h3>
           <p>{product.description}</p>
-          <a className="projects-arrow-button" href="#contact"><span>Explore</span><ArrowRight className="projects-arrow" aria-hidden="true" /></a>
+          <a className="projects-arrow-button explore-orbit-button" href="#contact"><span className="explore-orbit-label">Explore</span><span className="explore-orbit-icon" aria-hidden="true"><span className="explore-orbit-surface" /><ArrowRight /></span></a>
         </div>
 
         <div className="home3-products__art" aria-live="polite">
