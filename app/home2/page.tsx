@@ -12,7 +12,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { ScrollRevealController } from "@/components/scroll-reveal-controller"
 import { BackToTop } from "@/components/back-to-top"
 
-export default function Home3Page() {
+export default function Home2Page() {
   return (
     <main className="home-page home3-page min-h-screen bg-white">
       <ScrollRevealController />
