@@ -1358,7 +1358,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 
 /* ===== Product finder ===== */
-.finder { --finder-ink: rgb(35 38 35); --finder-muted: rgb(35 38 35 / 70%); --finder-border: rgb(35 38 35 / 8%); --finder-accent: #0071e3; background: rgb(238 242 247); padding-block: calc(94 * var(--u)) calc(100 * var(--u)); }
+.finder { --finder-ink: rgb(35 38 35); --finder-muted: rgb(35 38 35 / 70%); --finder-border: rgb(35 38 35 / 8%); --finder-accent: #0071e3; background: #eaf3f6; padding-block: calc(94 * var(--u)) calc(100 * var(--u)); }
 .finder__head { display: block; }
 .finder__title { text-align: center; }
 .finder__subtitle { margin-top: calc(16 * var(--u)); color: var(--finder-muted); font-size: calc(18 * var(--u)); line-height: 1.6; text-align: center; }
@@ -1417,7 +1417,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .product-card__link:hover .arrow-badge { background: #049fd5; translate: 3px 0; }
 
 /* ===== Mobile computers CTA ===== */
-.products-page .industry-section { background: rgb(238 242 247); }
+.products-page .industry-section { background: #eaf3f6; }
 .products-page .industry-section .section-title { color: #101010; text-align: center; }
 .products-page .industry-section .section-description { max-width: none; margin-inline: auto; color: #24435a; text-align: center; }
 .products-page .industry-section .pill-tabs { display: none; }

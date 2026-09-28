@@ -5,7 +5,8 @@ import { CapabilitiesSection } from "@/components/products/capabilities-section"
 import { ProductFinder } from "@/components/products/product-finder"
 import { EcosystemSection } from "@/components/ecosystem-section"
 import { IndustrySection } from "@/components/industry-section"
-import { Product1FaqSection } from "@/components/products/product1-faq-section"
+import { FaqSection } from "@/components/products/faq-section"
+import { MobileCtaSection } from "@/components/products/mobile-cta-section"
 import { SiteFooter } from "@/components/site-footer"
 import { ScrollRevealController } from "@/components/scroll-reveal-controller"
 
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="products-page product1-page min-h-screen bg-white">
+    <main className="products-page min-h-screen bg-white">
       <ScrollRevealController />
       <SiteHeader solid />
       <ProductsHero />
@@ -25,7 +26,8 @@ export default function ProductsPage() {
       <ProductFinder />
       <EcosystemSection variant="classic-white" />
       <IndustrySection cardGrid />
-      <Product1FaqSection />
+      <FaqSection />
+      <MobileCtaSection />
       <SiteFooter />
     </main>
   )
