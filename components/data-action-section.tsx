@@ -63,7 +63,7 @@ export function DataActionSection({ variant = "default" }: { variant?: "default"
                   <div id={`workflow-panel-${index}`} className="workflow-step__panel" aria-hidden={!isActive}>
                     <div className="workflow-step__content">
                       <p>{step.description}</p>
-                      <button type="button" onClick={() => selectStep((index + 1) % steps.length)}>Explore Industry<ArrowRight aria-hidden="true" /></button>
+                      <button type="button" onClick={() => selectStep((index + 1) % steps.length)}><span>Explore Industry</span><ArrowRight aria-hidden="true" /></button>
                     </div>
                   </div>
                 </article>
