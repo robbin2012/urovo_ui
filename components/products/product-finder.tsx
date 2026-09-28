@@ -125,16 +125,19 @@ export function ProductFinder() {
           </aside>
 
           <div className="finder__results">
-            {activeChips.length > 0 && (
-              <div className="finder__active-filters" aria-label="Selected filters">
-                {activeChips.map((chip) => (
-                  <button type="button" key={`${chip.key}-${chip.value}`} className="finder__chip" onClick={() => toggle(chip.key, chip.value)}>
-                    {chip.value}<X aria-hidden="true" />
-                  </button>
-                ))}
-                <button type="button" className="finder__chip-clear" onClick={clearAll}>Clear All</button>
-              </div>
-            )}
+            <div className="finder__results-head">
+              <span className="finder__count">{filtered.length} Products</span>
+              {activeChips.length > 0 && (
+                <div className="finder__active-filters" aria-label="Selected filters">
+                  {activeChips.map((chip) => (
+                    <button type="button" key={`${chip.key}-${chip.value}`} className="finder__chip" onClick={() => toggle(chip.key, chip.value)}>
+                      {chip.value}<X aria-hidden="true" />
+                    </button>
+                  ))}
+                  <button type="button" className="finder__chip-clear" onClick={clearAll}>Clear All</button>
+                </div>
+              )}
+            </div>
             <div className="finder__main">
               <div className="product-grid">
                 {filtered.map((product) => (

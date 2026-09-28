@@ -1396,9 +1396,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .finder__chip-clear { display: inline-flex; align-items: center; border: 1px solid rgb(35 38 35 / 28%); border-radius: 999px; background: #fff; color: var(--finder-ink); padding: calc(8 * var(--u)) calc(16 * var(--u)); font-size: calc(14 * var(--u)); font-weight: 500; transition: border-color .2s ease, color .2s ease; }
 .finder__chip-clear:is(:hover, :focus-visible) { border-color: #03a9f5; color: #03a9f5; }
 .finder__chip-hint { color: #7d94a6; font-size: calc(14 * var(--u)); }
-.finder__count { color: #45647c; font-size: calc(15 * var(--u)); font-weight: 600; }
+.finder__count { flex: 0 0 auto; color: var(--finder-ink); font-size: calc(18 * var(--u)); font-weight: 600; }
 .finder__results { min-width: 0; }
-.finder__active-filters { display: flex; flex-wrap: wrap; align-items: center; gap: calc(10 * var(--u)); margin-bottom: calc(20 * var(--u)); }
+.finder__results-head { display: flex; min-height: calc(38 * var(--u)); flex-wrap: wrap; align-items: center; gap: calc(14 * var(--u)); margin-bottom: calc(20 * var(--u)); }
+.finder__active-filters { display: flex; flex-wrap: wrap; align-items: center; gap: calc(10 * var(--u)); }
 .finder__active-filters .finder__chip { border-color: #03a9f5; color: #028bc8; }
 .finder__active-filters .finder__chip:is(:hover, :focus-visible) { background: #f5fcff; border-color: #028bc8; }
 .finder__main { min-width: 0; max-height: calc(1390 * var(--u)); overflow-y: auto; padding-right: calc(12 * var(--u)); scrollbar-color: #b9c8d5 transparent; scrollbar-width: thin; }
