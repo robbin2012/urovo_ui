@@ -92,21 +92,7 @@ export function ProductFinder() {
           <aside className="filter-panel" aria-label="Filter products">
             <div className="filter-panel__head">
               <span>Filter</span>
-              {activeChips.length > 0 && (
-                <button type="button" className="finder__chip-clear" onClick={clearAll}>Remove all</button>
-              )}
             </div>
-            {activeChips.length > 0 && (
-              <div className="filter-panel__selected">
-                <div className="filter-panel__chips">
-                  {activeChips.map((chip) => (
-                    <button type="button" key={`${chip.key}-${chip.value}`} className="finder__chip" onClick={() => toggle(chip.key, chip.value)}>
-                      {chip.value}<X aria-hidden="true" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
             {filterGroups.map((group) => (
               <div key={group.key} className="filter-group">
                 <button
@@ -138,28 +124,40 @@ export function ProductFinder() {
             ))}
           </aside>
 
-          <div className="finder__main">
-            <div className="product-grid">
-              {filtered.map((product) => (
-                <article key={product.name} className="product-card">
-                  <div className="product-card__media image-zoom-frame">
-                    <img src={`/images/revised_images/1x/${product.image}`} alt={product.name} />
-                  </div>
-                  <span className="product-card__type">Mobile Computer</span>
-                  <h3>{product.name}</h3>
-                  <div className="product-card__specs">
-                    {product.specs.map((spec) => (
-                      <span key={spec}>{spec}</span>
-                    ))}
-                  </div>
-                  <a href="#footer" className="product-card__link">
-                    Learn More <span className="arrow-badge"><ArrowRight className="arrow-current" aria-hidden="true" /><ArrowRight className="arrow-incoming" aria-hidden="true" /></span>
-                  </a>
-                </article>
-              ))}
-              {filtered.length === 0 && (
-                <p className="product-grid__empty">No products match the selected filters.</p>
-              )}
+          <div className="finder__results">
+            {activeChips.length > 0 && (
+              <div className="finder__active-filters" aria-label="Selected filters">
+                {activeChips.map((chip) => (
+                  <button type="button" key={`${chip.key}-${chip.value}`} className="finder__chip" onClick={() => toggle(chip.key, chip.value)}>
+                    {chip.value}<X aria-hidden="true" />
+                  </button>
+                ))}
+                <button type="button" className="finder__chip-clear" onClick={clearAll}>Clear All</button>
+              </div>
+            )}
+            <div className="finder__main">
+              <div className="product-grid">
+                {filtered.map((product) => (
+                  <article key={product.name} className="product-card">
+                    <div className="product-card__media image-zoom-frame">
+                      <img src={`/images/revised_images/1x/${product.image}`} alt={product.name} />
+                    </div>
+                    <span className="product-card__type">Mobile Computer</span>
+                    <h3>{product.name}</h3>
+                    <div className="product-card__specs">
+                      {product.specs.map((spec) => (
+                        <span key={spec}>{spec}</span>
+                      ))}
+                    </div>
+                    <a href="#footer" className="product-card__link">
+                      Learn More <span className="arrow-badge"><ArrowRight className="arrow-current" aria-hidden="true" /><ArrowRight className="arrow-incoming" aria-hidden="true" /></span>
+                    </a>
+                  </article>
+                ))}
+                {filtered.length === 0 && (
+                  <p className="product-grid__empty">No products match the selected filters.</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
