@@ -23,7 +23,7 @@ export default function ProductsPage() {
       <ProductsHero />
       <CapabilitiesSection />
       <ProductFinder />
-      <EcosystemSection />
+      <EcosystemSection variant="classic-white" />
       <IndustrySection cardGrid />
       <Product1FaqSection />
       <SiteFooter />

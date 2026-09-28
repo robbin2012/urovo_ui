@@ -19,7 +19,7 @@ export default function Page() {
       <HeroSection />
       <ProductsSection />
       <DataActionSection />
-      <EcosystemSection />
+      <EcosystemSection variant="classic" />
       <IndustrySection />
       <CustomerStories />
       <TechCtaSection />

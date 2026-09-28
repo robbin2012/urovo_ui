@@ -11,7 +11,37 @@ const partners = [
   { name: "Qualcomm", image: "/images/home3-ecosystem/qualcomm.svg" },
 ]
 
-export function EcosystemSection() {
+const classicPartners = [
+  { name: "StayLinked", tag: "TERMINAL EMULATION", asset: 8 },
+  { name: "Springdel", tag: "DEVICE MANAGEMENT", asset: 7 },
+  { name: "ivanti", tag: "ENTERPRISE PLATFORM", asset: 6 },
+  { name: "android", tag: "CERTIFICATION", asset: 5 },
+  { name: "EMVCo", tag: "CERTIFICATION", asset: 4 },
+  { name: "Qualcomm", tag: "TECHNOLOGY PLATFORM", asset: 3 },
+]
+
+function ClassicPartnerSet({ hidden = false }: { hidden?: boolean }) {
+  return <div className="partner-set" aria-hidden={hidden}>
+    {classicPartners.map((partner) => <div key={`${hidden ? "clone-" : ""}${partner.name}`} className="partner">
+      <img src={`/images/revised_images/SVG/资源 ${partner.asset}.svg`} alt={hidden ? "" : partner.name} />
+      <p>{partner.tag}</p>
+    </div>)}
+  </div>
+}
+
+function ClassicEcosystemSection({ white = false }: { white?: boolean }) {
+  return <section id="partners" className={`ecosystem-section ecosystem-section--classic${white ? " ecosystem-section--classic-white" : ""}`}>
+    <h2 data-reveal className="section-title page-container">UROVO Technology Ecosystem</h2>
+    <div data-reveal data-reveal-delay="1" className="partner-marquee" aria-label="Technology ecosystem partners">
+      <div className="partner-track">
+        <ClassicPartnerSet />
+        <ClassicPartnerSet hidden />
+      </div>
+    </div>
+  </section>
+}
+
+function CompactEcosystemSection() {
   const [offset, setOffset] = useState(0)
   const [animate, setAnimate] = useState(true)
 
@@ -42,4 +72,10 @@ export function EcosystemSection() {
       </div>
     </div>
   </section>
+}
+
+export function EcosystemSection({ variant = "compact" }: { variant?: "classic" | "classic-white" | "compact" }) {
+  if (variant === "classic") return <ClassicEcosystemSection />
+  if (variant === "classic-white") return <ClassicEcosystemSection white />
+  return <CompactEcosystemSection />
 }

@@ -24,8 +24,10 @@ export function CapabilitiesSection() {
                 tabIndex={0}
               >
                 <span className="capability-icon" aria-hidden="true"><img src={item.icon} alt="" /></span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
+                <div className="capability-copy">
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
               </div>
             )
           })}
