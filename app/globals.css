@@ -536,7 +536,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .ecosystem-mono-track { display: flex; width: max-content; animation: ecosystem-mono-scroll 36s linear infinite; will-change: transform; }
 .ecosystem-mono-set { display: flex; flex: none; align-items: center; }
 .ecosystem-mono-logo { display: grid; flex: 0 0 calc(100vw / 6); min-width: calc(220 * var(--u)); height: calc(64 * var(--u)); place-items: center; padding-inline: calc(42 * var(--u)); }
-.ecosystem-mono-logo img { display: block; width: auto; max-width: 100%; height: calc(30 * var(--u)); object-fit: contain; filter: grayscale(1); opacity: .68; }
+.ecosystem-mono-logo img { display: block; width: auto; max-width: 100%; height: calc(30 * var(--u)); object-fit: contain; }
 .ecosystem-mono-marquee:hover .ecosystem-mono-track, .ecosystem-mono-marquee:focus-within .ecosystem-mono-track { animation-play-state: paused; }
 @keyframes ecosystem-mono-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (max-width: 760px) {
