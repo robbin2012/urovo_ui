@@ -14,7 +14,7 @@ const cards = [
   { tab: "Financial Technology", title: "Financial Technology", body: "Bring connected payment technology and mobile devices to customer-facing financial operations.", image: "design/banks.webp" },
 ]
 
-export function IndustrySection({ cardGrid = false }: { cardGrid?: boolean }) {
+export function IndustrySection({ cardGrid = false, dark = false }: { cardGrid?: boolean; dark?: boolean }) {
   const [active, setActive] = useState(0)
   const [dragging, setDragging] = useState(false)
   const tabsRef = useRef<HTMLDivElement>(null)
@@ -75,7 +75,8 @@ export function IndustrySection({ cardGrid = false }: { cardGrid?: boolean }) {
     </section>
   }
 
-  return <section id="industries" className="industry-section">
+  return <section id="industries" className={`industry-section${dark ? " industry-section--dark" : ""}`}>
+    {dark && <div className="industry-video-background" aria-hidden="true" />}
     <div className="page-container">
       <h2 data-reveal className="section-title">Industry Solutions</h2>
       <p data-reveal data-reveal-delay="1" className="section-description">From stores and warehouses to factories and field operations, UROVO combines enterprise devices, data capture technologies and software to help frontline teams work with greater speed, accuracy and visibility.</p>
@@ -83,7 +84,7 @@ export function IndustrySection({ cardGrid = false }: { cardGrid?: boolean }) {
     </div>
     <div
       ref={viewportRef}
-      className={`industry-viewport${dragging ? " is-dragging" : ""}`}
+      className={`industry-viewport${dragging ? " is-dragging" : ""}${dark && active === 0 ? " is-first-slide" : ""}`}
       role="region"
       aria-roledescription="carousel"
       aria-label="Industry solutions"

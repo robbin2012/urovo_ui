@@ -18,9 +18,9 @@ export default function Page() {
       <SiteHeader />
       <HeroSection />
       <ProductsSection />
-      <DataActionSection />
+      <DataActionSection variant="split" />
       <EcosystemSection variant="mono" />
-      <IndustrySection />
+      <IndustrySection dark />
       <CustomerStories />
       <TechCtaSection />
       <InsightsSection />
