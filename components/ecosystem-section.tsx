@@ -41,6 +41,28 @@ function ClassicEcosystemSection({ white = false }: { white?: boolean }) {
   </section>
 }
 
+function MonoPartnerSet({ hidden = false }: { hidden?: boolean }) {
+  return <div className="ecosystem-mono-set" aria-hidden={hidden}>
+    {partners.map((partner) => <div key={`${hidden ? "clone-" : ""}${partner.name}`} className="ecosystem-mono-logo">
+      <img src={partner.image} alt={hidden ? "" : partner.name} />
+    </div>)}
+  </div>
+}
+
+function MonoEcosystemSection() {
+  return <section id="partners" className="ecosystem-section ecosystem-section--mono">
+    <div className="page-container">
+      <h2 className="section-title">UROVO Technology Ecosystem</h2>
+    </div>
+    <div className="ecosystem-mono-marquee" aria-label="Technology ecosystem partners">
+      <div className="ecosystem-mono-track">
+        <MonoPartnerSet />
+        <MonoPartnerSet hidden />
+      </div>
+    </div>
+  </section>
+}
+
 function CompactEcosystemSection() {
   const [offset, setOffset] = useState(0)
   const [animate, setAnimate] = useState(true)
@@ -74,8 +96,9 @@ function CompactEcosystemSection() {
   </section>
 }
 
-export function EcosystemSection({ variant = "compact" }: { variant?: "classic" | "classic-white" | "compact" }) {
+export function EcosystemSection({ variant = "compact" }: { variant?: "classic" | "classic-white" | "compact" | "mono" }) {
   if (variant === "classic") return <ClassicEcosystemSection />
   if (variant === "classic-white") return <ClassicEcosystemSection white />
+  if (variant === "mono") return <MonoEcosystemSection />
   return <CompactEcosystemSection />
 }

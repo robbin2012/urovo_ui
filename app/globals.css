@@ -530,9 +530,22 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .partner p { margin-top: calc(22 * var(--u)); color: #6e8a9e; font-size: calc(13 * var(--u)); font-weight: 500; white-space: nowrap; }
 @keyframes partner-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .partner-marquee:hover .partner-track, .partner-marquee:focus-within .partner-track { animation-play-state: paused; }
+.ecosystem-section--mono { overflow: hidden; padding-block: calc(92 * var(--u)) calc(88 * var(--u)); background: #eaf3f6; }
+.ecosystem-section--mono .section-title { text-align: left; font-size: calc(40 * var(--u)); }
+.ecosystem-mono-marquee { position: relative; overflow: hidden; width: 100%; margin-top: calc(64 * var(--u)); -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%); }
+.ecosystem-mono-track { display: flex; width: max-content; animation: ecosystem-mono-scroll 36s linear infinite; will-change: transform; }
+.ecosystem-mono-set { display: flex; flex: none; align-items: center; }
+.ecosystem-mono-logo { display: grid; flex: 0 0 calc(100vw / 6); min-width: calc(220 * var(--u)); height: calc(64 * var(--u)); place-items: center; padding-inline: calc(42 * var(--u)); }
+.ecosystem-mono-logo img { display: block; width: auto; max-width: 100%; height: calc(30 * var(--u)); object-fit: contain; filter: grayscale(1); opacity: .68; }
+.ecosystem-mono-marquee:hover .ecosystem-mono-track, .ecosystem-mono-marquee:focus-within .ecosystem-mono-track { animation-play-state: paused; }
+@keyframes ecosystem-mono-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (max-width: 760px) {
   .ecosystem-logo-track { width: 600%; }
   .ecosystem-logo { padding-inline: 22px; }
+  .ecosystem-section--mono { padding-block: 58px; }
+  .ecosystem-section--mono .section-title { font-size: 30px; }
+  .ecosystem-mono-marquee { margin-top: 38px; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%); }
+  .ecosystem-mono-logo { flex-basis: 46vw; min-width: 170px; padding-inline: 28px; }
 }
 .industry-section { --industry-gutter: max(8.333333vw, calc((100vw - 1600px) / 2)); --industry-card-width: calc((100vw - 2 * var(--industry-gutter)) * .83); overflow: hidden; background: #eaf3f6 url('/images/industry-light-bg.jpg') center/cover no-repeat; color: #11141a; padding-block: calc(84 * var(--u)) calc(92 * var(--u)); }
 .industry-section .section-title { color: #11141a; }
