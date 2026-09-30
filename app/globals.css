@@ -1887,3 +1887,124 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .hero-content .hero-fill-button:is(:hover, :focus-visible) > svg,
 .products-hero__cta:is(:hover, :focus-visible) > svg { color: #111; }
 
+/* HOME3 dark image-and-steps workflow */
+.home3-copy-page .home3-copy-workflow { --workflow-timer: 4.6s; position: relative; overflow: hidden; background: radial-gradient(80% 90% at 82% 82%, rgb(24 79 135 / 48%) 0%, transparent 64%), radial-gradient(120% 90% at 82% -6%, #174779 0%, transparent 56%), linear-gradient(168deg, #0b2044 0%, #0a1832 58%, #071126 100%); padding-block: calc(90 * var(--u)) calc(96 * var(--u)); color: #eaf1fb; }
+.home3-copy-page .home3-copy-workflow::before { content: ''; position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgb(135 183 242 / 8%) 1px, transparent 1px), linear-gradient(90deg, rgb(135 183 242 / 8%) 1px, transparent 1px); background-size: calc(58 * var(--u)) calc(58 * var(--u)); mask-image: linear-gradient(90deg, #000 0%, #000 28%, rgb(0 0 0 / 58%) 50%, transparent 76%); pointer-events: none; }
+.home3-copy-page .home3-copy-workflow::after { content: ''; position: absolute; z-index: 0; bottom: calc(-260 * var(--u)); left: calc(-160 * var(--u)); width: calc(680 * var(--u)); height: calc(680 * var(--u)); border-radius: 50%; background: radial-gradient(circle, rgb(0 174 239 / 16%) 0%, transparent 66%); pointer-events: none; }
+.home3-copy-page .home3-copy-workflow > .page-container { position: relative; z-index: 1; }
+.home3-copy-page .home3-copy-workflow .workflow-header { max-width: none; }
+.home3-copy-page .home3-copy-workflow .section-title { color: #fff; white-space: nowrap; }
+.home3-copy-page .home3-copy-workflow .section-description { max-width: none; margin-top: calc(18 * var(--u)); color: #9db4d4; font-size: calc(17 * var(--u)); line-height: 1.65; white-space: nowrap; }
+.home3-copy-page .home3-copy-workflow .workflow-layout { display: grid; grid-template-columns: minmax(0, 1.34fr) minmax(calc(360 * var(--u)), .96fr); gap: calc(30 * var(--u)); margin-top: calc(54 * var(--u)); }
+.home3-copy-page .home3-copy-workflow .workflow-visual { position: relative; overflow: hidden; min-height: calc(560 * var(--u)); border-radius: calc(18 * var(--u)); background: #101d32; border: 0; box-shadow: none; }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; opacity: 0; transform: translateY(28px) scale(1.035); transition: opacity .72s ease, transform .95s cubic-bezier(.16, 1, .3, 1); }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide.is-active { z-index: 1; opacity: 1; transform: translateY(0) scale(1); }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide.is-leaving { opacity: 0; transform: translateY(-18px) scale(1.015); }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(180deg, transparent 42%, rgb(3 12 28 / 72%) 100%); }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide figcaption { position: absolute; z-index: 3; left: calc(34 * var(--u)); bottom: calc(32 * var(--u)); display: flex; align-items: baseline; gap: calc(10 * var(--u)); color: #fff; text-shadow: 0 1px 8px rgb(0 0 0 / 55%); }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide figcaption span { font-size: calc(18 * var(--u)); font-weight: 300; }
+.home3-copy-page .home3-copy-workflow .workflow-visual__slide figcaption strong { font-size: calc(18 * var(--u)); font-weight: 500; letter-spacing: -.01em; }
+.home3-copy-page .home3-copy-workflow .workflow-accordion { display: flex; flex-direction: column; min-height: calc(560 * var(--u)); gap: 0; padding: 0; border-radius: 0; background: transparent; border: 0; backdrop-filter: none; }
+.home3-copy-page .home3-copy-workflow .workflow-step,
+.home3-copy-page .home3-copy-workflow .workflow-step:first-child,
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active { position: relative; flex: 0 0 calc(58 * var(--u)); display: flex; flex-direction: column; overflow: visible; border: 0; border-top: 1px solid rgb(150 180 220 / 20%); border-radius: 0; background: transparent; box-shadow: none; }
+.home3-copy-page .home3-copy-workflow .workflow-step:last-child { border-bottom: 1px solid rgb(150 180 220 / 20%); }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active { flex: 1 1 auto; }
+.home3-copy-page .home3-copy-workflow .workflow-step__progress { position: absolute; z-index: 2; top: -1px; bottom: auto; left: 0; width: 100%; height: 2px; overflow: hidden; opacity: 0; }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__progress { opacity: 1; }
+.home3-copy-page .home3-copy-workflow .workflow-step__progress i { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #00e5ff 0%, #2f7bff 100%); box-shadow: 0 0 12px rgb(0 200 255 / 60%); }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__progress i { animation: workflow-progress var(--workflow-timer) linear forwards; }
+.home3-copy-page .home3-copy-workflow .workflow-step__trigger { display: grid; grid-template-columns: calc(38 * var(--u)) 1fr auto; align-items: center; width: 100%; min-height: calc(58 * var(--u)); padding: 0; border: 0; background: transparent; color: #c6d6ec; text-align: left; transition: color .3s ease; }
+.home3-copy-page .home3-copy-workflow .workflow-step__trigger:hover { color: #fff; }
+.home3-copy-page .home3-copy-workflow .workflow-step__trigger > span { color: #6f8bb2; opacity: .8; font-size: calc(20 * var(--u)); font-weight: 600; }
+.home3-copy-page .home3-copy-workflow .workflow-step__trigger strong { font-size: calc(20 * var(--u)); font-weight: 600; letter-spacing: .01em; }
+.home3-copy-page .home3-copy-workflow .workflow-step__trigger > i { font-style: normal; font-size: calc(24 * var(--u)); font-weight: 300; color: #6f8bb2; transform: translateX(-12px); }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__trigger { color: #fff; }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__trigger > span,
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__trigger > i { color: #40b8fa; opacity: 1; }
+.home3-copy-page .home3-copy-workflow .workflow-step__panel { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .55s cubic-bezier(.16, 1, .3, 1), opacity .35s ease; }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__panel { grid-template-rows: 1fr; opacity: 1; }
+.home3-copy-page .home3-copy-workflow .workflow-step__content { min-height: 0; overflow: hidden; padding: 0 0 0 calc(38 * var(--u)); }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__content { padding-bottom: calc(27 * var(--u)); }
+.home3-copy-page .home3-copy-workflow .workflow-step__content p { max-width: calc(500 * var(--u)); margin-top: calc(12 * var(--u)); color: #9db4d4; font-size: 14px; line-height: 1.6; opacity: 0; transform: translateY(14px); }
+.home3-copy-page .home3-copy-workflow .workflow-step__content button { display: inline-flex; align-items: center; gap: calc(10 * var(--u)); overflow: visible; margin-top: calc(20 * var(--u)); padding: 0; border: 0; border-radius: 0; background: transparent; color: #40b8fa; font-size: 14px; font-weight: 700; letter-spacing: .04em; opacity: 0; transform: translateY(14px); transition: color .3s ease; }
+.home3-copy-page .home3-copy-workflow .workflow-step__content button::before { display: none; }
+.home3-copy-page .home3-copy-workflow .workflow-step__content button:is(:hover, :focus-visible) { color: #fff; border-color: transparent; box-shadow: none; }
+.home3-copy-page .home3-copy-workflow .workflow-step__arrow { position: relative; display: block; width: calc(18 * var(--u)); height: calc(18 * var(--u)); overflow: hidden; }
+.home3-copy-page .home3-copy-workflow .workflow-step__arrow svg { position: absolute; top: 50%; left: 50%; width: calc(16 * var(--u)); height: calc(16 * var(--u)); color: currentColor; transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
+.home3-copy-page .home3-copy-workflow .workflow-step__arrow-current { transform: translate(-50%, -50%); }
+.home3-copy-page .home3-copy-workflow .workflow-step__arrow-incoming { transform: translate(calc(-50% - 26px), -50%); }
+.home3-copy-page .home3-copy-workflow .workflow-step__content button:is(:hover, :focus-visible) .workflow-step__arrow-current { transform: translate(calc(-50% + 26px), -50%); }
+.home3-copy-page .home3-copy-workflow .workflow-step__content button:is(:hover, :focus-visible) .workflow-step__arrow-incoming { transform: translate(-50%, -50%); }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__content p { animation: workflow-copy-in .6s .08s both; }
+.home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__content button { animation: workflow-copy-in .6s .2s both; }
+
+@media (max-width: 950px) {
+  .home3-copy-page .home3-copy-workflow :is(.section-title, .section-description) { white-space: normal; }
+  .home3-copy-page .home3-copy-workflow .workflow-layout { grid-template-columns: 1fr; }
+  .home3-copy-page .home3-copy-workflow .workflow-visual { min-height: min(68vw, 520px); }
+  .home3-copy-page .home3-copy-workflow .workflow-accordion { min-height: 540px; }
+}
+@media (max-width: 639px) {
+  .home3-copy-page .home3-copy-workflow { padding-block: 64px 72px; }
+  .home3-copy-page .home3-copy-workflow .section-description { font-size: 15px; }
+  .home3-copy-page .home3-copy-workflow .workflow-layout { margin-top: 36px; }
+  .home3-copy-page .home3-copy-workflow .workflow-visual { min-height: 72vw; border-radius: 12px; }
+  .home3-copy-page .home3-copy-workflow .workflow-visual__slide figcaption { left: 20px; bottom: 20px; }
+  .home3-copy-page .home3-copy-workflow .workflow-accordion { min-height: 520px; padding-inline: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home3-copy-page .home3-copy-workflow :is(.workflow-visual__slide, .workflow-step__panel) { transition: none; }
+  .home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__progress i,
+  .home3-copy-page .home3-copy-workflow .workflow-step.is-active .workflow-step__content > * { animation: none; opacity: 1; transform: none; }
+}
+/* HOME3 full-background industry showcase */
+.home3-industry-stage { position: relative; isolation: isolate; height: 720px; min-height: 720px; overflow: hidden; background: #061326; color: #fff; }
+.home3-industry-stage__backgrounds,
+.home3-industry-stage__backgrounds img,
+.home3-industry-stage__shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.home3-industry-stage__backgrounds { z-index: -3; }
+.home3-industry-stage__backgrounds img { object-fit: cover; opacity: 0; transform: scale(1.035); transition: opacity .7s ease, transform 1.15s cubic-bezier(.16,1,.3,1); }
+.home3-industry-stage__backgrounds img.is-active { opacity: 1; transform: scale(1); }
+.home3-industry-stage__shade { z-index: -2; background: linear-gradient(90deg, rgb(2 13 28 / 62%) 0%, rgb(3 17 34 / 42%) 48%, rgb(3 15 29 / 28%) 100%), linear-gradient(0deg, rgb(1 10 23 / 56%) 0%, transparent 54%); }
+.home3-industry-stage__inner { height: 720px; min-height: 720px; display: grid; grid-template-rows: auto auto 1fr auto; padding-block: calc(72 * var(--u)) calc(34 * var(--u)); }
+.home3-industry-stage__header { display: block; }
+.home3-industry-stage__header h2 { color: #fff; font-size: calc(46 * var(--u)); font-weight: 500; line-height: 1.15; letter-spacing: -.035em; }
+.home3-industry-stage__rule { height: 1px; margin-top: calc(32 * var(--u)); background: rgb(255 255 255 / 20%); }
+.home3-industry-stage__content { align-self: center; max-width: calc(760 * var(--u)); padding-block: calc(48 * var(--u)); }
+.home3-industry-stage__content h3 { color: #fff; font-size: calc(54 * var(--u)); font-weight: 600; line-height: 1.12; letter-spacing: -.035em; }
+.home3-industry-stage__content p { margin-top: calc(22 * var(--u)); color: rgb(255 255 255 / 86%); font-size: 14px; line-height: 1.75; }
+.home3-industry-stage__content a { display: inline-flex; align-items: center; gap: 12px; margin-top: calc(34 * var(--u)); border-radius: 999px; background: #03a9f5; color: #fff; padding: 12px 20px; font-size: 13px; font-weight: 700; transition: background-color .3s ease, color .3s ease; }
+.home3-industry-stage__content a svg { width: 16px; height: 16px; transition: transform .3s ease; }
+.home3-industry-stage__content a:is(:hover, :focus-visible) { background: #03a9f5; color: #3b82f6 !important; }
+.home3-industry-stage__content a:is(:hover, :focus-visible) svg { color: #111; transform: none; }
+.home3-industry-stage__content > :is(h3, p, a) { opacity: 0; animation: home3-industry-copy-in .68s cubic-bezier(.16,1,.3,1) both; }
+.home3-industry-stage__content > h3 { animation-delay: .06s; }
+.home3-industry-stage__content > p { animation-delay: .2s; }
+.home3-industry-stage__content > a { animation-delay: .36s; }
+.home3-industry-stage__tabs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: calc(14 * var(--u)); }
+.home3-industry-stage__tabs button { position: relative; min-height: calc(66 * var(--u)); padding: 0 0 calc(15 * var(--u)); border: 0; border-bottom: 1px solid rgb(255 255 255 / 20%); border-radius: 0; background: transparent; color: rgb(255 255 255 / 52%); text-align: left; font-size: 15px; font-weight: 600; transition: color .3s ease, border-color .3s ease; }
+.home3-industry-stage__tabs button::after { content: ''; position: absolute; left: 0; bottom: -1px; display: block; width: 0; height: 2px; background: #fff; transition: width .45s cubic-bezier(.16,1,.3,1); }
+.home3-industry-stage__tabs button:is(:hover, :focus-visible) { color: rgb(255 255 255 / 86%); }
+.home3-industry-stage__tabs button.is-active { color: #fff; }
+.home3-industry-stage__tabs button.is-active::after { width: 100%; }
+@keyframes home3-industry-copy-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+  .home3-industry-stage, .home3-industry-stage__inner { height: 700px; min-height: 700px; }
+  .home3-industry-stage__header { grid-template-columns: 1fr; gap: 16px; }
+  .home3-industry-stage__tabs { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 620px) {
+  .home3-industry-stage, .home3-industry-stage__inner { height: auto; min-height: 760px; }
+  .home3-industry-stage__inner { padding-block: 58px 28px; }
+  .home3-industry-stage__header h2 { font-size: 34px; }
+  .home3-industry-stage__content h3 { font-size: 38px; }
+  .home3-industry-stage__tabs { grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+  .home3-industry-stage__tabs button { min-height: 48px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home3-industry-stage__backgrounds img { transition: none; }
+  .home3-industry-stage__content > :is(h3, p, a) { opacity: 1; animation: none; }
+}
