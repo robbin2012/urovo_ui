@@ -42,7 +42,7 @@ export function DataActionSection({ variant = "default" }: { variant?: "default"
         <h2 id="workflow-title">From Data Capture to Business Action</h2>
         <p>UROVO devices, software and cloud services work together in one continuous operational loop.</p>
       </header>
-      <div className="workflow-split__cards" aria-label="Operational workflow steps">
+      <div className="workflow-split__cards page-container" aria-label="Operational workflow steps">
         {steps.map((step, index) => {
           const isActive = activeStep === index
           return <button type="button" key={step.name} className={`workflow-split__card${isActive ? " is-active" : ""}`} aria-pressed={isActive} onPointerEnter={(event) => { if (event.pointerType === "mouse" || event.pointerType === "pen") selectStep(index) }} onClick={() => selectStep(index)}>
