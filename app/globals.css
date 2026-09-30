@@ -589,7 +589,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .industry-section--dark .section-description { color: rgb(255 255 255 / 76%); }
 .industry-section--dark .pill-tabs button { border-color: rgb(255 255 255 / 10%); background: linear-gradient(135deg, rgb(226 240 250 / 18%), rgb(148 181 207 / 10%)); color: rgb(255 255 255 / 96%); box-shadow: none; backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); -webkit-backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); }
 .industry-section--dark .pill-tabs button.active { border-color: rgb(113 214 255 / 96%); background: rgb(3 169 245 / 88%); color: white; box-shadow: none; backdrop-filter: blur(48px) saturate(96%) brightness(.82); -webkit-backdrop-filter: blur(48px) saturate(96%) brightness(.82); }
-.industry-section--dark .pill-tabs button:is(:hover, :focus-visible) { border-color: rgb(255 255 255 / 52%); background: rgb(255 255 255 / 26%); color: white; box-shadow: none; }
+.industry-section--dark .pill-tabs button:is(:hover, :focus-visible) { border-color: rgb(157 226 255 / 58%); background: rgb(126 217 255 / 34%); color: white; box-shadow: none; }
 .industry-section--dark .pill-tabs button.active:is(:hover, :focus-visible) { border-color: rgb(79 200 255 / 95%); background: rgb(3 169 245 / 88%); box-shadow: none; }
 .industry-section--dark .industry-viewport.is-first-slide { clip-path: inset(0 0 0 var(--industry-gutter)); }
 .industry-section--dark .industry-card { position: relative; border-color: rgb(255 255 255 / 10%); background: linear-gradient(90deg, rgb(3 20 40 / 62%) 0%, rgb(12 35 57 / 54%) 38%, rgb(96 133 163 / 30%) 62%, rgb(207 226 240 / 18%) 100%); color: white; box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%), 0 24px 64px rgb(0 8 24 / 30%); backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); -webkit-backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); }
@@ -607,7 +607,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .industry-section--dark .industry-controls button { border-color: rgb(255 255 255 / 10%); background: linear-gradient(135deg, rgb(226 240 250 / 18%), rgb(148 181 207 / 10%)); color: white; box-shadow: none; backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); -webkit-backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); }
 .industry-section--dark .industry-controls button:is(:hover, :focus-visible) { box-shadow: none; }
 .workflow-split { position: relative; overflow: hidden; height: min(46vw, 690px); min-height: 560px; background: #071524; color: white; }
-.workflow-split::after { content: ''; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgb(2 10 22 / 52%) 0%, rgb(3 12 24 / 30%) 32%, rgb(3 11 22 / 80%) 100%); }
+.workflow-split::after { content: ''; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: rgb(3 11 22 / 45%); }
 .workflow-split__header { position: absolute; z-index: 6; top: calc(54 * var(--u)); left: 50%; width: min(760px, calc(100% - 48px)); transform: translateX(-50%); text-align: center; pointer-events: none; }
 .workflow-split__header h2 { color: white; font-size: calc(40 * var(--u)); font-weight: 650; line-height: 1.15; letter-spacing: -.035em; }
 .workflow-split__header p { margin-top: calc(13 * var(--u)); color: rgb(255 255 255 / 82%); font-size: calc(14 * var(--u)); line-height: 1.55; }
