@@ -592,13 +592,14 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .industry-section--dark .pill-tabs button:is(:hover, :focus-visible) { border-color: rgb(157 226 255 / 58%); background: rgb(126 217 255 / 34%); color: white; box-shadow: none; }
 .industry-section--dark .pill-tabs button.active:is(:hover, :focus-visible) { border-color: rgb(79 200 255 / 95%); background: rgb(3 169 245 / 88%); box-shadow: none; }
 .industry-section--dark .industry-viewport.is-first-slide { clip-path: inset(0 0 0 var(--industry-gutter)); }
-.industry-section--dark .industry-card { position: relative; border-color: rgb(255 255 255 / 10%); background: linear-gradient(90deg, rgb(3 20 40 / 62%) 0%, rgb(12 35 57 / 54%) 38%, rgb(96 133 163 / 30%) 62%, rgb(207 226 240 / 18%) 100%); color: white; box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%), 0 24px 64px rgb(0 8 24 / 30%); backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); -webkit-backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); }
+.industry-section--dark .industry-card { position: relative; border-color: rgb(255 255 255 / 10%); background: rgb(207 226 240 / 18%); color: white; box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%), 0 24px 64px rgb(0 8 24 / 30%); backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); -webkit-backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); }
 .industry-section--dark .industry-card::before { content: ''; position: absolute; z-index: 1; inset: 0; pointer-events: none; border-radius: inherit; background-image: radial-gradient(circle at 20% 15%, rgb(255 255 255 / 13%) 0 1px, transparent 1.5px), radial-gradient(circle at 75% 65%, rgb(255 255 255 / 8%) 0 1px, transparent 1.5px); background-size: 7px 7px, 9px 9px; mix-blend-mode: soft-light; opacity: .24; }
 .industry-section--dark .industry-card::after { content: ''; position: absolute; z-index: 3; inset: 0; pointer-events: none; border-radius: inherit; background: rgb(0 0 0 / 20%); opacity: 1; transition: opacity .45s ease; }
 .industry-section--dark .industry-card[aria-hidden='true'] { filter: saturate(.84); }
 .industry-section--dark .industry-card:not([aria-hidden='true'])::after { opacity: 0; }
 .industry-section--dark .industry-copy { position: relative; z-index: 4; }
 .industry-section--dark .industry-image { position: relative; z-index: 2; }
+.industry-section--dark .industry-image::after { content: ''; position: absolute; z-index: 2; inset: 0; border-radius: inherit; background: rgb(0 0 0 / 20%); pointer-events: none; }
 .industry-section--dark .industry-copy h3 { color: white; font-weight: 700; }
 .industry-section--dark .industry-copy p { color: white; }
 .industry-section--dark .industry-copy a { color: #65caff; }
