@@ -617,6 +617,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .workflow-split__backgrounds img.is-active { opacity: 1; transform: scale(1); }
 .workflow-split__cards { position: relative; z-index: 2; display: flex; height: 100%; }
 .workflow-split__card { position: relative; z-index: 2; isolation: isolate; flex: 1 1 0; min-width: 0; overflow: hidden; border: 0; border-right: 1px solid rgb(255 255 255 / 20%); border-radius: 0; padding: 0; background: transparent; color: white; cursor: pointer; text-align: left; transition: flex-grow .82s cubic-bezier(.18,.84,.18,1); }
+.workflow-split__card:last-child { border-right: 0; }
 .workflow-split__card.is-active { flex-grow: 2; }
 .workflow-split__shade { position: absolute; z-index: 0; inset: 0; display: block; pointer-events: none; background: transparent; transition: background-color .45s ease; }
 .workflow-split__card.is-active .workflow-split__shade { background: rgb(1 13 28 / 24%); }
