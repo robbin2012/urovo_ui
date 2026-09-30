@@ -1968,7 +1968,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .home3-industry-stage__backgrounds { z-index: -3; }
 .home3-industry-stage__backgrounds img { object-fit: cover; opacity: 0; transform: scale(1.035); transition: opacity .7s ease, transform 1.15s cubic-bezier(.16,1,.3,1); }
 .home3-industry-stage__backgrounds img.is-active { opacity: 1; transform: scale(1); }
-.home3-industry-stage__shade { z-index: -2; background: linear-gradient(90deg, rgb(2 13 28 / 62%) 0%, rgb(3 17 34 / 42%) 48%, rgb(3 15 29 / 28%) 100%), linear-gradient(0deg, rgb(1 10 23 / 56%) 0%, transparent 54%); }
+.home3-industry-stage__shade { z-index: -2; background: linear-gradient(90deg, rgb(2 13 28 / 74%) 0%, rgb(3 17 34 / 54%) 48%, rgb(3 15 29 / 38%) 100%), linear-gradient(0deg, rgb(1 10 23 / 66%) 0%, transparent 54%); }
 .home3-industry-stage__inner { height: 720px; min-height: 720px; display: grid; grid-template-rows: auto auto 1fr auto; padding-block: calc(72 * var(--u)) calc(34 * var(--u)); }
 .home3-industry-stage__header { display: block; }
 .home3-industry-stage__header h2 { color: #fff; font-size: calc(46 * var(--u)); font-weight: 500; line-height: 1.15; letter-spacing: -.035em; }
