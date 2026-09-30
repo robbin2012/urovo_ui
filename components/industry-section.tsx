@@ -76,7 +76,6 @@ export function IndustrySection({ cardGrid = false, dark = false }: { cardGrid?:
   }
 
   return <section id="industries" className={`industry-section${dark ? " industry-section--dark" : ""}`}>
-    {dark && <div className="industry-video-background" aria-hidden="true" />}
     <div className="page-container">
       <h2 data-reveal className="section-title">Industry Solutions</h2>
       <p data-reveal data-reveal-delay="1" className="section-description">From stores and warehouses to factories and field operations, UROVO combines enterprise devices, data capture technologies and software to help frontline teams work with greater speed, accuracy and visibility.</p>

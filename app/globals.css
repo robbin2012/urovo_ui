@@ -581,9 +581,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .industry-copy p { color: #404f63; font-size: calc(18 * var(--u)); line-height: 1.8; letter-spacing: .03em; text-align: left; margin-top: calc(26 * var(--u)); }
 .industry-copy a { display: inline-flex; gap: calc(14 * var(--u)); align-items: center; color: var(--brand); font-size: calc(14 * var(--u)); font-weight: 500; margin-top: auto; padding-top: calc(24 * var(--u)); }
 .industry-section--dark { --industry-card-width: calc(100vw - 2 * var(--industry-gutter)); position: relative; isolation: isolate; background: #00152d; color: white; }
-.industry-video-background { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; background: #00152d; }
-.industry-video-background::before { content: ''; position: absolute; inset: -16px; background: url('/images/industry-video-frame.png') center/cover no-repeat; opacity: 1; filter: blur(16px); transform: scale(1.02); }
-.industry-video-background::after { content: ''; position: absolute; inset: 0; background: rgb(0 21 45 / 4%); }
+.industry-section--dark::before { content: ''; position: absolute; z-index: 0; inset: -4px; pointer-events: none; background: url('/images/industry-video-frame.png') center/cover no-repeat; filter: blur(4px); transform: scale(1.01); }
+.industry-section--dark::after { content: ''; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: rgb(0 21 45 / 60%); }
 .industry-section--dark > .page-container,
 .industry-section--dark > .industry-viewport { position: relative; z-index: 1; }
 .industry-section--dark .section-title { color: white; }
@@ -593,7 +592,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .industry-section--dark .pill-tabs button:is(:hover, :focus-visible) { border-color: rgb(255 255 255 / 52%); background: rgb(255 255 255 / 26%); color: white; box-shadow: none; }
 .industry-section--dark .pill-tabs button.active:is(:hover, :focus-visible) { border-color: rgb(79 200 255 / 95%); background: rgb(3 169 245 / 88%); box-shadow: none; }
 .industry-section--dark .industry-viewport.is-first-slide { clip-path: inset(0 0 0 var(--industry-gutter)); }
-.industry-section--dark .industry-card { position: relative; border-color: rgb(255 255 255 / 10%); background: linear-gradient(90deg, rgb(3 20 40 / 62%) 0%, rgb(12 35 57 / 54%) 38%, rgb(96 133 163 / 30%) 62%, rgb(207 226 240 / 18%) 100%); color: white; box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%), 0 24px 64px rgb(0 8 24 / 30%); backdrop-filter: blur(32px) saturate(70%) brightness(.66) contrast(.82); -webkit-backdrop-filter: blur(32px) saturate(70%) brightness(.66) contrast(.82); transform: translateZ(0); }
+.industry-section--dark .industry-card { position: relative; border-color: rgb(255 255 255 / 10%); background: linear-gradient(90deg, rgb(3 20 40 / 62%) 0%, rgb(12 35 57 / 54%) 38%, rgb(96 133 163 / 30%) 62%, rgb(207 226 240 / 18%) 100%); color: white; box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%), 0 24px 64px rgb(0 8 24 / 30%); backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); -webkit-backdrop-filter: blur(16px) saturate(70%) brightness(.66) contrast(.82); }
 .industry-section--dark .industry-card::before { content: ''; position: absolute; z-index: 1; inset: 0; pointer-events: none; border-radius: inherit; background-image: radial-gradient(circle at 20% 15%, rgb(255 255 255 / 13%) 0 1px, transparent 1.5px), radial-gradient(circle at 75% 65%, rgb(255 255 255 / 8%) 0 1px, transparent 1.5px); background-size: 7px 7px, 9px 9px; mix-blend-mode: soft-light; opacity: .24; }
 .industry-section--dark .industry-card::after { content: ''; position: absolute; z-index: 3; inset: 0; pointer-events: none; border-radius: inherit; background: rgb(0 0 0 / 20%); opacity: 1; transition: opacity .45s ease; }
 .industry-section--dark .industry-card[aria-hidden='true'] { filter: saturate(.84); }
