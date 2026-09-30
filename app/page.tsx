@@ -20,7 +20,7 @@ export default function Page() {
       <ProductsSection />
       <DataActionSection variant="split" />
       <EcosystemSection variant="mono" />
-      <IndustrySection dark />
+      <IndustrySection />
       <CustomerStories />
       <TechCtaSection />
       <InsightsSection />

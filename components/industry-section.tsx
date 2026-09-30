@@ -100,7 +100,7 @@ export function IndustrySection({ cardGrid = false, dark = false }: { cardGrid?:
       <div className="industry-track">
         {cards.map((card, index) => <div className="industry-slide" key={card.tab}>
           <article className="industry-card" aria-hidden={active !== index || undefined}>
-            <div className="industry-copy"><h3>{card.title}</h3><p>{card.body}</p><a href="#contact" tabIndex={active === index ? 0 : -1}>Explore Industry <span className="arrow-badge"><ArrowRight className="arrow-current" aria-hidden="true" /><ArrowRight className="arrow-incoming" aria-hidden="true" /></span></a></div>
+            <div className="industry-copy"><h3>{card.title}</h3><p>{card.body}</p><a className="industry-explore-button" href="#contact" tabIndex={active === index ? 0 : -1}><span className="industry-explore-label">Explore</span><span className="industry-explore-icon" aria-hidden="true"><span className="industry-explore-surface" /><ArrowRight /></span></a></div>
             <div className="industry-image image-zoom-frame"><img src={`/images/${card.image}`} alt={card.title} draggable={false} /></div>
           </article>
         </div>)}
