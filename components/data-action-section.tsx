@@ -35,7 +35,8 @@ export function DataActionSection({ variant = "default" }: { variant?: "default"
 
   if (variant === "split") {
     return <section id="software" className="workflow-split-section" aria-labelledby="workflow-title">
-      <div className="workflow-split page-container">
+      <div className="page-container">
+      <div className="workflow-split">
         <header data-reveal className="workflow-split__header">
           <span className="workflow-split__eyebrow">Operational Loop</span>
           <h2 id="workflow-title">From Data Capture to Business Action</h2>
@@ -57,6 +58,7 @@ export function DataActionSection({ variant = "default" }: { variant?: "default"
             </button>
           })}
         </div>
+      </div>
       </div>
     </section>
   }
