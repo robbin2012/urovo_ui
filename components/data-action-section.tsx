@@ -45,21 +45,44 @@ export function DataActionSection({ variant = "default" }: { variant?: "default"
           <h2 id="workflow-title">From Data Capture to Business Action</h2>
           <p>UROVO devices, software and cloud services work together in one continuous operational loop.</p>
         </header>
-        <div data-reveal data-reveal-delay="1" className="workflow-split__cards" aria-label="Operational workflow steps">
-          {steps.map((step, index) => {
-            const isActive = activeStep === index
-            return <button type="button" key={step.name} className={`workflow-split__card${isActive ? " is-active" : ""}`} aria-pressed={isActive} onPointerEnter={(event) => { if (event.pointerType === "mouse" || event.pointerType === "pen") selectStep(index) }} onClick={() => selectStep(index)}>
-              <img className="workflow-split__image" src={step.image} alt={step.alt} />
-              <span className="workflow-split__shade" aria-hidden="true" />
-              <span className="workflow-split__compact"><b>{String(index + 1).padStart(2, "0")}</b><strong>{step.name}</strong></span>
-              <span className="workflow-split__content">
-                <b>{String(index + 1).padStart(2, "0")}</b>
-                <strong>{step.name}</strong>
-                <small>{step.description}</small>
-                <i>Explore Industry <ArrowRight aria-hidden="true" /></i>
-              </span>
-            </button>
-          })}
+        <div data-reveal data-reveal-delay="1" className="home3-copy-page workflow-split__embed">
+          <div className="home3-copy-workflow">
+            <div className="workflow-layout">
+              <div className="workflow-visual" aria-live="polite">
+                {steps.map((step, index) => (
+                  <figure key={step.name} className={`workflow-visual__slide${activeStep === index ? " is-active" : ""}${previousStep === index ? " is-leaving" : ""}`} aria-hidden={activeStep !== index}>
+                    <img src={step.image} alt={activeStep === index ? step.alt : ""} />
+                    <figcaption><span>{String(index + 1).padStart(2, "0")}</span><strong>{step.name}</strong></figcaption>
+                  </figure>
+                ))}
+              </div>
+              <div className="workflow-accordion" aria-label="Operational workflow steps">
+                {steps.map((step, index) => {
+                  const isActive = activeStep === index
+                  return (
+                    <article key={`${step.name}-${isActive ? cycle : "idle"}`} className={`workflow-step${isActive ? " is-active" : ""}`}>
+                      <div className="workflow-step__progress" aria-hidden="true"><i /></div>
+                      <button type="button" className="workflow-step__trigger" aria-expanded={isActive} aria-controls={`workflow-split-panel-${index}`} onClick={() => selectStep(index)}>
+                        <span>{String(index + 1).padStart(2, "0")}</span><strong>{step.name}</strong><i aria-hidden="true">{isActive ? "−" : "+"}</i>
+                      </button>
+                      <div id={`workflow-split-panel-${index}`} className="workflow-step__panel" aria-hidden={!isActive}>
+                        <div className="workflow-step__content">
+                          <p>{step.description}</p>
+                          <button type="button" onClick={() => selectStep((index + 1) % steps.length)}>
+                            <span>Explore Industry</span>
+                            <span className="workflow-step__arrow" aria-hidden="true">
+                              <ArrowRight className="workflow-step__arrow-current" />
+                              <ArrowRight className="workflow-step__arrow-incoming" />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </article>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       </div>

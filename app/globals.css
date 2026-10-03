@@ -2037,3 +2037,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   .home3-industry-stage__backgrounds img { transition: none; }
   .home3-industry-stage__content > :is(h3, p, a) { opacity: 1; animation: none; }
 }
+
+.workflow-split-section .workflow-split__embed .home3-copy-workflow { overflow: visible; padding: 0; background: none; }
+.workflow-split-section .workflow-split__embed .home3-copy-workflow::before,
+.workflow-split-section .workflow-split__embed .home3-copy-workflow::after { display: none; }
+.workflow-split-section .workflow-split__embed .workflow-layout { margin-top: 0; }
+.workflow-split-section .workflow-split__embed .workflow-visual { box-shadow: 0 24px 60px rgb(2 10 26 / 45%); }
+.workflow-split-section .workflow-split__embed .workflow-step__content p { color: rgb(220 232 248 / 82%); }
