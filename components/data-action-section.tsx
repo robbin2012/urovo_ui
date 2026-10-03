@@ -35,18 +35,17 @@ export function DataActionSection({ variant = "default" }: { variant?: "default"
 
   if (variant === "split") {
     return <section id="software" className="workflow-split-section" aria-labelledby="workflow-title">
-      <div className="workflow-split">
-        <div className="workflow-split__backgrounds" aria-hidden="true">
-          {steps.map((step, index) => <img key={step.name} src={step.image} alt="" className={activeStep === index ? "is-active" : ""} />)}
-        </div>
-        <header className="workflow-split__header page-container">
+      <div className="workflow-split page-container">
+        <header data-reveal className="workflow-split__header">
+          <span className="workflow-split__eyebrow">Operational Loop</span>
           <h2 id="workflow-title">From Data Capture to Business Action</h2>
           <p>UROVO devices, software and cloud services work together in one continuous operational loop.</p>
         </header>
-        <div className="workflow-split__cards page-container" aria-label="Operational workflow steps">
+        <div data-reveal data-reveal-delay="1" className="workflow-split__cards" aria-label="Operational workflow steps">
           {steps.map((step, index) => {
             const isActive = activeStep === index
             return <button type="button" key={step.name} className={`workflow-split__card${isActive ? " is-active" : ""}`} aria-pressed={isActive} onPointerEnter={(event) => { if (event.pointerType === "mouse" || event.pointerType === "pen") selectStep(index) }} onClick={() => selectStep(index)}>
+              <img className="workflow-split__image" src={step.image} alt={step.alt} />
               <span className="workflow-split__shade" aria-hidden="true" />
               <span className="workflow-split__compact"><b>{String(index + 1).padStart(2, "0")}</b><strong>{step.name}</strong></span>
               <span className="workflow-split__content">

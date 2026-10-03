@@ -618,58 +618,57 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .industry-section--dark .industry-copy a:is(:hover, :focus-visible) .arrow-badge.arrow-badge { background: white; color: #0b223a; }
 .industry-section--dark .industry-controls button { border-color: rgb(255 255 255 / 10%); background: linear-gradient(135deg, rgb(226 240 250 / 18%), rgb(148 181 207 / 10%)); color: white; box-shadow: none; backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); -webkit-backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); }
 .industry-section--dark .industry-controls button:is(:hover, :focus-visible) { box-shadow: none; }
-.workflow-split-section { background: #071524; }
-.workflow-split { position: relative; overflow: hidden; height: min(46vw, 690px); min-height: 560px; background: #071524; color: white; }
-.workflow-split::after { content: ''; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgb(3 11 22 / 80%) 0%, rgb(3 11 22 / 62%) 38%, rgb(3 11 22 / 48%) 100%); }
-.workflow-split__header { position: absolute; z-index: 6; top: calc(54 * var(--u)); left: 50%; transform: translateX(-50%); text-align: left; pointer-events: none; }
-.workflow-split__header h2 { color: white; font-size: calc(40 * var(--u)); font-weight: 500; line-height: 1.25; letter-spacing: -.04em; }
-.workflow-split__header p { max-width: calc(760 * var(--u)); margin-top: calc(13 * var(--u)); color: rgb(255 255 255 / 86%); font-size: calc(14 * var(--u)); line-height: 1.55; }
-.workflow-split__backgrounds { position: absolute; z-index: 0; inset: 0; overflow: hidden; background: #071524; }
-.workflow-split__backgrounds img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity .58s ease, transform 1.1s cubic-bezier(.16,1,.3,1); }
-.workflow-split__backgrounds img.is-active { opacity: 1; transform: scale(1); }
-.workflow-split__cards { position: relative; z-index: 2; display: flex; height: 100%; }
-.workflow-split__card { position: relative; z-index: 2; isolation: isolate; flex: 1 1 0; min-width: 0; overflow: hidden; border: 0; border-radius: 0; padding: 0; background: transparent; color: white; cursor: pointer; text-align: left; transition: flex-grow .82s cubic-bezier(.18,.84,.18,1); }
-.workflow-split__card::before { content: ''; position: absolute; z-index: 3; bottom: calc(91 * var(--u)); left: 0; width: 1px; height: calc(52 * var(--u)); background: rgb(255 255 255 / 26%); pointer-events: none; }
-.workflow-split__card.is-active { flex-grow: 2; }
-.workflow-split__shade { position: absolute; z-index: 0; inset: 0; display: block; pointer-events: none; background: transparent; transition: background-color .45s ease; }
-.workflow-split__card.is-active .workflow-split__shade { background: rgb(1 13 28 / 24%); }
-.workflow-split__compact { position: absolute; z-index: 1; right: calc(28 * var(--u)); bottom: calc(52 * var(--u)); left: calc(34 * var(--u)); display: grid; gap: calc(15 * var(--u)); color: rgb(255 255 255 / 50%); transition: opacity .3s ease, transform .5s ease; }
-.workflow-split__compact b { font-size: calc(62 * var(--u)); font-weight: 500; line-height: .8; letter-spacing: -.04em; }
-.workflow-split__compact strong { font-size: calc(23 * var(--u)); font-weight: 650; line-height: 1.1; }
+.workflow-split-section { padding-block: calc(88 * var(--u)) calc(96 * var(--u)); background: linear-gradient(180deg, #eef3f8 0%, #e3ebf3 100%); }
+.workflow-split { display: flex; flex-direction: column; gap: calc(44 * var(--u)); }
+.workflow-split__header { display: flex; flex-direction: column; align-items: center; max-width: calc(820 * var(--u)); margin-inline: auto; text-align: center; }
+.workflow-split__eyebrow { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 6px 14px; background: rgb(3 169 245 / 10%); color: #0282c4; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.workflow-split__header h2 { margin-top: calc(18 * var(--u)); color: #0b223a; font-size: max(32px, calc(44 * var(--u))); font-weight: 650; line-height: 1.2; letter-spacing: -.03em; text-wrap: balance; }
+.workflow-split__header p { max-width: calc(640 * var(--u)); margin-top: calc(14 * var(--u)); color: #4a5f74; font-size: max(15px, calc(17 * var(--u))); line-height: 1.6; text-wrap: pretty; }
+.workflow-split__cards { display: flex; gap: calc(16 * var(--u)); height: calc(500 * var(--u)); min-height: 420px; }
+.workflow-split__card { position: relative; isolation: isolate; flex: 1 1 0; min-width: 0; overflow: hidden; border: 1px solid rgb(11 34 58 / 8%); border-radius: 20px; padding: 0; background: #3a5672; color: white; cursor: pointer; text-align: left; box-shadow: 0 10px 30px -18px rgb(11 34 58 / 45%); transition: flex-grow .82s cubic-bezier(.18,.84,.18,1), box-shadow .4s ease; }
+.workflow-split__card.is-active { flex-grow: 2.2; box-shadow: 0 24px 48px -24px rgb(11 34 58 / 55%); }
+.workflow-split__card:focus-visible { outline: 3px solid #03a9f5; outline-offset: 3px; }
+.workflow-split__image { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 1.1s cubic-bezier(.16,1,.3,1); }
+.workflow-split__card.is-active .workflow-split__image { transform: scale(1); }
+.workflow-split__shade { position: absolute; z-index: -1; inset: 0; display: block; pointer-events: none; background: linear-gradient(180deg, rgb(20 45 70 / 10%) 0%, rgb(20 45 70 / 35%) 45%, rgb(14 36 58 / 82%) 100%); transition: opacity .45s ease; }
+.workflow-split__card:not(.is-active) .workflow-split__shade { background: linear-gradient(180deg, rgb(30 58 86 / 30%) 0%, rgb(20 45 70 / 55%) 50%, rgb(14 36 58 / 85%) 100%); }
+.workflow-split__compact { position: absolute; right: calc(24 * var(--u)); bottom: calc(28 * var(--u)); left: calc(24 * var(--u)); display: grid; gap: calc(10 * var(--u)); color: white; transition: opacity .3s ease, transform .5s ease; }
+.workflow-split__compact b { color: #7fd3ff; font-size: calc(15 * var(--u)); font-weight: 700; letter-spacing: .08em; }
+.workflow-split__compact strong { font-size: calc(20 * var(--u)); font-weight: 700; line-height: 1.15; letter-spacing: .02em; overflow-wrap: anywhere; }
 .workflow-split__card.is-active .workflow-split__compact { opacity: 0; transform: translateY(18px); }
-.workflow-split__content { position: absolute; z-index: 1; right: calc(48 * var(--u)); bottom: calc(58 * var(--u)); left: calc(48 * var(--u)); display: flex; flex-direction: column; align-items: flex-start; opacity: 0; transform: translateY(22px); transition: opacity .34s ease, transform .58s cubic-bezier(.16,1,.3,1); }
-.workflow-split__card.is-active .workflow-split__content { opacity: 1; transform: translateY(0); transition-delay: 0s; }
-.workflow-split__content > b { font-size: calc(66 * var(--u)); font-weight: 500; line-height: .85; letter-spacing: -.04em; }
-.workflow-split__content > strong { margin-top: calc(22 * var(--u)); font-size: calc(28 * var(--u)); font-weight: 700; }
-.workflow-split__content > small { max-width: calc(500 * var(--u)); margin-top: calc(22 * var(--u)); color: white; font-size: 14px; line-height: 1.55; }
-.workflow-split__content > i { display: inline-flex; align-items: center; gap: calc(10 * var(--u)); margin-top: calc(30 * var(--u)); border-radius: 999px; padding: calc(12 * var(--u)) calc(20 * var(--u)); background: #03a9f5; color: white; font-size: calc(13 * var(--u)); font-style: normal; font-weight: 700; }
+.workflow-split__content { position: absolute; right: calc(36 * var(--u)); bottom: calc(36 * var(--u)); left: calc(36 * var(--u)); display: flex; flex-direction: column; align-items: flex-start; opacity: 0; transform: translateY(22px); transition: opacity .34s ease, transform .58s cubic-bezier(.16,1,.3,1); pointer-events: none; }
+.workflow-split__card.is-active .workflow-split__content { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.workflow-split__content > b { color: #7fd3ff; font-size: calc(15 * var(--u)); font-weight: 700; letter-spacing: .08em; }
+.workflow-split__content > strong { margin-top: calc(10 * var(--u)); font-size: calc(30 * var(--u)); font-weight: 700; line-height: 1.15; letter-spacing: .01em; }
+.workflow-split__content > small { max-width: calc(480 * var(--u)); margin-top: calc(14 * var(--u)); color: rgb(255 255 255 / 90%); font-size: 15px; line-height: 1.6; }
+.workflow-split__content > i { display: inline-flex; align-items: center; gap: calc(8 * var(--u)); margin-top: calc(22 * var(--u)); border-radius: 999px; padding: calc(11 * var(--u)) calc(20 * var(--u)); background: #03a9f5; color: white; font-size: calc(13 * var(--u)); font-style: normal; font-weight: 700; transition: background-color .25s ease; }
+.workflow-split__card:hover .workflow-split__content > i { background: #0292d6; }
 .workflow-split__content > i svg { width: calc(16 * var(--u)); height: calc(16 * var(--u)); }
 .workflow-split__content > b, .workflow-split__content > strong, .workflow-split__content > small, .workflow-split__content > i { opacity: 0; transform: translateY(18px); }
 .workflow-split__card.is-active .workflow-split__content > b { animation: workflow-split-copy-in .55s .16s cubic-bezier(.16,1,.3,1) both; }
-.workflow-split__card.is-active .workflow-split__content > strong { animation: workflow-split-copy-in .55s .28s cubic-bezier(.16,1,.3,1) both; }
-.workflow-split__card.is-active .workflow-split__content > small { animation: workflow-split-copy-in .58s .42s cubic-bezier(.16,1,.3,1) both; }
-.workflow-split__card.is-active .workflow-split__content > i { animation: workflow-split-copy-in .55s .56s cubic-bezier(.16,1,.3,1) both; }
+.workflow-split__card.is-active .workflow-split__content > strong { animation: workflow-split-copy-in .55s .26s cubic-bezier(.16,1,.3,1) both; }
+.workflow-split__card.is-active .workflow-split__content > small { animation: workflow-split-copy-in .58s .38s cubic-bezier(.16,1,.3,1) both; }
+.workflow-split__card.is-active .workflow-split__content > i { animation: workflow-split-copy-in .55s .5s cubic-bezier(.16,1,.3,1) both; }
 @keyframes workflow-split-copy-in { to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
   .workflow-split__content > b, .workflow-split__content > strong, .workflow-split__content > small, .workflow-split__content > i { opacity: 1; transform: none; animation: none !important; }
 }
 @media (max-width: 760px) {
-  .workflow-split { height: 720px; min-height: 720px; }
-  .workflow-split__header { top: 34px; }
+  .workflow-split-section { padding-block: 56px 64px; }
+  .workflow-split { gap: 28px; }
   .workflow-split__header h2 { font-size: 28px; }
-  .workflow-split__header p { font-size: 13px; }
-  .workflow-split__cards { flex-direction: column; }
-  .workflow-split__card { border-right: 0; border-bottom: 1px solid rgb(255 255 255 / 20%); }
-  .workflow-split__card::before { display: none; }
-  .workflow-split__card.is-active { flex-grow: 2.3; }
-  .workflow-split__compact { inset: auto 20px 18px; display: flex; align-items: baseline; gap: 12px; }
-  .workflow-split__compact b { font-size: 34px; }
-  .workflow-split__compact strong { font-size: 17px; }
-  .workflow-split__content { right: 24px; bottom: 22px; left: 24px; }
-  .workflow-split__content > b { font-size: 42px; }
-  .workflow-split__content > strong { margin-top: 10px; font-size: 22px; }
-  .workflow-split__content > small { margin-top: 10px; font-size: 14px; }
-  .workflow-split__content > i { margin-top: 14px; padding: 9px 15px; font-size: 11px; }
+  .workflow-split__header p { font-size: 14px; }
+  .workflow-split__cards { flex-direction: column; gap: 12px; height: 680px; }
+  .workflow-split__card { border-radius: 16px; }
+  .workflow-split__card.is-active { flex-grow: 3.2; }
+  .workflow-split__compact { inset: auto 20px 50%; transform: translateY(50%); display: flex; align-items: baseline; gap: 12px; }
+  .workflow-split__card.is-active .workflow-split__compact { transform: translateY(50%); }
+  .workflow-split__compact b, .workflow-split__content > b { font-size: 13px; }
+  .workflow-split__compact strong { font-size: 18px; }
+  .workflow-split__content { right: 20px; bottom: 20px; left: 20px; }
+  .workflow-split__content > strong { margin-top: 6px; font-size: 22px; }
+  .workflow-split__content > small { margin-top: 8px; font-size: 14px; }
+  .workflow-split__content > i { margin-top: 14px; padding: 9px 15px; font-size: 12px; }
 }
 .stories-section { padding-block: calc(50 * var(--u)); }
 .stories-grid { display: flex; gap: calc(20 * var(--u)); height: calc(635 * var(--u)); margin-top: calc(40 * var(--u)); }
