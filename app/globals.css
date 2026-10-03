@@ -618,12 +618,12 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .industry-section--dark .industry-copy a:is(:hover, :focus-visible) .arrow-badge.arrow-badge { background: white; color: #0b223a; }
 .industry-section--dark .industry-controls button { border-color: rgb(255 255 255 / 10%); background: linear-gradient(135deg, rgb(226 240 250 / 18%), rgb(148 181 207 / 10%)); color: white; box-shadow: none; backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); -webkit-backdrop-filter: blur(48px) saturate(82%) brightness(.76) contrast(.88); }
 .industry-section--dark .industry-controls button:is(:hover, :focus-visible) { box-shadow: none; }
-.workflow-split-section { padding-block: calc(88 * var(--u)) calc(96 * var(--u)); background: linear-gradient(180deg, #eef3f8 0%, #e3ebf3 100%); }
+.workflow-split-section { padding-block: calc(88 * var(--u)) calc(96 * var(--u)); background: linear-gradient(180deg, #d2deea 0%, #bfd0e0 100%); }
 .workflow-split { display: flex; flex-direction: column; gap: calc(44 * var(--u)); }
 .workflow-split__header { display: flex; flex-direction: column; align-items: center; max-width: calc(820 * var(--u)); margin-inline: auto; text-align: center; }
-.workflow-split__eyebrow { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 6px 14px; background: rgb(3 169 245 / 10%); color: #0282c4; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.workflow-split__eyebrow { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 6px 14px; background: rgb(255 255 255 / 55%); color: #0272ad; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .workflow-split__header h2 { margin-top: calc(18 * var(--u)); color: #0b223a; font-size: max(32px, calc(44 * var(--u))); font-weight: 650; line-height: 1.2; letter-spacing: -.03em; text-wrap: balance; }
-.workflow-split__header p { max-width: calc(640 * var(--u)); margin-top: calc(14 * var(--u)); color: #4a5f74; font-size: max(15px, calc(17 * var(--u))); line-height: 1.6; text-wrap: pretty; }
+.workflow-split__header p { max-width: calc(640 * var(--u)); margin-top: calc(14 * var(--u)); color: #34495e; font-size: max(15px, calc(17 * var(--u))); line-height: 1.6; text-wrap: pretty; }
 .workflow-split__cards { display: flex; gap: calc(16 * var(--u)); height: calc(500 * var(--u)); min-height: 420px; }
 .workflow-split__card { position: relative; isolation: isolate; flex: 1 1 0; min-width: 0; overflow: hidden; border: 1px solid rgb(11 34 58 / 8%); border-radius: 20px; padding: 0; background: #3a5672; color: white; cursor: pointer; text-align: left; box-shadow: 0 10px 30px -18px rgb(11 34 58 / 45%); transition: flex-grow .82s cubic-bezier(.18,.84,.18,1), box-shadow .4s ease; }
 .workflow-split__card.is-active { flex-grow: 2.2; box-shadow: 0 24px 48px -24px rgb(11 34 58 / 55%); }
