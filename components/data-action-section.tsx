@@ -35,6 +35,9 @@ export function DataActionSection({ variant = "default" }: { variant?: "default"
 
   if (variant === "split") {
     return <section id="software" className="workflow-split-section" aria-labelledby="workflow-title">
+      <div className="workflow-split__backgrounds" aria-hidden="true">
+        {steps.map((step, index) => <img key={step.name} src={step.image} alt="" className={activeStep === index ? "is-active" : ""} />)}
+      </div>
       <div className="page-container">
       <div className="workflow-split">
         <header data-reveal className="workflow-split__header">
