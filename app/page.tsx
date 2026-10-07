@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { HeroSection } from "@/components/hero-section"
 import { ProductsSection } from "@/components/products-section"
-import { DataActionSection } from "@/components/data-action-section"
+import { Home3CopyDataActionSection } from "@/components/home3-copy-data-action-section"
 import { EcosystemSection } from "@/components/ecosystem-section"
 import { IndustrySection } from "@/components/industry-section"
 import { CustomerStories } from "@/components/customer-stories"
@@ -13,14 +13,14 @@ import { BackToTop } from "@/components/back-to-top"
 
 export default function Page() {
   return (
-    <main className="home-page min-h-screen bg-white">
+    <main className="home-page home1-page home3-copy-page min-h-screen bg-white">
       <ScrollRevealController />
       <SiteHeader />
       <HeroSection />
       <ProductsSection />
-      <DataActionSection variant="split" />
+      <Home3CopyDataActionSection />
       <EcosystemSection variant="mono" />
-      <IndustrySection />
+      <IndustrySection dark />
       <CustomerStories />
       <TechCtaSection />
       <InsightsSection />
