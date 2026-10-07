@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
@@ -13,7 +13,23 @@ const steps = [
 
 export function Home4DataActionSection() {
   const [activeStep, setActiveStep] = useState(0)
+  const [cycle, setCycle] = useState(0)
   const step = steps[activeStep]
+
+  const selectStep = (index: number) => {
+    setActiveStep(index)
+    setCycle((value) => value + 1)
+  }
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    const timeout = window.setTimeout(() => {
+      setActiveStep((current) => (current + 1) % steps.length)
+      setCycle((value) => value + 1)
+    }, 7000)
+    return () => window.clearTimeout(timeout)
+  }, [activeStep, cycle])
+
   return (
     <section id="software" className="home4-data-action" aria-labelledby="home4-data-action-title">
       <Image key={step.image} className="home4-data-action__image" src={step.image} alt={step.alt} fill sizes="100vw" />
@@ -26,8 +42,11 @@ export function Home4DataActionSection() {
           {steps.map((item, index) => {
             const isActive = activeStep === index
             return (
-              <button key={item.name} type="button" className={`home4-data-action__step-button${isActive ? " is-active" : ""}`} aria-pressed={isActive} onClick={() => setActiveStep(index)}>
-                <span className="home4-data-action__step-number">{String(index + 1).padStart(2, "0")}</span>
+              <button key={item.name} type="button" className={`home4-data-action__step-button${isActive ? " is-active" : ""}`} aria-pressed={isActive} onClick={() => selectStep(index)} onMouseEnter={() => selectStep(index)} onFocus={() => selectStep(index)}>
+                <span className="home4-data-action__step-number">
+                  <span className="home4-data-action__step-value">{String(index + 1).padStart(2, "0")}</span>
+                  {isActive && <span key={`${index}-${cycle}`} className="home4-data-action__step-progress" aria-hidden="true" />}
+                </span>
                 <span className="home4-data-action__step-copy"><strong>{item.name}</strong><small>{item.summary}</small></span>
               </button>
             )
