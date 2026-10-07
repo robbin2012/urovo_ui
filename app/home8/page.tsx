@@ -10,10 +10,11 @@ import { InsightsSection } from "@/components/insights-section"
 import { SiteFooter } from "@/components/site-footer"
 import { ScrollRevealController } from "@/components/scroll-reveal-controller"
 import { BackToTop } from "@/components/back-to-top"
+import styles from "./home8.module.css"
 
 export default function Home8Page() {
   return (
-    <main className="home-page home1-page home3-copy-page min-h-screen bg-white">
+    <main className={`${styles.page} home-page home1-page home3-copy-page min-h-screen bg-white`}>
       <ScrollRevealController />
       <SiteHeader />
       <HeroSection />

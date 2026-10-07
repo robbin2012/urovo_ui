@@ -1,0 +1,25 @@
+.page :global(.home3-copy-workflow) {
+  background:
+    linear-gradient(rgb(0 21 45 / 72%), rgb(0 21 45 / 72%)),
+    url('/images/home1-workflow-dark-bg.png') center / cover no-repeat;
+}
+
+.page :global(.home3-copy-workflow::before) {
+  display: none;
+}
+
+.page :global(.home3-copy-workflow .workflow-step__progress) {
+  height: 1px;
+}
+
+.page :global(.home3-copy-workflow .workflow-step__trigger > span) {
+  font-size: calc(23 * var(--u));
+}
+
+.page :global(.home3-copy-workflow .workflow-step__trigger strong) {
+  font-size: calc(24 * var(--u));
+}
+
+.page :global(.home3-copy-workflow .workflow-step__content button) {
+  font-size: 12px;
+}
