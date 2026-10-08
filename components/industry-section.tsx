@@ -67,7 +67,7 @@ export function IndustrySection({ cardGrid = false, dark = false, clipFirstSlide
             <div className="industry-solution-card__copy">
               <h3>{card.title}</h3>
               <p>{card.body}</p>
-              <a href="#contact">Explore {card.tab}<span className="arrow-badge"><ArrowRight className="arrow-current" aria-hidden="true" /><ArrowRight className="arrow-incoming" aria-hidden="true" /></span></a>
+              <a href="#contact">Explore More<span className="arrow-badge"><ArrowRight className="arrow-current" aria-hidden="true" /><ArrowRight className="arrow-incoming" aria-hidden="true" /></span></a>
             </div>
           </article>)}
         </div>
