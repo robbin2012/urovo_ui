@@ -13,6 +13,9 @@ const homeLinks = [
   { label: "Home 5", href: "/home5" },
   { label: "Home 6", href: "/home6" },
   { label: "Home 7", href: "/home7" },
+  { label: "Home 8", href: "/home8" },
+  { label: "Home 9", href: "/home9" },
+  { label: "Home 10", href: "/home10" },
 ]
 
 export function BackToTop() {

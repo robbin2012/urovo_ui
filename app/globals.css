@@ -244,6 +244,39 @@ body { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   .page-tools__menu, .page-tools__toggle, .page-tools__toggle svg, .page-tools__links a, .back-to-top, .back-to-top__arrow, .back-to-top__label { transition: none; }
 }
+
+/* HOME9: Home1 shell with the Home3 workflow and centered section headings */
+.home9-page .home3-copy-workflow .workflow-header { text-align: center; }
+.home9-page .home3-copy-workflow .workflow-header .section-description { margin-inline: auto; }
+.home9-page .ecosystem-section--mono .section-title { text-align: center; }
+.home9-page .stories-section > .section-title { text-align: center; }
+.home9-page .industry-section .industry-copy a.industry-explore-button { min-width: 0; align-items: center; gap: 2px; border: 0; border-radius: 0; padding: 0; background: transparent; color: #5d6973; }
+.home9-page .industry-section .industry-copy a.industry-explore-button:is(:hover, :focus-visible) { border: 0; background: transparent; color: #40b8fa; }
+.home9-page .industry-section .industry-explore-icon { position: relative; right: auto; display: grid; width: 15px; height: 15px; place-items: center; color: currentColor !important; }
+.home9-page .industry-section .industry-explore-icon,
+.home9-page .industry-section .industry-explore-icon svg { transform: none !important; transition: color .25s ease !important; }
+.home9-page .industry-section .industry-explore-icon svg { width: 15px; height: 15px; color: currentColor !important; }
+.home9-page .industry-section .industry-explore-surface { display: none; }
+
+/* HOME10: default home shell with the Home2 product showcase */
+.home10-page .home3-products { background: #fff url('/images/home3-products-bg.jpg') center/cover no-repeat; }
+.home10-page .home3-products__header h2 { color: #111827; }
+.home10-page .home3-products__header h2 span { color: #03a9f5; }
+.home10-page .home3-products__details h3 { color: #111827; }
+.home10-page .home3-products__details p { color: #526174; }
+.home10-page .home3-products__tabs button { color: #4b5563; }
+.home10-page .home3-products__tabs button.is-active { background: #03a9f5; color: #fff; }
+.home10-page .home3-products__tabs button:hover:not(.is-active),
+.home10-page .home3-products__tabs button:focus-visible:not(.is-active) { color: #03a9f5; background: transparent; }
+
+.home9-page .home3-copy-workflow .workflow-header { text-align: center; }
+.home9-page .home3-copy-workflow .workflow-header .section-description { margin-inline: auto; }
+.home9-page .ecosystem-section--mono .section-title,
+.home9-page .stories-section > .section-title { text-align: center; }
+.home9-page .home3-copy-workflow .workflow-step__content button { display: inline-flex; align-items: center; gap: 10px; margin-top: calc(20 * var(--u)); border: 0; border-radius: 0; padding: 0; background: transparent; color: #40b8fa; }
+.home9-page .home3-copy-workflow .workflow-step__content button:is(:hover, :focus-visible) { border: 0; background: transparent; color: #fff; box-shadow: none; }
+.home9-page .home3-copy-workflow .workflow-step__arrow { width: 18px; height: 18px; }
+.home9-page .home3-copy-workflow .workflow-step__arrow svg { width: 16px; height: 16px; }
 .reveal-enabled [data-reveal] {
   opacity: 0;
   translate: 0 44px;
