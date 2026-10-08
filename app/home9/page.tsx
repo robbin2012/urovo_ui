@@ -20,7 +20,7 @@ export default function Home9Page() {
       <ProductsSection />
       <Home3CopyDataActionSection />
       <EcosystemSection variant="mono" />
-      <IndustrySection />
+      <IndustrySection clipFirstSlide />
       <CustomerStories />
       <TechCtaSection />
       <InsightsSection />

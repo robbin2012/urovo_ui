@@ -277,6 +277,8 @@ body { margin: 0; }
 .home9-page .home3-copy-workflow .workflow-step__content button:is(:hover, :focus-visible) { border: 0; background: transparent; color: #fff; box-shadow: none; }
 .home9-page .home3-copy-workflow .workflow-step__arrow { width: 18px; height: 18px; }
 .home9-page .home3-copy-workflow .workflow-step__arrow svg { width: 16px; height: 16px; }
+.home9-page .industry-section { --industry-card-width: calc(100vw - 2 * var(--industry-gutter)); }
+.home9-page .industry-viewport.is-first-slide { clip-path: inset(0 0 0 var(--industry-gutter)); }
 .home9-page .industry-section .industry-card { overflow: visible; }
 .home9-page .industry-section .industry-image { height: calc(100% - 56px); align-self: center; margin: 28px 28px 28px 0; overflow: hidden; border-radius: 10px; }
 .home9-page .industry-section .industry-image img { border-radius: inherit; }

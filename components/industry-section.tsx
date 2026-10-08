@@ -14,7 +14,7 @@ const cards = [
   { tab: "Financial Technology", title: "Financial Technology", body: "Bring connected payment technology and mobile devices to customer-facing financial operations.", image: "design/banks.webp" },
 ]
 
-export function IndustrySection({ cardGrid = false, dark = false }: { cardGrid?: boolean; dark?: boolean }) {
+export function IndustrySection({ cardGrid = false, dark = false, clipFirstSlide = false }: { cardGrid?: boolean; dark?: boolean; clipFirstSlide?: boolean }) {
   const [active, setActive] = useState(0)
   const [dragging, setDragging] = useState(false)
   const tabsRef = useRef<HTMLDivElement>(null)
@@ -83,7 +83,7 @@ export function IndustrySection({ cardGrid = false, dark = false }: { cardGrid?:
     </div>
     <div
       ref={viewportRef}
-      className={`industry-viewport${dragging ? " is-dragging" : ""}${dark && active === 0 ? " is-first-slide" : ""}`}
+      className={`industry-viewport${dragging ? " is-dragging" : ""}${(dark || clipFirstSlide) && active === 0 ? " is-first-slide" : ""}`}
       role="region"
       aria-roledescription="carousel"
       aria-label="Industry solutions"
